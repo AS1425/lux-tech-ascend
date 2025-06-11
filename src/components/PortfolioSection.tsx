@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Github, Play } from 'lucide-react';
 
@@ -84,9 +83,7 @@ const PortfolioSection = () => {
   }, []);
 
   return (
-    <section id="portfolio" className="py-20 relative overflow-hidden" ref={sectionRef}>
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-muted/20 via-background to-muted/20"></div>
+    <section id="portfolio" className="py-20 relative overflow-hidden bg-gradient-to-b from-muted/20 via-background to-muted/20" ref={sectionRef}>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -103,7 +100,7 @@ const PortfolioSection = () => {
 
         {/* Featured Projects Showcase */}
         <div className="mb-16">
-          <div className="relative bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-3xl p-8 glass">
+          <div className="relative bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-3xl p-8 glass card-hover">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-block px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
@@ -119,7 +116,7 @@ const PortfolioSection = () => {
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {projects[activeProject].tech.map((tech, index) => (
-                    <span key={index} className="px-3 py-1 bg-muted/50 rounded-full text-sm text-muted-foreground">
+                    <span key={index} className="px-3 py-1 glass rounded-full text-sm text-muted-foreground">
                       {tech}
                     </span>
                   ))}
@@ -128,7 +125,7 @@ const PortfolioSection = () => {
                 {/* Metrics */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                   {projects[activeProject].metrics.map((metric, index) => (
-                    <div key={index} className="text-center p-3 glass rounded-xl">
+                    <div key={index} className="text-center p-3 glass rounded-xl card-hover">
                       <div className="text-primary font-semibold text-sm">{metric}</div>
                     </div>
                   ))}
@@ -136,11 +133,11 @@ const PortfolioSection = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-4">
-                  <button className="glass px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold hover:scale-105 transition-all duration-300 flex items-center">
+                  <button className="cta-ripple glass px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:scale-105 transition-all duration-300 flex items-center pulse-glow">
                     <Play className="w-4 h-4 mr-2" />
                     View Demo
                   </button>
-                  <button className="glass px-6 py-3 rounded-full text-foreground border border-primary/30 hover:bg-primary/10 transition-all duration-300 flex items-center">
+                  <button className="glass px-6 py-3 rounded-full text-foreground border border-primary/30 hover:bg-primary/10 transition-all duration-300 flex items-center card-hover">
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Case Study
                   </button>
@@ -148,7 +145,7 @@ const PortfolioSection = () => {
               </div>
 
               <div className="relative">
-                <div className="aspect-video rounded-2xl overflow-hidden glass border border-primary/20">
+                <div className="aspect-video rounded-2xl overflow-hidden glass border border-primary/20 card-hover">
                   <img 
                     src={projects[activeProject].image} 
                     alt={projects[activeProject].title}
@@ -166,7 +163,7 @@ const PortfolioSection = () => {
                   key={index}
                   onClick={() => setActiveProject(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    activeProject === index ? 'bg-primary scale-125' : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                    activeProject === index ? 'bg-primary scale-125 glow-mint' : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
                   }`}
                 />
               ))}
@@ -183,7 +180,7 @@ const PortfolioSection = () => {
               <div
                 key={index}
                 data-index={index}
-                className={`project-card group glass rounded-2xl overflow-hidden border border-primary/20 hover:border-primary/40 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 ${
+                className={`project-card group glass rounded-2xl overflow-hidden border border-primary/20 hover:border-primary/40 card-hover ${
                   isVisible ? 'animate-fade-up opacity-100' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -202,7 +199,7 @@ const PortfolioSection = () => {
                     </span>
                   </div>
                   <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Play className="w-12 h-12 text-white" />
+                    <Play className="w-12 h-12 text-white glow-mint" />
                   </div>
                 </div>
 
@@ -218,12 +215,12 @@ const PortfolioSection = () => {
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-1 mb-4">
                     {project.tech.slice(0, 3).map((tech, techIndex) => (
-                      <span key={techIndex} className="px-2 py-1 bg-muted/30 rounded text-xs text-muted-foreground">
+                      <span key={techIndex} className="px-2 py-1 glass rounded text-xs text-muted-foreground">
                         {tech}
                       </span>
                     ))}
                     {project.tech.length > 3 && (
-                      <span className="px-2 py-1 bg-muted/30 rounded text-xs text-muted-foreground">
+                      <span className="px-2 py-1 glass rounded text-xs text-muted-foreground">
                         +{project.tech.length - 3}
                       </span>
                     )}
@@ -235,10 +232,10 @@ const PortfolioSection = () => {
                       View Details
                     </button>
                     <div className="flex space-x-2">
-                      <button className="w-8 h-8 rounded-full bg-muted/20 hover:bg-primary/20 transition-colors duration-300 flex items-center justify-center">
+                      <button className="w-8 h-8 rounded-full glass hover:bg-primary/20 transition-colors duration-300 flex items-center justify-center card-hover">
                         <ExternalLink className="w-4 h-4 text-muted-foreground hover:text-primary" />
                       </button>
-                      <button className="w-8 h-8 rounded-full bg-muted/20 hover:bg-primary/20 transition-colors duration-300 flex items-center justify-center">
+                      <button className="w-8 h-8 rounded-full glass hover:bg-primary/20 transition-colors duration-300 flex items-center justify-center card-hover">
                         <Github className="w-4 h-4 text-muted-foreground hover:text-primary" />
                       </button>
                     </div>

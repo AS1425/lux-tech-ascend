@@ -9,39 +9,39 @@ const ServicesSection = () => {
   const services = [
     {
       icon: Brain,
-      title: 'AI & Machine Learning',
-      description: 'Custom AI solutions, predictive analytics, and intelligent automation to revolutionize your business processes.',
-      features: ['Custom AI Models', 'Predictive Analytics', 'NLP Solutions', 'Computer Vision']
+      title: 'AI Chatbot',
+      description: 'Intelligent conversational AI that understands context and provides human-like responses for customer support.',
+      features: ['Natural Language Processing', 'Multi-language Support', '24/7 Availability', 'Custom Training']
+    },
+    {
+      icon: BarChart3,
+      title: 'Predictive Analytics',
+      description: 'Advanced machine learning models that forecast trends and optimize business decisions with data-driven insights.',
+      features: ['Trend Forecasting', 'Risk Assessment', 'Performance Optimization', 'Real-time Insights']
+    },
+    {
+      icon: Zap,
+      title: 'AI Agents',
+      description: 'Autonomous AI systems that perform complex tasks, automate workflows, and integrate seamlessly with existing tools.',
+      features: ['Workflow Automation', 'Task Orchestration', 'System Integration', 'Smart Decision Making']
+    },
+    {
+      icon: Shield,
+      title: 'AI Consulting',
+      description: 'Strategic guidance and implementation support to transform your business with cutting-edge AI solutions.',
+      features: ['Strategy Development', 'Implementation Planning', 'Team Training', 'Ongoing Support']
     },
     {
       icon: Code,
-      title: 'Web Development',
-      description: 'Cutting-edge web applications built with modern frameworks and optimized for performance and user experience.',
-      features: ['React & Next.js', 'Full-Stack Development', 'API Integration', 'Performance Optimization']
+      title: 'Custom Development',
+      description: 'Tailored AI solutions built specifically for your business needs with modern frameworks and best practices.',
+      features: ['Custom Models', 'API Development', 'Cloud Integration', 'Scalable Architecture']
     },
     {
       icon: Rocket,
       title: 'Digital Transformation',
-      description: 'Complete digital overhaul services to modernize your business and stay ahead of the competition.',
-      features: ['Process Automation', 'Legacy System Migration', 'Cloud Solutions', 'Digital Strategy']
-    },
-    {
-      icon: Shield,
-      title: 'Cybersecurity',
-      description: 'Advanced security solutions to protect your digital assets and ensure compliance with industry standards.',
-      features: ['Security Audits', 'Penetration Testing', 'Compliance Solutions', '24/7 Monitoring']
-    },
-    {
-      icon: Zap,
-      title: 'Automation Solutions',
-      description: 'Streamline operations with intelligent automation that reduces costs and improves efficiency.',
-      features: ['Workflow Automation', 'RPA Implementation', 'API Development', 'Integration Services']
-    },
-    {
-      icon: BarChart3,
-      title: 'Data Analytics',
-      description: 'Transform raw data into actionable insights with advanced analytics and visualization solutions.',
-      features: ['Business Intelligence', 'Data Visualization', 'Custom Dashboards', 'Real-time Analytics']
+      description: 'Complete digital overhaul services to modernize your business processes and stay ahead of competition.',
+      features: ['Process Modernization', 'Legacy Migration', 'Cloud Solutions', 'Change Management']
     }
   ];
 
@@ -65,9 +65,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section id="services" className="py-20 relative overflow-hidden" ref={sectionRef}>
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background"></div>
+    <section id="services" className="py-20 relative overflow-hidden bg-gradient-to-b from-background via-muted/20 to-background" ref={sectionRef}>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -92,15 +90,15 @@ const ServicesSection = () => {
               <div
                 key={index}
                 data-index={index}
-                className={`service-card group glass p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 ${
+                className={`service-card group glass p-8 rounded-2xl border border-primary/20 hover:border-primary/40 card-hover ${
                   isVisible ? 'animate-fade-up opacity-100' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Icon */}
+                {/* Icon with enhanced animation */}
                 <div className="mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-8 h-8 text-primary group-hover:text-secondary transition-colors duration-300" />
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 glow-mint">
+                    <Icon className="w-8 h-8 text-primary group-hover:text-secondary transition-all duration-500 group-hover:scale-125" />
                   </div>
                 </div>
 
@@ -116,7 +114,7 @@ const ServicesSection = () => {
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3"></div>
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3 group-hover:bg-secondary transition-colors duration-300"></div>
                       {feature}
                     </li>
                   ))}
@@ -138,14 +136,14 @@ const ServicesSection = () => {
 
         {/* CTA Section */}
         <div className="text-center mt-16">
-          <div className="glass p-8 rounded-3xl border border-primary/20 max-w-2xl mx-auto">
+          <div className="glass p-8 rounded-3xl border border-primary/20 max-w-2xl mx-auto card-hover">
             <h3 className="text-2xl font-bold mb-4 text-foreground">
               Ready to Transform Your Business?
             </h3>
             <p className="text-muted-foreground mb-6">
               Let's discuss how our AI and digital solutions can drive your next breakthrough.
             </p>
-            <button className="glass px-8 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold hover:scale-105 transition-all duration-300 pulse-glow">
+            <button className="cta-ripple glass px-8 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:scale-105 transition-all duration-300 pulse-glow">
               Get Free Consultation
             </button>
           </div>

@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import CounterAnimation from './CounterAnimation';
 
 const ClientsSection = () => {
   const [animatedCounters, setAnimatedCounters] = useState<boolean[]>([]);
@@ -20,36 +21,12 @@ const ClientsSection = () => {
     { number: 24, suffix: '/7', label: 'Support Available', duration: 1000 }
   ];
 
-  const [counters, setCounters] = useState(metrics.map(() => 0));
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !animatedCounters[0]) {
             setAnimatedCounters([true]);
-            // Animate counters
-            metrics.forEach((metric, index) => {
-              let start = 0;
-              const increment = metric.number / (metric.duration / 16);
-              const timer = setInterval(() => {
-                start += increment;
-                if (start >= metric.number) {
-                  setCounters(prev => {
-                    const newCounters = [...prev];
-                    newCounters[index] = metric.number;
-                    return newCounters;
-                  });
-                  clearInterval(timer);
-                } else {
-                  setCounters(prev => {
-                    const newCounters = [...prev];
-                    newCounters[index] = Math.floor(start);
-                    return newCounters;
-                  });
-                }
-              }, 16);
-            });
           }
         });
       },
@@ -65,9 +42,7 @@ const ClientsSection = () => {
   }, [animatedCounters]);
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background"></div>
+    <section className="py-20 relative overflow-hidden bg-gradient-to-b from-background via-muted/10 to-background">
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Metrics Section */}
@@ -86,9 +61,14 @@ const ClientsSection = () => {
           {/* Animated Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
             {metrics.map((metric, index) => (
-              <div key={index} className="text-center glass p-6 rounded-2xl border border-primary/20">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2 font-manrope">
-                  {counters[index]}{metric.suffix}
+              <div key={index} className="text-center glass p-6 rounded-2xl border border-primary/20 card-hover">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2 glow-mint">
+                  <CounterAnimation 
+                    target={metric.number}
+                    suffix={metric.suffix}
+                    duration={metric.duration}
+                    isVisible={animatedCounters[0] || false}
+                  />
                 </div>
                 <div className="text-sm text-muted-foreground">
                   {metric.label}
@@ -111,7 +91,7 @@ const ClientsSection = () => {
             {[...clients, ...clients].map((client, index) => (
               <div 
                 key={index}
-                className="flex-shrink-0 w-32 h-16 glass rounded-lg border border-primary/10 flex items-center justify-center group hover:border-primary/30 transition-all duration-300 hover:scale-105"
+                className="flex-shrink-0 w-32 h-16 glass rounded-lg border border-primary/10 flex items-center justify-center group hover:border-primary/30 transition-all duration-300 hover:scale-105 card-hover"
               >
                 <div className="text-muted-foreground group-hover:text-primary transition-colors duration-300 font-semibold text-sm">
                   {client.name}
@@ -143,7 +123,7 @@ const ClientsSection = () => {
               avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face"
             }
           ].map((testimonial, index) => (
-            <div key={index} className="glass p-6 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-300">
+            <div key={index} className="glass p-6 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-300 card-hover">
               <div className="mb-4">
                 <svg className="w-8 h-8 text-primary/60" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
