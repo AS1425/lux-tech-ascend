@@ -57,13 +57,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				cyan: {
-					400: '#00FFE0',
-					500: '#00E6CC',
+				purple: {
+					400: '#B445FF',
+					500: '#8B00FF',
 				},
-				pink: {
-					400: '#FF00FF',
-					500: '#E600E6',
+				magenta: {
+					400: '#C147E9',
+					500: '#B445FF',
 				}
 			},
 			borderRadius: {
@@ -120,11 +120,11 @@ export default {
 				},
 				'pulse-glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(0, 255, 224, 0.5)',
+						boxShadow: '0 0 20px rgba(180, 69, 255, 0.5)',
 						transform: 'scale(1)'
 					},
 					'50%': {
-						boxShadow: '0 0 30px rgba(0, 255, 224, 0.8)',
+						boxShadow: '0 0 30px rgba(180, 69, 255, 0.8)',
 						transform: 'scale(1.02)'
 					}
 				},

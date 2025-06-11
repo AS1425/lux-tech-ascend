@@ -40,9 +40,11 @@ const Navigation = () => {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <div className="flex items-center">
-              <div className="text-2xl font-bold font-manrope bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                AI Solutions
-              </div>
+              <img 
+                src="/lovable-uploads/f93f435b-d0de-41b2-95fb-eb0ea83683c5.png" 
+                alt="Foreignerds" 
+                className="h-10 w-auto"
+              />
             </div>
 
             {/* Desktop Navigation */}

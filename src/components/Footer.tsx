@@ -39,7 +39,7 @@ const Footer = () => {
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,255,224,0.1) 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(180,69,255,0.1) 1px, transparent 0)`,
           backgroundSize: '50px 50px'
         }}></div>
       </div>
@@ -50,8 +50,12 @@ const Footer = () => {
           <div className="grid lg:grid-cols-4 gap-12">
             {/* Company Info */}
             <div className="lg:col-span-1">
-              <div className="text-3xl font-bold font-manrope mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                AI Solutions
+              <div className="mb-4">
+                <img 
+                  src="/lovable-uploads/f93f435b-d0de-41b2-95fb-eb0ea83683c5.png" 
+                  alt="Foreignerds" 
+                  className="h-12 w-auto"
+                />
               </div>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 Transforming businesses through innovative AI and digital solutions. 
@@ -131,7 +135,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center text-sm">
                   <Mail className="w-4 h-4 text-primary mr-3" />
-                  <span className="text-muted-foreground">hello@aisolutions.com</span>
+                  <span className="text-muted-foreground">hello@foreignerds.com</span>
                 </div>
                 <div className="flex items-center text-sm">
                   <Phone className="w-4 h-4 text-primary mr-3" />
@@ -175,7 +179,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary/20 py-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-muted-foreground text-sm mb-4 md:mb-0">
-            © 2024 AI Solutions. All rights reserved. Built with cutting-edge technology.
+            © 2024 Foreignerds. All rights reserved. Built with cutting-edge technology.
           </div>
           
           <div className="flex items-center space-x-6">
