@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import AIDevelopment from "./pages/AIDevelopment";
+import AIChatbotDevelopment from "./pages/AIChatbotDevelopment";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/ai-development" element={<AIDevelopment />} />
+          <Route path="/ai-chatbot-development" element={<AIChatbotDevelopment />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
