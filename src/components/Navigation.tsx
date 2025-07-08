@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import {
@@ -24,11 +23,13 @@ const Navigation = () => {
   }, []);
 
   const servicesItems = [
-    { label: 'AI Chatbots', href: '#ai-chatbots' },
-    { label: 'Predictive Analytics', href: '#predictive-analytics' },
-    { label: 'AI Agents', href: '#ai-agents' },
-    { label: 'Custom AI Solutions', href: '#custom-ai' },
-    { label: 'AI Consulting', href: '#ai-consulting' },
+    { label: 'Web Development', href: '#web-development' },
+    { label: 'Mobile App Development', href: '#mobile-development' },
+    { label: 'AI Solutions', href: '/ai-development' },
+    { label: 'Cloud Solutions', href: '#cloud-solutions' },
+    { label: 'UX/UI Design', href: '#ux-ui-design' },
+    { label: 'Software Testing & QA', href: '#testing-qa' },
+    { label: 'Digital Marketing', href: '#digital-marketing' },
   ];
 
   const portfolioItems = [
