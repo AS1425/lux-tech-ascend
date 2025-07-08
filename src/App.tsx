@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import AIDevelopment from "./pages/AIDevelopment";
 import AIChatbotDevelopment from "./pages/AIChatbotDevelopment";
 import AIAgentDevelopment from "./pages/AIAgentDevelopment";
+import ConversationalAI from "./pages/ConversationalAI";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/ai-development" element={<AIDevelopment />} />
           <Route path="/ai-chatbot-development" element={<AIChatbotDevelopment />} />
           <Route path="/ai-agent-development" element={<AIAgentDevelopment />} />
+          <Route path="/conversational-ai" element={<ConversationalAI />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
