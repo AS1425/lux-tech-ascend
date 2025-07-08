@@ -1,6 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,11 +23,33 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { label: 'Services', href: '#services' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' }
+  const servicesItems = [
+    { label: 'AI Chatbots', href: '#ai-chatbots' },
+    { label: 'Predictive Analytics', href: '#predictive-analytics' },
+    { label: 'AI Agents', href: '#ai-agents' },
+    { label: 'Custom AI Solutions', href: '#custom-ai' },
+    { label: 'AI Consulting', href: '#ai-consulting' },
+  ];
+
+  const portfolioItems = [
+    { label: 'Case Studies', href: '#case-studies' },
+    { label: 'Client Success Stories', href: '#success-stories' },
+    { label: 'Industry Solutions', href: '#industry-solutions' },
+    { label: 'Product Demos', href: '#demos' },
+  ];
+
+  const resourcesItems = [
+    { label: 'Blog', href: '#blog' },
+    { label: 'Whitepapers', href: '#whitepapers' },
+    { label: 'Webinars', href: '#webinars' },
+    { label: 'AI Guides', href: '#guides' },
+  ];
+
+  const companyItems = [
+    { label: 'About Us', href: '#about' },
+    { label: 'Our Team', href: '#team' },
+    { label: 'Mission & Vision', href: '#mission' },
+    { label: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -48,24 +78,119 @@ const Navigation = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
-                >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              ))}
-              <button className="glass px-6 py-2 rounded-full text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25">
+            <div className="hidden lg:flex items-center">
+              <NavigationMenu>
+                <NavigationMenuList className="flex items-center space-x-2">
+                  {/* Services Dropdown */}
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-foreground hover:text-primary transition-colors duration-300 font-medium bg-transparent">
+                      Services
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        {servicesItems.map((item) => (
+                          <NavigationMenuLink
+                            key={item.label}
+                            href={item.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{item.label}</div>
+                          </NavigationMenuLink>
+                        ))}
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+
+                  {/* AI Solutions */}
+                  <NavigationMenuItem>
+                    <NavigationMenuLink 
+                      href="#ai-solutions"
+                      className="text-foreground hover:text-primary transition-colors duration-300 font-medium px-4 py-2 rounded-md hover:bg-accent/10"
+                    >
+                      AI Solutions
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+
+                  {/* Portfolio Dropdown */}
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-foreground hover:text-primary transition-colors duration-300 font-medium bg-transparent">
+                      Portfolio
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                        {portfolioItems.map((item) => (
+                          <NavigationMenuLink
+                            key={item.label}
+                            href={item.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{item.label}</div>
+                          </NavigationMenuLink>
+                        ))}
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+
+                  {/* Resources Dropdown */}
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-foreground hover:text-primary transition-colors duration-300 font-medium bg-transparent">
+                      Resources
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                        {resourcesItems.map((item) => (
+                          <NavigationMenuLink
+                            key={item.label}
+                            href={item.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{item.label}</div>
+                          </NavigationMenuLink>
+                        ))}
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+
+                  {/* Company Dropdown */}
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-foreground hover:text-primary transition-colors duration-300 font-medium bg-transparent">
+                      Company
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                        {companyItems.map((item) => (
+                          <NavigationMenuLink
+                            key={item.label}
+                            href={item.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{item.label}</div>
+                          </NavigationMenuLink>
+                        ))}
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+
+                  {/* Careers */}
+                  <NavigationMenuItem>
+                    <NavigationMenuLink 
+                      href="#careers"
+                      className="text-foreground hover:text-primary transition-colors duration-300 font-medium px-4 py-2 rounded-md hover:bg-accent/10"
+                    >
+                      Careers
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+
+              {/* CTA Button */}
+              <button className="ml-6 glass px-6 py-2 rounded-full text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25 cta-ripple">
                 Get Started
               </button>
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-foreground hover:text-primary transition-colors"
@@ -77,18 +202,84 @@ const Navigation = () => {
 
           {/* Mobile Navigation */}
           {isOpen && (
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 glass-dark rounded-lg mt-2 mb-4">
-                {navItems.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-300"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                ))}
+                {/* Mobile Services */}
+                <div className="space-y-1">
+                  <div className="px-3 py-2 text-foreground font-medium">Services</div>
+                  {servicesItems.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="block px-6 py-2 text-sm text-foreground/80 hover:text-primary transition-colors duration-300"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+
+                <a
+                  href="#ai-solutions"
+                  className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  AI Solutions
+                </a>
+
+                {/* Mobile Portfolio */}
+                <div className="space-y-1">
+                  <div className="px-3 py-2 text-foreground font-medium">Portfolio</div>
+                  {portfolioItems.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="block px-6 py-2 text-sm text-foreground/80 hover:text-primary transition-colors duration-300"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+
+                {/* Mobile Resources */}
+                <div className="space-y-1">
+                  <div className="px-3 py-2 text-foreground font-medium">Resources</div>
+                  {resourcesItems.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="block px-6 py-2 text-sm text-foreground/80 hover:text-primary transition-colors duration-300"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+
+                {/* Mobile Company */}
+                <div className="space-y-1">
+                  <div className="px-3 py-2 text-foreground font-medium">Company</div>
+                  {companyItems.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="block px-6 py-2 text-sm text-foreground/80 hover:text-primary transition-colors duration-300"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+
+                <a
+                  href="#careers"
+                  className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Careers
+                </a>
+
                 <div className="px-3 py-2">
                   <button className="w-full glass px-4 py-2 rounded-full text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
                     Get Started
