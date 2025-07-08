@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,6 +13,7 @@ import {
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [expandedMobileCategory, setExpandedMobileCategory] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,15 +24,43 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const servicesItems = [
-    { label: 'Web Development', href: '#web-development' },
-    { label: 'Mobile App Development', href: '#mobile-development' },
-    { label: 'AI Solutions', href: '/ai-development' },
-    { label: 'Cloud Solutions', href: '#cloud-solutions' },
-    { label: 'UX/UI Design', href: '#ux-ui-design' },
-    { label: 'Software Testing & QA', href: '#testing-qa' },
-    { label: 'Digital Marketing', href: '#digital-marketing' },
-  ];
+  const servicesCategories = {
+    'AI & Data': [
+      { label: 'AI Development', href: '/ai-development' },
+      { label: 'AI Chatbot Development', href: '#ai-chatbot-development' },
+      { label: 'AI Agent Development', href: '#ai-agent-development' },
+      { label: 'Conversational AI', href: '#conversational-ai' },
+      { label: 'Conversation Design', href: '#conversation-design' },
+      { label: 'Generative AI Development', href: '#generative-ai-development' },
+      { label: 'AI Predictive Analytics', href: '#ai-predictive-analytics' },
+      { label: 'LLM Development', href: '#llm-development' },
+      { label: 'AI Voice Bots', href: '#ai-voice-bots' },
+    ],
+    'Consulting': [
+      { label: 'AI Consulting', href: '#ai-consulting' },
+      { label: 'Chatbot Consulting', href: '#chatbot-consulting' },
+      { label: 'Generative AI Consulting', href: '#generative-ai-consulting' },
+      { label: 'Machine Learning Consulting', href: '#machine-learning-consulting' },
+      { label: 'AI Security Consulting', href: '#ai-security-consulting' },
+      { label: 'Healthcare AI Consulting', href: '#healthcare-ai-consulting' },
+    ],
+    'Development': [
+      { label: 'Software Product Development', href: '#software-product-development' },
+      { label: 'PoC Development Services', href: '#poc-development-services' },
+      { label: 'Mobile Development', href: '#mobile-development' },
+      { label: 'Connector Development', href: '#connector-development' },
+      { label: 'Blockchain Development', href: '#blockchain-development' },
+      { label: 'CRM Software Development', href: '#crm-software-development' },
+      { label: 'Digital Platform Development', href: '#digital-platform-development' },
+    ],
+    'Other': [
+      { label: 'Business Process Automation', href: '#business-process-automation' },
+      { label: 'IT Recruiting Services', href: '#it-recruiting-services' },
+      { label: 'Conversational Analytics', href: '#conversational-analytics' },
+      { label: 'AI Copilot', href: '#ai-copilot' },
+      { label: 'LLM-Orchestrator Open Source Framework', href: '#llm-orchestrator-framework' },
+    ],
+  };
 
   const portfolioItems = [
     { label: 'Case Studies', href: '#case-studies' },
@@ -52,6 +82,10 @@ const Navigation = () => {
     { label: 'Mission & Vision', href: '#mission' },
     { label: 'Contact', href: '#contact' },
   ];
+
+  const toggleMobileCategory = (category: string) => {
+    setExpandedMobileCategory(expandedMobileCategory === category ? null : category);
+  };
 
   return (
     <>
@@ -88,15 +122,24 @@ const Navigation = () => {
                       Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                        {servicesItems.map((item) => (
-                          <NavigationMenuLink
-                            key={item.label}
-                            href={item.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">{item.label}</div>
-                          </NavigationMenuLink>
+                      <div className="grid w-[800px] gap-3 p-6 md:grid-cols-4 lg:w-[900px]">
+                        {Object.entries(servicesCategories).map(([category, services]) => (
+                          <div key={category} className="space-y-3">
+                            <h4 className="text-sm font-semibold text-primary border-b border-primary/20 pb-2">
+                              {category}
+                            </h4>
+                            <div className="space-y-1">
+                              {services.map((service) => (
+                                <NavigationMenuLink
+                                  key={service.label}
+                                  href={service.href}
+                                  className="block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-sm"
+                                >
+                                  {service.label}
+                                </NavigationMenuLink>
+                              ))}
+                            </div>
+                          </div>
                         ))}
                       </div>
                     </NavigationMenuContent>
@@ -204,19 +247,39 @@ const Navigation = () => {
           {/* Mobile Navigation */}
           {isOpen && (
             <div className="lg:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 glass-dark rounded-lg mt-2 mb-4">
+              <div className="px-2 pt-2 pb-3 space-y-1 glass-dark rounded-lg mt-2 mb-4 max-h-96 overflow-y-auto">
                 {/* Mobile Services */}
                 <div className="space-y-1">
                   <div className="px-3 py-2 text-foreground font-medium">Services</div>
-                  {servicesItems.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      className="block px-6 py-2 text-sm text-foreground/80 hover:text-primary transition-colors duration-300"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.label}
-                    </a>
+                  {Object.entries(servicesCategories).map(([category, services]) => (
+                    <div key={category} className="space-y-1">
+                      <button
+                        onClick={() => toggleMobileCategory(category)}
+                        className="w-full flex items-center justify-between px-6 py-2 text-sm text-foreground/80 hover:text-primary transition-colors duration-300"
+                      >
+                        {category}
+                        <ChevronRight 
+                          size={16} 
+                          className={`transition-transform duration-200 ${
+                            expandedMobileCategory === category ? 'rotate-90' : ''
+                          }`}
+                        />
+                      </button>
+                      {expandedMobileCategory === category && (
+                        <div className="space-y-1 pl-4">
+                          {services.map((service) => (
+                            <a
+                              key={service.label}
+                              href={service.href}
+                              className="block px-6 py-1 text-xs text-foreground/70 hover:text-primary transition-colors duration-300"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {service.label}
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
 
