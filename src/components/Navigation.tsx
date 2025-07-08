@@ -27,7 +27,7 @@ const Navigation = () => {
     'AI & Data': [
       { label: 'AI Development', href: '/ai-development' },
       { label: 'AI Chatbot Development', href: '/ai-chatbot-development' },
-      { label: 'AI Agent Development', href: '#ai-agent-development' },
+      { label: 'AI Agent Development', href: '/ai-agent-development' },
       { label: 'Conversational AI', href: '#conversational-ai' },
       { label: 'Conversation Design', href: '#conversation-design' },
       { label: 'Generative AI Development', href: '#generative-ai-development' },
