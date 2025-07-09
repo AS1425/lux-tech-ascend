@@ -26,6 +26,7 @@ import PoCDevelopment from "./pages/PoCDevelopment";
 import MobileAppDevelopment from "./pages/MobileAppDevelopment";
 import ConnectorDevelopment from "./pages/ConnectorDevelopment";
 import BlockchainDevelopment from "./pages/BlockchainDevelopment";
+import CRMDevelopment from "./pages/CRMDevelopment";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +59,7 @@ const App = () => (
           <Route path="/mobile-app-development" element={<MobileAppDevelopment />} />
           <Route path="/connector-development" element={<ConnectorDevelopment />} />
           <Route path="/blockchain-development" element={<BlockchainDevelopment />} />
+          <Route path="/crm-software-development" element={<CRMDevelopment />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
