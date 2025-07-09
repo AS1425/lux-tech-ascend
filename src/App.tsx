@@ -18,6 +18,7 @@ import EUAccessibilityAudit from "./pages/EUAccessibilityAudit";
 import AIConsulting from "./pages/AIConsulting";
 import ChatbotConsulting from "./pages/ChatbotConsulting";
 import GenerativeAIConsulting from "./pages/GenerativeAIConsulting";
+import MachineLearningConsulting from "./pages/MachineLearningConsulting";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/ai-consulting" element={<AIConsulting />} />
           <Route path="/chatbot-consulting" element={<ChatbotConsulting />} />
           <Route path="/generative-ai-consulting" element={<GenerativeAIConsulting />} />
+          <Route path="/machine-learning-consulting" element={<MachineLearningConsulting />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
