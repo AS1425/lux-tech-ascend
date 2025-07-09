@@ -42,7 +42,7 @@ const Navigation = () => {
       { label: 'Generative AI Consulting', href: '/generative-ai-consulting' },
       { label: 'Machine Learning Consulting', href: '/machine-learning-consulting' },
       { label: 'AI Security Consulting', href: '/ai-security-consulting' },
-      { label: 'Healthcare AI Consulting', href: '#healthcare-ai-consulting' },
+      { label: 'Healthcare AI Consulting', href: '/healthcare-ai-consulting' },
     ],
     'Development': [
       { label: 'Software Product Development', href: '#software-product-development' },
