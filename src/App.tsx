@@ -15,6 +15,7 @@ import AIPredictiveAnalytics from "./pages/AIPredictiveAnalytics";
 import LLMDevelopment from "./pages/LLMDevelopment";
 import AIVoiceBots from "./pages/AIVoiceBots";
 import EUAccessibilityAudit from "./pages/EUAccessibilityAudit";
+import AIConsulting from "./pages/AIConsulting";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/llm-development" element={<LLMDevelopment />} />
           <Route path="/ai-voice-bots" element={<AIVoiceBots />} />
           <Route path="/eu-accessibility-audit" element={<EUAccessibilityAudit />} />
+          <Route path="/ai-consulting" element={<AIConsulting />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

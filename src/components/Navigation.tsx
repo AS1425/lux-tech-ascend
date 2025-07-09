@@ -36,7 +36,7 @@ const Navigation = () => {
       { label: 'AI Voice Bots', href: '/ai-voice-bots' },
     ],
     'Consulting': [
-      { label: 'AI Consulting', href: '#ai-consulting' },
+      { label: 'AI Consulting', href: '/ai-consulting' },
       { label: 'Chatbot Consulting', href: '#chatbot-consulting' },
       { label: 'Generative AI Consulting', href: '#generative-ai-consulting' },
       { label: 'Machine Learning Consulting', href: '#machine-learning-consulting' },
