@@ -16,6 +16,7 @@ import LLMDevelopment from "./pages/LLMDevelopment";
 import AIVoiceBots from "./pages/AIVoiceBots";
 import EUAccessibilityAudit from "./pages/EUAccessibilityAudit";
 import AIConsulting from "./pages/AIConsulting";
+import ChatbotConsulting from "./pages/ChatbotConsulting";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/ai-voice-bots" element={<AIVoiceBots />} />
           <Route path="/eu-accessibility-audit" element={<EUAccessibilityAudit />} />
           <Route path="/ai-consulting" element={<AIConsulting />} />
+          <Route path="/chatbot-consulting" element={<ChatbotConsulting />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
