@@ -22,6 +22,7 @@ import MachineLearningConsulting from "./pages/MachineLearningConsulting";
 import AISecurityConsulting from "./pages/AISecurityConsulting";
 import HealthcareAIConsulting from "./pages/HealthcareAIConsulting";
 import CustomSoftwareDevelopment from "./pages/CustomSoftwareDevelopment";
+import PoCDevelopment from "./pages/PoCDevelopment";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/ai-security-consulting" element={<AISecurityConsulting />} />
           <Route path="/healthcare-ai-consulting" element={<HealthcareAIConsulting />} />
           <Route path="/custom-software-development" element={<CustomSoftwareDevelopment />} />
+          <Route path="/poc-development-services" element={<PoCDevelopment />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
