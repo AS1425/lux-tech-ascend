@@ -48,7 +48,7 @@ const Navigation = () => {
       { label: 'Custom Software Development', href: '/custom-software-development' },
       { label: 'Software Product Development', href: '#software-product-development' },
       { label: 'PoC Development Services', href: '/poc-development-services' },
-      { label: 'Mobile Development', href: '#mobile-development' },
+      { label: 'Mobile App Development', href: '/mobile-app-development' },
       { label: 'Connector Development', href: '#connector-development' },
       { label: 'Blockchain Development', href: '#blockchain-development' },
       { label: 'CRM Software Development', href: '#crm-software-development' },
