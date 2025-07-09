@@ -39,7 +39,7 @@ const Navigation = () => {
       { label: 'Chatbot Consulting', href: '/chatbot-consulting' },
       { label: 'EU Accessibility Act Audit Services for Chatbots', href: '/eu-accessibility-audit' },
       { label: 'AI Consulting', href: '/ai-consulting' },
-      { label: 'Generative AI Consulting', href: '#generative-ai-consulting' },
+      { label: 'Generative AI Consulting', href: '/generative-ai-consulting' },
       { label: 'Machine Learning Consulting', href: '#machine-learning-consulting' },
       { label: 'AI Security Consulting', href: '#ai-security-consulting' },
       { label: 'Healthcare AI Consulting', href: '#healthcare-ai-consulting' },
