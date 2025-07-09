@@ -13,6 +13,7 @@ import ConversationDesign from "./pages/ConversationDesign";
 import GenerativeAIDevelopment from "./pages/GenerativeAIDevelopment";
 import AIPredictiveAnalytics from "./pages/AIPredictiveAnalytics";
 import LLMDevelopment from "./pages/LLMDevelopment";
+import AIVoiceBots from "./pages/AIVoiceBots";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/generative-ai-development" element={<GenerativeAIDevelopment />} />
           <Route path="/ai-predictive-analytics" element={<AIPredictiveAnalytics />} />
           <Route path="/llm-development" element={<LLMDevelopment />} />
+          <Route path="/ai-voice-bots" element={<AIVoiceBots />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
