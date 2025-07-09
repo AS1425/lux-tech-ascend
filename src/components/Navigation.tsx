@@ -52,7 +52,7 @@ const Navigation = () => {
       { label: 'Connector Development', href: '/connector-development' },
       { label: 'Blockchain Development', href: '/blockchain-development' },
       { label: 'CRM Software Development', href: '/crm-software-development' },
-      { label: 'Digital Platform Development', href: '#digital-platform-development' },
+      { label: 'Digital Platform Development', href: '/digital-platform-development' },
     ],
     'Other': [
       { label: 'Business Process Automation', href: '#business-process-automation' },
