@@ -30,6 +30,7 @@ import CRMDevelopment from "./pages/CRMDevelopment";
 import DigitalPlatformDevelopment from "./pages/DigitalPlatformDevelopment";
 import BusinessProcessAutomation from "./pages/BusinessProcessAutomation";
 import ITRecruitingServices from "./pages/ITRecruitingServices";
+import ConversationalAnalytics from "./pages/ConversationalAnalytics";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +67,7 @@ const App = () => (
           <Route path="/digital-platform-development" element={<DigitalPlatformDevelopment />} />
           <Route path="/business-process-automation" element={<BusinessProcessAutomation />} />
           <Route path="/it-recruiting-services" element={<ITRecruitingServices />} />
+          <Route path="/conversational-analytics" element={<ConversationalAnalytics />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

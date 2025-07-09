@@ -57,7 +57,7 @@ const Navigation = () => {
     'Other': [
       { label: 'Business Process Automation', href: '/business-process-automation' },
       { label: 'IT Recruiting Services', href: '/it-recruiting-services' },
-      { label: 'Conversational Analytics', href: '#conversational-analytics' },
+      { label: 'Conversational Analytics', href: '/conversational-analytics' },
       { label: 'AI Copilot', href: '#ai-copilot' },
       { label: 'LLM-Orchestrator Open Source Framework', href: '#llm-orchestrator-framework' },
     ],
