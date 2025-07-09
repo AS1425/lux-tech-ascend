@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import {
@@ -58,7 +59,7 @@ const Navigation = () => {
       { label: 'Business Process Automation', href: '/business-process-automation' },
       { label: 'IT Recruiting Services', href: '/it-recruiting-services' },
       { label: 'Conversational Analytics', href: '/conversational-analytics' },
-      { label: 'AI Copilot', href: '#ai-copilot' },
+      { label: 'AI Copilot Development', href: '/ai-copilot-development' },
       { label: 'LLM-Orchestrator Open Source Framework', href: '#llm-orchestrator-framework' },
     ],
   };
