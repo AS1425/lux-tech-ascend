@@ -29,6 +29,7 @@ import BlockchainDevelopment from "./pages/BlockchainDevelopment";
 import CRMDevelopment from "./pages/CRMDevelopment";
 import DigitalPlatformDevelopment from "./pages/DigitalPlatformDevelopment";
 import BusinessProcessAutomation from "./pages/BusinessProcessAutomation";
+import ITRecruitingServices from "./pages/ITRecruitingServices";
 
 const queryClient = new QueryClient();
 
@@ -64,6 +65,7 @@ const App = () => (
           <Route path="/crm-software-development" element={<CRMDevelopment />} />
           <Route path="/digital-platform-development" element={<DigitalPlatformDevelopment />} />
           <Route path="/business-process-automation" element={<BusinessProcessAutomation />} />
+          <Route path="/it-recruiting-services" element={<ITRecruitingServices />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
