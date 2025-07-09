@@ -60,6 +60,7 @@ const Navigation = () => {
       { label: 'IT Recruiting Services', href: '/it-recruiting-services' },
       { label: 'Conversational Analytics', href: '/conversational-analytics' },
       { label: 'AI Copilot Development', href: '/ai-copilot-development' },
+      { label: 'Loft', href: '/loft' },
       { label: 'LLM-Orchestrator Open Source Framework', href: '#llm-orchestrator-framework' },
     ],
   };
