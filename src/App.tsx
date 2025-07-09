@@ -10,6 +10,7 @@ import AIChatbotDevelopment from "./pages/AIChatbotDevelopment";
 import AIAgentDevelopment from "./pages/AIAgentDevelopment";
 import ConversationalAI from "./pages/ConversationalAI";
 import ConversationDesign from "./pages/ConversationDesign";
+import GenerativeAIDevelopment from "./pages/GenerativeAIDevelopment";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/ai-agent-development" element={<AIAgentDevelopment />} />
           <Route path="/conversational-ai" element={<ConversationalAI />} />
           <Route path="/conversation-design" element={<ConversationDesign />} />
+          <Route path="/generative-ai-development" element={<GenerativeAIDevelopment />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
