@@ -55,7 +55,7 @@ const Navigation = () => {
       { label: 'Digital Platform Development', href: '/digital-platform-development' },
     ],
     'Other': [
-      { label: 'Business Process Automation', href: '#business-process-automation' },
+      { label: 'Business Process Automation', href: '/business-process-automation' },
       { label: 'IT Recruiting Services', href: '#it-recruiting-services' },
       { label: 'Conversational Analytics', href: '#conversational-analytics' },
       { label: 'AI Copilot', href: '#ai-copilot' },
