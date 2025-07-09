@@ -45,6 +45,7 @@ const Navigation = () => {
       { label: 'Healthcare AI Consulting', href: '/healthcare-ai-consulting' },
     ],
     'Development': [
+      { label: 'Custom Software Development', href: '/custom-software-development' },
       { label: 'Software Product Development', href: '#software-product-development' },
       { label: 'PoC Development Services', href: '#poc-development-services' },
       { label: 'Mobile Development', href: '#mobile-development' },

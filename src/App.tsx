@@ -21,6 +21,7 @@ import GenerativeAIConsulting from "./pages/GenerativeAIConsulting";
 import MachineLearningConsulting from "./pages/MachineLearningConsulting";
 import AISecurityConsulting from "./pages/AISecurityConsulting";
 import HealthcareAIConsulting from "./pages/HealthcareAIConsulting";
+import CustomSoftwareDevelopment from "./pages/CustomSoftwareDevelopment";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/machine-learning-consulting" element={<MachineLearningConsulting />} />
           <Route path="/ai-security-consulting" element={<AISecurityConsulting />} />
           <Route path="/healthcare-ai-consulting" element={<HealthcareAIConsulting />} />
+          <Route path="/custom-software-development" element={<CustomSoftwareDevelopment />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
