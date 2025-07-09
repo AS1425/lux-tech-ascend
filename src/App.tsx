@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -24,6 +23,7 @@ import HealthcareAIConsulting from "./pages/HealthcareAIConsulting";
 import CustomSoftwareDevelopment from "./pages/CustomSoftwareDevelopment";
 import PoCDevelopment from "./pages/PoCDevelopment";
 import MobileAppDevelopment from "./pages/MobileAppDevelopment";
+import ConnectorDevelopment from "./pages/ConnectorDevelopment";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +54,7 @@ const App = () => (
           <Route path="/custom-software-development" element={<CustomSoftwareDevelopment />} />
           <Route path="/poc-development-services" element={<PoCDevelopment />} />
           <Route path="/mobile-app-development" element={<MobileAppDevelopment />} />
+          <Route path="/connector-development" element={<ConnectorDevelopment />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
