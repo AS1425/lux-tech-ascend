@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -24,6 +25,7 @@ import CustomSoftwareDevelopment from "./pages/CustomSoftwareDevelopment";
 import PoCDevelopment from "./pages/PoCDevelopment";
 import MobileAppDevelopment from "./pages/MobileAppDevelopment";
 import ConnectorDevelopment from "./pages/ConnectorDevelopment";
+import BlockchainDevelopment from "./pages/BlockchainDevelopment";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +57,7 @@ const App = () => (
           <Route path="/poc-development-services" element={<PoCDevelopment />} />
           <Route path="/mobile-app-development" element={<MobileAppDevelopment />} />
           <Route path="/connector-development" element={<ConnectorDevelopment />} />
+          <Route path="/blockchain-development" element={<BlockchainDevelopment />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

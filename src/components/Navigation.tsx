@@ -50,7 +50,7 @@ const Navigation = () => {
       { label: 'PoC Development Services', href: '/poc-development-services' },
       { label: 'Mobile App Development', href: '/mobile-app-development' },
       { label: 'Connector Development', href: '/connector-development' },
-      { label: 'Blockchain Development', href: '#blockchain-development' },
+      { label: 'Blockchain Development', href: '/blockchain-development' },
       { label: 'CRM Software Development', href: '#crm-software-development' },
       { label: 'Digital Platform Development', href: '#digital-platform-development' },
     ],
