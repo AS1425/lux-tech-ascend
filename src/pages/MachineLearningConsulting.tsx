@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -74,7 +73,15 @@ const MachineLearningConsulting = () => {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-right">
+            <div className="relative animate-fade-right">
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Machine Learning Circuit Board"
+                className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl"></div>
+            </div>
+            <div className="space-y-6 animate-fade-left">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                 What is Machine Learning Consulting?
               </h2>
@@ -84,17 +91,6 @@ const MachineLearningConsulting = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Whether you're looking to optimize your processes, improve decision-making, or harness the power of predictive analytics, our team of experts will guide you every step of the way.
               </p>
-            </div>
-            <div className="relative animate-fade-left">
-              <div className="glass p-8 rounded-2xl">
-                <div className="grid grid-cols-3 gap-4">
-                  {[Database, Brain, BarChart3, Cpu, Target, TrendingUp].map((Icon, index) => (
-                    <div key={index} className="flex items-center justify-center p-4 bg-primary/10 rounded-lg">
-                      <Icon className="h-8 w-8 text-primary" />
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>
