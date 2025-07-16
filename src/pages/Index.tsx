@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
-import TrustedBySection from '../components/TrustedBySection';
+
 import WorkflowSection from '../components/WorkflowSection';
 import TechStackSection from '../components/TechStackSection';
 import ServicesSection from '../components/ServicesSection';
@@ -34,11 +34,10 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground font-inter">
       <Navigation />
       <HeroSection />
-      <TrustedBySection />
-      <TechStackSection />
       <ServicesSection />
       <PortfolioSection />
       <ClientsSection />
+      <TechStackSection />
       <ContactSection />
       <WorkflowSection />
       <Footer />
