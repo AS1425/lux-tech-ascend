@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 
 import WorkflowSection from '../components/WorkflowSection';
+import BlogInsightsSection from '../components/BlogInsightsSection';
 import TechStackSection from '../components/TechStackSection';
 import IndustrySection from '../components/IndustrySection';
 import ServicesSection from '../components/ServicesSection';
@@ -42,6 +43,7 @@ const Index = () => {
       <IndustrySection />
       <ContactSection />
       <WorkflowSection />
+      <BlogInsightsSection />
       <Footer />
       <FloatingChatbot />
     </div>
