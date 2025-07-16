@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const IndustrySection = () => {
   const [flippedCard, setFlippedCard] = useState<number | null>(null);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const industries = [
     {
@@ -121,16 +123,49 @@ const IndustrySection = () => {
     }
   ];
 
+  // Duplicate industries for seamless infinite scroll
+  const duplicatedIndustries = [...industries, ...industries];
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (!isAutoScrolling || !scrollContainerRef.current) return;
+
+    const scrollContainer = scrollContainerRef.current;
+    const scrollSpeed = 1; // pixels per interval
+    const scrollInterval = 30; // milliseconds
+
+    const autoScroll = setInterval(() => {
+      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+        scrollContainer.scrollLeft = 0;
+      } else {
+        scrollContainer.scrollLeft += scrollSpeed;
+      }
+    }, scrollInterval);
+
+    return () => clearInterval(autoScroll);
+  }, [isAutoScrolling]);
+
   const handleCardInteraction = (index: number, isEntering: boolean) => {
     if (isEntering) {
       setFlippedCard(index);
+      setIsAutoScrolling(false); // Pause auto-scroll on hover
     } else {
       setFlippedCard(null);
+      setIsAutoScrolling(true); // Resume auto-scroll
     }
   };
 
+  const handleMouseEnter = () => {
+    setIsAutoScrolling(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsAutoScrolling(true);
+    setFlippedCard(null);
+  };
+
   return (
-    <section id="ai-industries" className="py-20 px-4 bg-gradient-to-br from-background via-background/95 to-muted/10">
+    <section id="ai-industries" className="py-20 px-4 bg-gradient-to-br from-background via-background/95 to-muted/10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-6">
@@ -141,11 +176,22 @@ const IndustrySection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {industries.map((industry, index) => (
+        <div 
+          ref={scrollContainerRef}
+          className="flex gap-4 overflow-x-hidden pb-4"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          style={{ 
+            scrollBehavior: 'auto',
+            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+          }}
+        >
+          {duplicatedIndustries.map((industry, index) => (
             <div
-              key={index}
-              className="industry-card group relative h-48 cursor-pointer"
+              key={`${industry.name}-${index}`}
+              className="industry-card group relative flex-shrink-0 cursor-pointer"
+              style={{ width: '200px', height: '140px' }}
               onMouseEnter={() => handleCardInteraction(index, true)}
               onMouseLeave={() => handleCardInteraction(index, false)}
               onClick={() => handleCardInteraction(index, flippedCard !== index)}
@@ -158,23 +204,23 @@ const IndustrySection = () => {
                   }`}
                 >
                   {/* Front face */}
-                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] bg-card border border-border rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center p-6">
-                    <h3 className="text-lg font-semibold text-center text-card-foreground group-hover:text-primary transition-colors duration-300">
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] bg-card border border-border rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center p-4">
+                    <h3 className="text-sm font-semibold text-center text-card-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
                       {industry.name}
                     </h3>
                   </div>
 
                   {/* Back face */}
-                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-primary/10 border border-primary/20 rounded-2xl shadow-xl flex flex-col items-center justify-center p-6 text-center">
-                    <p className="text-sm text-foreground mb-4 leading-relaxed">
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-primary/10 border border-primary/20 rounded-3xl shadow-xl flex flex-col items-center justify-center p-3 text-center">
+                    <p className="text-xs text-foreground mb-3 leading-relaxed line-clamp-3">
                       {industry.description}
                     </p>
                     <a
                       href={industry.link}
-                      className="inline-flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 text-sm font-medium shadow-md hover:shadow-lg transform hover:scale-105"
+                      className="inline-flex items-center px-3 py-1.5 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all duration-300 text-xs font-medium shadow-md hover:shadow-lg transform hover:scale-105"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      Explore Solutions
+                      Explore
                     </a>
                   </div>
                 </div>
