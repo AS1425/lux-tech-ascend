@@ -2,10 +2,12 @@
 import React, { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
+import TrustedBySection from '../components/TrustedBySection';
 import ServicesSection from '../components/ServicesSection';
 import PortfolioSection from '../components/PortfolioSection';
 import ClientsSection from '../components/ClientsSection';
 import ContactSection from '../components/ContactSection';
+import WorkflowSection from '../components/WorkflowSection';
 import Footer from '../components/Footer';
 import FloatingChatbot from '../components/FloatingChatbot';
 
@@ -31,10 +33,12 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground font-inter">
       <Navigation />
       <HeroSection />
+      <TrustedBySection />
       <ServicesSection />
       <PortfolioSection />
       <ClientsSection />
       <ContactSection />
+      <WorkflowSection />
       <Footer />
       <FloatingChatbot />
     </div>

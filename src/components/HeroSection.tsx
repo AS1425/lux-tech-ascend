@@ -73,7 +73,7 @@ const HeroSection = () => {
 
       <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Hero Badge */}
-        <div className={`inline-flex items-center glass bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full mb-8 transition-all duration-700 border border-primary/20 shadow-lg ${
+        <div className={`inline-flex items-center glass bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full mb-12 transition-all duration-700 border border-primary/20 shadow-lg ${
           mounted ? 'animate-fade-up opacity-100' : 'opacity-0'
         }`} style={{ animationDelay: '0.1s' }}>
           <Sparkles className="w-4 h-4 text-primary mr-2" />

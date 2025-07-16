@@ -202,7 +202,7 @@ const ContactSection = () => {
             )}
           </div>
 
-          {/* Contact Information */}
+          {/* Our Process */}
           <div className="space-y-8">
             {/* Quick Contact */}
             <div className="glass p-8 rounded-3xl border border-primary/20">
@@ -289,17 +289,6 @@ const ContactSection = () => {
                     <div className="text-sm text-muted-foreground">Deployment and ongoing support</div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Response Time */}
-            <div className="glass p-6 rounded-2xl border border-primary/20 text-center">
-              <Clock className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="font-semibold text-foreground mb-1">
-                24-Hour Response Time
-              </div>
-              <div className="text-sm text-muted-foreground">
-                We pride ourselves on rapid communication
               </div>
             </div>
           </div>
