@@ -52,13 +52,13 @@ const HeroSection = () => {
         loop 
         muted 
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
       >
         <source src="/videos/hero-background.webm" type="video/webm" />
       </video>
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
+      {/* Light Overlay for better text readability */}
+      <div className="absolute inset-0 bg-white/20 z-10"></div>
 
       {/* Neural Network Background */}
       <div className="neural-network z-20"></div>

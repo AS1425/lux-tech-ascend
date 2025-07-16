@@ -101,9 +101,7 @@ const Navigation = () => {
         }}
       />
       
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'glass-dark backdrop-blur-md' : 'bg-transparent'
-      }`}>
+      <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200/50 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
@@ -121,7 +119,7 @@ const Navigation = () => {
                 <NavigationMenuList className="flex items-center space-x-2">
                   {/* Services Dropdown */}
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-foreground hover:text-primary transition-colors duration-300 font-medium bg-transparent">
+                     <NavigationMenuTrigger className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium bg-transparent">
                       Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -152,7 +150,7 @@ const Navigation = () => {
                   <NavigationMenuItem>
                     <NavigationMenuLink 
                       href="#ai-solutions"
-                      className="text-foreground hover:text-primary transition-colors duration-300 font-medium px-4 py-2 rounded-md hover:bg-accent/10"
+                      className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium px-4 py-2 rounded-md hover:bg-accent/10"
                     >
                       AI Solutions
                     </NavigationMenuLink>
@@ -160,7 +158,7 @@ const Navigation = () => {
 
                   {/* Portfolio Dropdown */}
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-foreground hover:text-primary transition-colors duration-300 font-medium bg-transparent">
+                     <NavigationMenuTrigger className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium bg-transparent">
                       Portfolio
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -180,7 +178,7 @@ const Navigation = () => {
 
                   {/* Resources Dropdown */}
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-foreground hover:text-primary transition-colors duration-300 font-medium bg-transparent">
+                     <NavigationMenuTrigger className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium bg-transparent">
                       Resources
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -200,7 +198,7 @@ const Navigation = () => {
 
                   {/* Company Dropdown */}
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-foreground hover:text-primary transition-colors duration-300 font-medium bg-transparent">
+                    <NavigationMenuTrigger className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium bg-transparent">
                       Company
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -222,7 +220,7 @@ const Navigation = () => {
                   <NavigationMenuItem>
                     <NavigationMenuLink 
                       href="#careers"
-                      className="text-foreground hover:text-primary transition-colors duration-300 font-medium px-4 py-2 rounded-md hover:bg-accent/10"
+                      className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium px-4 py-2 rounded-md hover:bg-accent/10"
                     >
                       Careers
                     </NavigationMenuLink>
@@ -240,7 +238,7 @@ const Navigation = () => {
             <div className="lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-gray-800 hover:text-primary transition-colors"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
