@@ -14,17 +14,17 @@ const TechStackSection = () => {
 
   const techStacks = {
     infrastructure: [
-      { name: 'Kubernetes', logo: '☸️' },
-      { name: 'AWS', logo: '☁️' },
-      { name: 'Google Cloud', logo: '🌐' },
-      { name: 'Azure', logo: '☁️' }
+      { name: 'Kubernetes', logo: '/lovable-uploads/a99581ab-b412-4024-a334-6ed024dea9dc.png' },
+      { name: 'AWS', logo: '/lovable-uploads/c5869668-2ca0-4d98-ae87-121d3c2a2e51.png' },
+      { name: 'Google Cloud', logo: '/lovable-uploads/719f62e6-2285-4fb4-8f44-d5a748250c0d.png' },
+      { name: 'Azure', logo: '/lovable-uploads/5180df42-3881-438e-ab8b-d4c4ecddcc74.png' }
     ],
     ai: [
-      { name: 'Open AI', logo: '🤖' },
-      { name: 'Google Vertex', logo: '🔬' },
-      { name: 'LLama', logo: '🦙' },
-      { name: 'Lang Chain', logo: '🔗' },
-      { name: 'Streamlit', logo: '⚡' }
+      { name: 'Open AI', logo: '/lovable-uploads/bcbeadd9-d309-495a-9d0b-ac56c3eadad1.png' },
+      { name: 'Google Vertex', logo: '/lovable-uploads/6b6204b6-2cd0-456e-83e6-7e3c444c37c8.png' },
+      { name: 'LLama', logo: '/lovable-uploads/789edca0-4ca1-4514-916b-a86fc6baf585.png' },
+      { name: 'Lang Chain', logo: '/lovable-uploads/9c6d2551-374c-4c38-b727-b8da53aba70a.png' },
+      { name: 'Streamlit', logo: '/lovable-uploads/d23fcf19-80ad-4991-a51d-314794899af2.png' }
     ],
     frontend: [
       { name: 'JavaScript', logo: '🟨' },
@@ -105,8 +105,12 @@ const TechStackSection = () => {
                   className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-border"
                 >
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-16 h-16 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300 mb-4 shadow-md">
-                      {tech.logo}
+                    <div className="w-16 h-16 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4 shadow-md">
+                      {tech.logo.startsWith('/') ? (
+                        <img src={tech.logo} alt={tech.name} className="w-10 h-10 object-contain" />
+                      ) : (
+                        <span className="text-3xl">{tech.logo}</span>
+                      )}
                     </div>
                     <h3 className="font-semibold text-foreground text-sm">{tech.name}</h3>
                   </div>
