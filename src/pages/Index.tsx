@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import TrustedBySection from '../components/TrustedBySection';
-import ProcessIconsSection from '../components/ProcessIconsSection';
 import WorkflowSection from '../components/WorkflowSection';
 import TechStackSection from '../components/TechStackSection';
 import ServicesSection from '../components/ServicesSection';
@@ -36,13 +35,12 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <TrustedBySection />
-      <ProcessIconsSection />
-      <WorkflowSection />
       <TechStackSection />
       <ServicesSection />
       <PortfolioSection />
       <ClientsSection />
       <ContactSection />
+      <WorkflowSection />
       <Footer />
       <FloatingChatbot />
     </div>

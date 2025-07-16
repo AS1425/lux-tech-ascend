@@ -17,41 +17,42 @@ const TechStackSection = () => {
       { name: 'Kubernetes', logo: '☸️' },
       { name: 'AWS', logo: '☁️' },
       { name: 'Google Cloud', logo: '🌐' },
-      { name: 'Azure', logo: '☁️' },
-      { name: 'Docker', logo: '🐳' },
-      { name: 'Terraform', logo: '🏗️' }
+      { name: 'Azure', logo: '☁️' }
     ],
     ai: [
-      { name: 'TensorFlow', logo: '🧠' },
-      { name: 'PyTorch', logo: '🔥' },
-      { name: 'OpenAI', logo: '🤖' },
-      { name: 'Hugging Face', logo: '🤗' },
-      { name: 'LangChain', logo: '🔗' },
-      { name: 'NVIDIA', logo: '💚' }
+      { name: 'Open AI', logo: '🤖' },
+      { name: 'Google Vertex', logo: '🔬' },
+      { name: 'LLama', logo: '🦙' },
+      { name: 'Lang Chain', logo: '🔗' },
+      { name: 'Streamlit', logo: '⚡' }
     ],
     frontend: [
-      { name: 'React', logo: '⚛️' },
-      { name: 'Next.js', logo: '▲' },
-      { name: 'Vue.js', logo: '💚' },
-      { name: 'Angular', logo: '🅰️' },
+      { name: 'JavaScript', logo: '🟨' },
       { name: 'TypeScript', logo: '📘' },
-      { name: 'Tailwind', logo: '🎨' }
+      { name: 'Next.js', logo: '▲' },
+      { name: 'Nuxt.js', logo: '💚' },
+      { name: 'React', logo: '⚛️' },
+      { name: 'Vue.js', logo: '💚' },
+      { name: 'Angular', logo: '🅰️' }
     ],
     backend: [
       { name: 'Node.js', logo: '💚' },
+      { name: 'Nest.js', logo: '🐱' },
+      { name: 'Express', logo: '🚂' },
+      { name: 'Fastify', logo: '⚡' },
       { name: 'Python', logo: '🐍' },
+      { name: 'Go', logo: '🔵' },
       { name: 'Java', logo: '☕' },
-      { name: 'PostgreSQL', logo: '🐘' },
-      { name: 'MongoDB', logo: '🍃' },
-      { name: 'Redis', logo: '🔴' }
+      { name: '.NET Core', logo: '🔷' },
+      { name: 'Ruby', logo: '💎' }
     ],
     mobile: [
+      { name: 'Swift', logo: '🍎' },
+      { name: 'SwiftUI', logo: '🎨' },
+      { name: 'Kotlin', logo: '🟣' },
+      { name: 'Jetpack Compose', logo: '🚀' },
       { name: 'React Native', logo: '📱' },
-      { name: 'Flutter', logo: '🦋' },
-      { name: 'iOS Swift', logo: '🍎' },
-      { name: 'Android', logo: '🤖' },
-      { name: 'Expo', logo: '⚡' },
-      { name: 'Ionic', logo: '⚡' }
+      { name: 'Flutter', logo: '🦋' }
     ]
   };
 
