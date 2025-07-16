@@ -65,6 +65,24 @@ const Navigation = () => {
     ],
   };
 
+  const aiSolutionsItems = [
+    { label: 'Healthcare', href: '/industries/healthcare' },
+    { label: 'Finance & Banking', href: '/industries/finance' },
+    { label: 'E-commerce & Retail', href: '/industries/ecommerce' },
+    { label: 'Education & E-Learning', href: '/industries/education' },
+    { label: 'Legal & Compliance', href: '/industries/legal' },
+    { label: 'Aviation & Airlines', href: '/industries/aviation' },
+    { label: 'Transportation & Logistics', href: '/industries/logistics' },
+    { label: 'Telecom & IT', href: '/industries/telecom' },
+    { label: 'Automotive & Car Sales', href: '/industries/automotive' },
+    { label: 'Travel & Hospitality', href: '/industries/travel' },
+    { label: 'Media & Entertainment', href: '/industries/media' },
+    { label: 'Agriculture', href: '/industries/agriculture' },
+    { label: 'Energy & Environment', href: '/industries/energy' },
+    { label: 'Real Estate', href: '/industries/real-estate' },
+    { label: 'Financial Services', href: '/industries/financial-services' },
+  ];
+
   const portfolioItems = [
     { label: 'Case Studies', href: '#case-studies' },
     { label: 'Client Success Stories', href: '#success-stories' },
@@ -146,14 +164,24 @@ const Navigation = () => {
                     </NavigationMenuContent>
                   </NavigationMenuItem>
 
-                  {/* AI Solutions */}
+                  {/* AI Solutions Dropdown */}
                   <NavigationMenuItem>
-                    <NavigationMenuLink 
-                      href="#ai-solutions"
-                      className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium px-4 py-2 rounded-md hover:bg-accent/10"
-                    >
+                    <NavigationMenuTrigger className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium bg-transparent">
                       AI Solutions
-                    </NavigationMenuLink>
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid w-[500px] gap-3 p-4 md:w-[600px] md:grid-cols-3">
+                        {aiSolutionsItems.map((item) => (
+                          <NavigationMenuLink
+                            key={item.label}
+                            href={item.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{item.label}</div>
+                          </NavigationMenuLink>
+                        ))}
+                      </div>
+                    </NavigationMenuContent>
                   </NavigationMenuItem>
 
                   {/* Portfolio Dropdown */}
@@ -284,13 +312,35 @@ const Navigation = () => {
                   ))}
                 </div>
 
-                <a
-                  href="#ai-solutions"
-                  className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  AI Solutions
-                </a>
+                {/* Mobile AI Solutions */}
+                <div className="space-y-1">
+                  <button
+                    onClick={() => toggleMobileCategory('AI Solutions')}
+                    className="w-full flex items-center justify-between px-3 py-2 text-foreground font-medium"
+                  >
+                    AI Solutions
+                    <ChevronRight 
+                      size={16} 
+                      className={`transition-transform duration-200 ${
+                        expandedMobileCategory === 'AI Solutions' ? 'rotate-90' : ''
+                      }`}
+                    />
+                  </button>
+                  {expandedMobileCategory === 'AI Solutions' && (
+                    <div className="space-y-1 pl-4">
+                      {aiSolutionsItems.map((item) => (
+                        <a
+                          key={item.label}
+                          href={item.href}
+                          className="block px-6 py-1 text-xs text-foreground/70 hover:text-primary transition-colors duration-300"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
 
                 {/* Mobile Portfolio */}
                 <div className="space-y-1">

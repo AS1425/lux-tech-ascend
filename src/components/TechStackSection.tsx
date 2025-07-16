@@ -51,8 +51,8 @@ const TechStackSection = () => {
       { name: 'SwiftUI', logo: '/lovable-uploads/dc83a1d5-eb63-4b82-b5b9-11211fbdfbae.png' },
       { name: 'Kotlin', logo: '/lovable-uploads/3ca4aae6-c8a7-447f-824c-a746d863e63c.png' },
       { name: 'Jetpack Compose', logo: '/lovable-uploads/91a208ed-fa9c-4b69-a41f-6287b353a14e.png' },
-      { name: 'React Native', logo: '📱' },
-      { name: 'Flutter', logo: '🦋' }
+      { name: 'React Native', logo: '/lovable-uploads/b949ede3-3d1d-44f3-8c0c-1b9ed36d34e2.png' },
+      { name: 'Flutter', logo: '/lovable-uploads/548dfabd-a77b-47df-bd08-a1e8f0b6f0d3.png' }
     ]
   };
 
