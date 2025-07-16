@@ -27,18 +27,18 @@ const TechStackSection = () => {
       { name: 'Streamlit', logo: '/lovable-uploads/d23fcf19-80ad-4991-a51d-314794899af2.png' }
     ],
     frontend: [
-      { name: 'JavaScript', logo: '🟨' },
-      { name: 'TypeScript', logo: '📘' },
-      { name: 'Next.js', logo: '▲' },
-      { name: 'Nuxt.js', logo: '💚' },
-      { name: 'React', logo: '⚛️' },
-      { name: 'Vue.js', logo: '💚' },
-      { name: 'Angular', logo: '🅰️' }
+      { name: 'JavaScript', logo: '/lovable-uploads/8b71c982-5eaa-436a-9a9e-30789aa114a8.png' },
+      { name: 'TypeScript', logo: '/lovable-uploads/7d68d6c0-e4a6-4ab1-97af-feea948bfdf4.png' },
+      { name: 'Next.js', logo: '/lovable-uploads/f9054897-c6b5-4787-af4c-22d3b5d2684f.png' },
+      { name: 'Nuxt.js', logo: '/lovable-uploads/91dc40c8-e8ff-4314-9217-028055c705e2.png' },
+      { name: 'React', logo: '/lovable-uploads/4398f4ce-d943-48ee-8a03-e8d3a088c4f4.png' },
+      { name: 'Vue.js', logo: '/lovable-uploads/fe3b2ca3-2b7a-4051-8af9-710281ad732b.png' },
+      { name: 'Angular', logo: '/lovable-uploads/c99a3bbf-42b8-48ec-9465-f87b7e90d87a.png' }
     ],
     backend: [
-      { name: 'Node.js', logo: '💚' },
-      { name: 'Nest.js', logo: '🐱' },
-      { name: 'Express', logo: '🚂' },
+      { name: 'Node.js', logo: '/lovable-uploads/d1ed50a8-d579-4145-a703-8aaae17ce75a.png' },
+      { name: 'Nest.js', logo: '/lovable-uploads/a173058e-3970-41d7-b03f-5faa92936b71.png' },
+      { name: 'Express', logo: '/lovable-uploads/7a5056ee-8476-4c03-bf0c-ff52e1cd9c5d.png' },
       { name: 'Fastify', logo: '⚡' },
       { name: 'Python', logo: '🐍' },
       { name: 'Go', logo: '🔵' },
