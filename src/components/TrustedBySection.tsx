@@ -1,38 +1,38 @@
 import React from 'react';
-import CounterAnimation from './CounterAnimation';
 
 const TrustedBySection = () => {
-  const stats = [
-    { number: '325+', label: 'Projects Delivered' },
-    { number: '98%', label: 'Client Satisfaction' },
-    { number: '15M+', label: 'Users Impacted' },
-    { number: '24/7', label: 'Support Available' }
+  const companies = [
+    { name: 'Microsoft', logo: 'M' },
+    { name: 'Google', logo: 'G' },
+    { name: 'Amazon', logo: 'A' },
+    { name: 'Meta', logo: 'M' },
+    { name: 'Apple', logo: 'A' },
+    { name: 'Tesla', logo: 'T' },
+    { name: 'Netflix', logo: 'N' },
+    { name: 'Spotify', logo: 'S' }
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white/50 backdrop-blur-sm border-b border-gray-200/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Trusted by Industry Leaders
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Delivering exceptional results across the globe
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Join hundreds of forward-thinking companies that trust us to deliver cutting-edge AI and digital solutions
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center">
+          {companies.map((company, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-border hover:scale-105"
+              className="flex items-center justify-center group hover:scale-110 transition-transform duration-300"
             >
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
-                {stat.number}
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-2xl font-bold text-primary group-hover:shadow-lg transition-all duration-300">
+                {company.logo}
               </div>
-              <p className="text-muted-foreground font-medium text-lg">
-                {stat.label}
-              </p>
             </div>
           ))}
         </div>

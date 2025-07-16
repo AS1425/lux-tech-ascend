@@ -54,112 +54,47 @@ const WorkflowSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-manrope mb-6">
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              From Concept to Execution — Our Collaborative Development Flow
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            Enjoy the smooth process from idea to business benefits
           </h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            At our company, we set the convenient flow of work that is transparent and clear for our clients. 
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            At Master of Code Global, we set the convenient flow of work that is transparent and clear for our clients. 
             We value everyone's time and effort; thus, involve you only during phases when mutual collaboration is crucial.
           </p>
         </div>
 
-        {/* Timeline */}
+        {/* Horizontal Timeline */}
         <div className="relative">
-          {/* Desktop Timeline */}
-          <div className="hidden lg:block">
-            <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-primary/30 via-primary to-secondary/30 rounded-full"></div>
-              
-              {/* Steps */}
-              <div className="grid grid-cols-4 gap-8 mb-12">
-                {steps.slice(0, 4).map((step, index) => {
-                  const Icon = step.icon;
-                  return (
-                    <div key={step.id} className="relative">
-                      {/* Step Circle */}
-                      <div className="relative z-10 w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
-                        <Icon className="w-8 h-8 text-white" />
-                      </div>
-                      
-                      {/* Step Content */}
-                      <div className="text-center">
-                        <h3 className="font-bold text-lg mb-2 text-foreground">{step.title}</h3>
-                        <p className="text-sm text-muted-foreground">{step.description}</p>
-                      </div>
-                      
-                      {/* Step Number */}
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">
-                        {step.id}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              
-              <div className="grid grid-cols-4 gap-8">
-                {steps.slice(4, 8).map((step, index) => {
-                  const Icon = step.icon;
-                  return (
-                    <div key={step.id} className="relative">
-                      {/* Step Circle */}
-                      <div className="relative z-10 w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
-                        <Icon className="w-8 h-8 text-white" />
-                      </div>
-                      
-                      {/* Step Content */}
-                      <div className="text-center">
-                        <h3 className="font-bold text-lg mb-2 text-foreground">{step.title}</h3>
-                        <p className="text-sm text-muted-foreground">{step.description}</p>
-                      </div>
-                      
-                      {/* Step Number */}
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">
-                        {step.id}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile/Tablet Timeline */}
-          <div className="lg:hidden">
-            <div className="space-y-8">
-              {steps.map((step, index) => {
-                const Icon = step.icon;
-                return (
-                  <div key={step.id} className="flex items-center space-x-6">
-                    {/* Step Circle */}
-                    <div className="flex-shrink-0 relative">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg">
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-xs">
-                        {step.id}
-                      </div>
-                      {/* Connector Line */}
-                      {index < steps.length - 1 && (
-                        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-1 h-12 bg-gradient-to-b from-primary/50 to-primary/20"></div>
-                      )}
-                    </div>
-                    
-                    {/* Step Content */}
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2 text-foreground">{step.title}</h3>
-                      <p className="text-sm text-muted-foreground">{step.description}</p>
-                    </div>
+          {/* Timeline Line */}
+          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-300 transform -translate-y-1/2 hidden lg:block"></div>
+          
+          {/* Steps */}
+          <div className="flex flex-wrap justify-center lg:justify-between items-center gap-8 lg:gap-4">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
+              const isHighlighted = step.id === 6; // Launch step
+              return (
+                <div key={step.id} className="flex flex-col items-center relative z-10">
+                  {/* Step Circle */}
+                  <div className={`w-24 h-24 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 ${
+                    isHighlighted 
+                      ? 'bg-red-500 text-white' 
+                      : 'bg-white text-gray-600 border-2 border-gray-200'
+                  }`}>
+                    <Icon className="w-8 h-8" />
                   </div>
-                );
-              })}
-            </div>
+                  
+                  {/* Step Label */}
+                  <div className="mt-4 text-center max-w-24">
+                    <h3 className="font-semibold text-sm text-gray-800 leading-tight">{step.title}</h3>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

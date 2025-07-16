@@ -14,44 +14,44 @@ const TechStackSection = () => {
 
   const techStacks = {
     infrastructure: [
-      { name: 'Kubernetes', logo: 'K8s' },
-      { name: 'AWS', logo: 'AWS' },
-      { name: 'Google Cloud', logo: 'GCP' },
-      { name: 'Azure', logo: 'AZ' },
-      { name: 'Docker', logo: 'DOC' },
-      { name: 'Terraform', logo: 'TF' }
+      { name: 'Kubernetes', logo: '☸️' },
+      { name: 'AWS', logo: '☁️' },
+      { name: 'Google Cloud', logo: '🌐' },
+      { name: 'Azure', logo: '☁️' },
+      { name: 'Docker', logo: '🐳' },
+      { name: 'Terraform', logo: '🏗️' }
     ],
     ai: [
-      { name: 'TensorFlow', logo: 'TF' },
-      { name: 'PyTorch', logo: 'PT' },
-      { name: 'OpenAI', logo: 'AI' },
-      { name: 'Hugging Face', logo: 'HF' },
-      { name: 'LangChain', logo: 'LC' },
-      { name: 'NVIDIA', logo: 'NV' }
+      { name: 'TensorFlow', logo: '🧠' },
+      { name: 'PyTorch', logo: '🔥' },
+      { name: 'OpenAI', logo: '🤖' },
+      { name: 'Hugging Face', logo: '🤗' },
+      { name: 'LangChain', logo: '🔗' },
+      { name: 'NVIDIA', logo: '💚' }
     ],
     frontend: [
-      { name: 'React', logo: 'RE' },
-      { name: 'Next.js', logo: 'NX' },
-      { name: 'Vue.js', logo: 'VU' },
-      { name: 'Angular', logo: 'NG' },
-      { name: 'TypeScript', logo: 'TS' },
-      { name: 'Tailwind', logo: 'TW' }
+      { name: 'React', logo: '⚛️' },
+      { name: 'Next.js', logo: '▲' },
+      { name: 'Vue.js', logo: '💚' },
+      { name: 'Angular', logo: '🅰️' },
+      { name: 'TypeScript', logo: '📘' },
+      { name: 'Tailwind', logo: '🎨' }
     ],
     backend: [
-      { name: 'Node.js', logo: 'JS' },
-      { name: 'Python', logo: 'PY' },
-      { name: 'Java', logo: 'JA' },
-      { name: 'PostgreSQL', logo: 'PG' },
-      { name: 'MongoDB', logo: 'MG' },
-      { name: 'Redis', logo: 'RD' }
+      { name: 'Node.js', logo: '💚' },
+      { name: 'Python', logo: '🐍' },
+      { name: 'Java', logo: '☕' },
+      { name: 'PostgreSQL', logo: '🐘' },
+      { name: 'MongoDB', logo: '🍃' },
+      { name: 'Redis', logo: '🔴' }
     ],
     mobile: [
-      { name: 'React Native', logo: 'RN' },
-      { name: 'Flutter', logo: 'FL' },
-      { name: 'iOS Swift', logo: 'SW' },
-      { name: 'Android', logo: 'AD' },
-      { name: 'Expo', logo: 'EX' },
-      { name: 'Ionic', logo: 'IO' }
+      { name: 'React Native', logo: '📱' },
+      { name: 'Flutter', logo: '🦋' },
+      { name: 'iOS Swift', logo: '🍎' },
+      { name: 'Android', logo: '🤖' },
+      { name: 'Expo', logo: '⚡' },
+      { name: 'Ionic', logo: '⚡' }
     ]
   };
 
@@ -104,10 +104,10 @@ const TechStackSection = () => {
                   className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-border"
                 >
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300 mb-4">
+                    <div className="w-16 h-16 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300 mb-4 shadow-md">
                       {tech.logo}
                     </div>
-                    <h3 className="font-semibold text-foreground">{tech.name}</h3>
+                    <h3 className="font-semibold text-foreground text-sm">{tech.name}</h3>
                   </div>
                 </div>
               ))}
