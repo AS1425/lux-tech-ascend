@@ -2,11 +2,12 @@
 import React, { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
-
-import WorkflowSection from '../components/WorkflowSection';
-import BlogInsightsSection from '../components/BlogInsightsSection';
+import TrustedBySection from '../components/TrustedBySection';
 import TechStackSection from '../components/TechStackSection';
 import IndustrySection from '../components/IndustrySection';
+import AIServicesSection from '../components/AIServicesSection';
+import WorkflowSection from '../components/WorkflowSection';
+import BlogInsightsSection from '../components/BlogInsightsSection';
 import ServicesSection from '../components/ServicesSection';
 import PortfolioSection from '../components/PortfolioSection';
 import ClientsSection from '../components/ClientsSection';
@@ -36,14 +37,13 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground font-inter">
       <Navigation />
       <HeroSection />
-      <ServicesSection />
-      <PortfolioSection />
-      <ClientsSection />
+      <TrustedBySection />
       <TechStackSection />
       <IndustrySection />
-      <ContactSection />
+      <AIServicesSection />
       <WorkflowSection />
       <BlogInsightsSection />
+      <ContactSection />
       <Footer />
       <FloatingChatbot />
     </div>
