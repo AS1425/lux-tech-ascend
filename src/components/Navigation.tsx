@@ -98,7 +98,7 @@ const Navigation = () => {
   ];
 
   const companyItems = [
-    { label: 'About Us', href: '#about' },
+    { label: 'About Us', href: '/about-us' },
     { label: 'Our Team', href: '#team' },
     { label: 'Mission & Vision', href: '#mission' },
     { label: 'Contact Us', href: '/contact-us' },

@@ -33,6 +33,7 @@ import ITRecruitingServices from "./pages/ITRecruitingServices";
 import ConversationalAnalytics from "./pages/ConversationalAnalytics";
 import AICopilotDevelopment from "./pages/AICopilotDevelopment";
 import ContactUs from "./pages/ContactUs";
+import AboutUs from "./pages/AboutUs";
 import Loft from "./pages/Loft";
 
 const queryClient = new QueryClient();
@@ -73,6 +74,7 @@ const App = () => (
           <Route path="/conversational-analytics" element={<ConversationalAnalytics />} />
           <Route path="/ai-copilot-development" element={<AICopilotDevelopment />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/loft" element={<Loft />} />
         </Routes>
       </BrowserRouter>
