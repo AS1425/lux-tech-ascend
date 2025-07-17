@@ -32,6 +32,7 @@ import BusinessProcessAutomation from "./pages/BusinessProcessAutomation";
 import ITRecruitingServices from "./pages/ITRecruitingServices";
 import ConversationalAnalytics from "./pages/ConversationalAnalytics";
 import AICopilotDevelopment from "./pages/AICopilotDevelopment";
+import ContactUs from "./pages/ContactUs";
 import Loft from "./pages/Loft";
 
 const queryClient = new QueryClient();
@@ -71,6 +72,7 @@ const App = () => (
           <Route path="/it-recruiting-services" element={<ITRecruitingServices />} />
           <Route path="/conversational-analytics" element={<ConversationalAnalytics />} />
           <Route path="/ai-copilot-development" element={<AICopilotDevelopment />} />
+          <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/loft" element={<Loft />} />
         </Routes>
       </BrowserRouter>

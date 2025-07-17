@@ -101,7 +101,7 @@ const Navigation = () => {
     { label: 'About Us', href: '#about' },
     { label: 'Our Team', href: '#team' },
     { label: 'Mission & Vision', href: '#mission' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Contact Us', href: '/contact-us' },
   ];
 
   const toggleMobileCategory = (category: string) => {
