@@ -55,39 +55,33 @@ const ContactUs = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-bold font-manrope mb-8">
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Contact Us
+              Let's talk
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Have a project in mind or a challenge to solve? Let's talk about how our AI-first solutions can help accelerate your growth.
+            Whether you're curious about features, a free trial, or even press—we're ready to answer any and all questions.
           </p>
         </div>
       </section>
 
-      {/* Interactive Globe Section */}
+      {/* Global Presence Visualization */}
       <section className="py-20 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="relative max-w-2xl mx-auto">
-            {/* Globe Illustration */}
-            <div className="relative w-80 h-80 mx-auto mb-8">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 animate-pulse"></div>
-              <div className="absolute inset-4 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s' }}></div>
-              <div className="absolute inset-8 rounded-full bg-gradient-to-br from-primary/10 to-secondary/10"></div>
-              <Globe className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 text-primary" />
-              
-              {/* Floating dots for global presence */}
-              <div className="absolute top-16 left-20 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-              <div className="absolute top-32 right-16 w-2 h-2 bg-secondary rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-              <div className="absolute bottom-24 left-24 w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute bottom-32 right-20 w-3 h-3 bg-secondary rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-              <div className="absolute top-24 right-32 w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="relative max-w-4xl mx-auto">
+            {/* Globe Image */}
+            <div className="relative mx-auto mb-8 max-w-2xl">
+              <img 
+                src="/lovable-uploads/7f57f081-38c1-45ac-a9d8-050fe37e6fc9.png" 
+                alt="Global presence visualization" 
+                className="w-full h-auto mx-auto filter drop-shadow-lg"
+              />
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              We work with clients across the globe
+              Serving Clients Globally
             </h2>
             <p className="text-lg text-muted-foreground">
-              From startups to Fortune 500 companies, we deliver AI solutions worldwide
+              Trusted by businesses worldwide to deliver innovative AI solutions
             </p>
           </div>
         </div>
@@ -100,9 +94,12 @@ const ContactUs = () => {
             {/* Left Side - Contact Form */}
             <div className="order-2 lg:order-1">
               <div className="glass p-8 md:p-12 rounded-3xl border border-primary/20">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
-                  Let's Start Something Amazing
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                  Contact Us
                 </h2>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Send us a message and we'll get back to you shortly.
+                </p>
                 
                 {!isSubmitted ? (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -126,7 +123,7 @@ const ContactUs = () => {
                         onChange={handleInputChange}
                         required
                         className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-muted-foreground/30 focus:border-primary focus:outline-none transition-colors text-lg placeholder:text-muted-foreground"
-                        placeholder="Work Email *"
+                        placeholder="Business Email *"
                       />
                     </div>
 
@@ -142,21 +139,6 @@ const ContactUs = () => {
                     </div>
 
                     <div>
-                      <select
-                        name="projectBudget"
-                        value={formData.projectBudget}
-                        onChange={handleInputChange}
-                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-muted-foreground/30 focus:border-primary focus:outline-none transition-colors text-lg text-muted-foreground"
-                      >
-                        <option value="">Project Budget</option>
-                        <option value="<10k">&lt;$10K</option>
-                        <option value="10k-25k">$10K–$25K</option>
-                        <option value="25k-50k">$25K–$50K</option>
-                        <option value="50k+">$50K+</option>
-                      </select>
-                    </div>
-
-                    <div>
                       <textarea
                         name="message"
                         value={formData.message}
@@ -164,8 +146,23 @@ const ContactUs = () => {
                         required
                         rows={4}
                         className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-muted-foreground/30 focus:border-primary focus:outline-none transition-colors text-lg placeholder:text-muted-foreground resize-none"
-                        placeholder="Tell us about your project..."
+                        placeholder="Message / Inquiry Description"
                       />
+                    </div>
+
+                    <div>
+                      <select
+                        name="projectBudget"
+                        value={formData.projectBudget}
+                        onChange={handleInputChange}
+                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-muted-foreground/30 focus:border-primary focus:outline-none transition-colors text-lg text-muted-foreground"
+                      >
+                        <option value="">Project Budget (Optional)</option>
+                        <option value="<10k">&lt; $10,000</option>
+                        <option value="10k-25k">$10,000–$25,000</option>
+                        <option value="25k-50k">$25,000–$50,000</option>
+                        <option value="50k+">$50,000+</option>
+                      </select>
                     </div>
 
                     <button
@@ -182,7 +179,7 @@ const ContactUs = () => {
                         </>
                       ) : (
                         <>
-                          Let's Talk
+                          Send Message
                           <Send className="ml-2 w-5 h-5" />
                         </>
                       )}
@@ -252,10 +249,10 @@ const ContactUs = () => {
       <section className="py-20 bg-muted/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-            Not ready to chat? Learn more about how we help businesses grow with AI.
+            Still exploring your options?
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Explore our comprehensive AI services and discover how we can transform your business.
+            Learn how our AI-first agency helps companies like yours grow faster.
           </p>
           <a
             href="/ai-development"
