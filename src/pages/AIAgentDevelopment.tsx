@@ -1,12 +1,151 @@
 
-import React from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, Clock, Users, BarChart3, Zap, Brain, Globe, Shield, Cog, Target } from 'lucide-react';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { Bot, Clock, Users, BarChart3, Zap, Brain, Globe, Shield, Cog, Target, ChevronDown, Settings, UserCheck, Lightbulb, TrendingUp, Headphones, Building, BarChart } from 'lucide-react';
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadBasic } from "@tsparticles/basic";
 
 const AIAgentDevelopment = () => {
+  const [init, setInit] = useState(false);
+  const [activeServiceTab, setActiveServiceTab] = useState(0);
+  const [openIndustryAccordion, setOpenIndustryAccordion] = useState<string | null>(null);
+
+  // Initialize particles engine
+  React.useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadBasic(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  const particlesOptions = useMemo(
+    () => ({
+      background: {
+        color: {
+          value: "transparent",
+        },
+      },
+      fpsLimit: 120,
+      particles: {
+        color: {
+          value: ["#8b5cf6", "#f97316"],
+        },
+        move: {
+          direction: "none" as const,
+          enable: true,
+          outModes: {
+            default: "bounce" as const,
+          },
+          random: true,
+          speed: 1,
+          straight: false,
+        },
+        number: {
+          density: {
+            enable: true,
+          },
+          value: 50,
+        },
+        opacity: {
+          value: 0.15,
+        },
+        shape: {
+          type: "circle",
+        },
+        size: {
+          value: 2,
+        },
+      },
+      detectRetina: true,
+    }),
+    [],
+  );
+
+  const aiServices = [
+    {
+      title: "Expert AI Advisory for Strategic Advantage",
+      content: "Not sure where to begin? Our AI Agent specialists help you choose the right LLMs, architecture, and orchestration framework. We align AI initiatives with your business goals while ensuring efficiency, security, and scalability from day one."
+    },
+    {
+      title: "Frictionless Embedding into Existing System",
+      content: "Our integration services ensure seamless compatibility with your current software environment—without costly reengineering."
+    },
+    {
+      title: "Custom AI Agent Engineering",
+      content: "Build AI agents tailored to your workflows, data structure, and user needs with scalable architecture."
+    },
+    {
+      title: "Intelligent Virtual Assistants",
+      content: "Develop virtual assistants capable of smart dialogue management, contextual understanding, and continuous learning."
+    },
+    {
+      title: "Human-Like Capabilities",
+      content: "Add advanced NLP, speech synthesis, and real-time response systems that make your AI feel natural and intuitive."
+    },
+    {
+      title: "In-depth Audit & Enhancement",
+      content: "Optimize existing agents with performance tuning, analytics, and retraining based on real user data."
+    },
+    {
+      title: "Agent Assist Systems",
+      content: "Equip your teams with AI copilots and workflow enhancers that boost productivity and customer service."
+    },
+    {
+      title: "Enterprise AI Agents",
+      content: "Create and manage scalable, secure AI agent deployments across departments and touchpoints."
+    }
+  ];
+
+  const industries = [
+    {
+      id: "retail",
+      title: "Retail and eCommerce",
+      icon: BarChart,
+      content: "Deliver hyper-personalized shopping journeys with AI agents offering dynamic product recommendations, pricing models, and style assistants for eCommerce.",
+      bullets: ["Smart product search", "Real-time promotions", "Style & gift recommendation engines"]
+    },
+    {
+      id: "finance",
+      title: "Finance and Banking",
+      icon: TrendingUp,
+      content: "Help customers navigate complex financial services via AI agents offering advisory, fraud alerts, and account management.",
+      bullets: ["Fraud detection", "Account management", "Financial advisory"]
+    },
+    {
+      id: "insurance",
+      title: "Insurance",
+      icon: Shield,
+      content: "Automate claims processing and customer support with intent-driven AI agents trained in insurance lingo.",
+      bullets: ["Claims automation", "Policy guidance", "Risk assessment"]
+    },
+    {
+      id: "automotive",
+      title: "Automotive",
+      icon: Cog,
+      content: "AI agents assist in virtual showrooms, customer service automation, and predictive maintenance scheduling.",
+      bullets: ["Virtual showrooms", "Service scheduling", "Maintenance alerts"]
+    },
+    {
+      id: "telecom",
+      title: "Telecom",
+      icon: Globe,
+      content: "Streamline support tickets, onboarding, and plan upgrades through AI-powered virtual agents.",
+      bullets: ["Support automation", "Plan optimization", "Network troubleshooting"]
+    },
+    {
+      id: "healthcare",
+      title: "Healthcare",
+      icon: Headphones,
+      content: "Enable virtual assistants for patient triage, appointment scheduling, and medical FAQ handling.",
+      bullets: ["Patient triage", "Appointment booking", "Medical information"]
+    }
+  ];
+
   const features = [
     {
       icon: Bot,
@@ -100,37 +239,79 @@ const AIAgentDevelopment = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
+      {/* Particles Background */}
+      {init && (
+        <Particles
+          id="particles-background"
+          options={particlesOptions}
+          className="absolute inset-0 z-0"
+        />
+      )}
+
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 neural-network">
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="neural-node"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 8}s`,
-              }}
-            />
-          ))}
-        </div>
-        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              AI Agent Development Services
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              Enhance customer interactions with intelligent, autonomous AI agents built for your business needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.4s' }}>
-              <Button size="lg" className="glass px-8 py-3 text-lg cta-ripple hover:scale-105 transition-transform">
-                Request a Demo
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-3 text-lg hover:scale-105 transition-transform">
-                Contact Our Team
-              </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-left">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                AI Agent Development Services
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+                Enhance customer interactions with intelligent, autonomous AI agents built for your business needs.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+                <Button size="lg" className="glass px-8 py-3 text-lg cta-ripple hover:scale-105 transition-transform">
+                  Contact Our Team
+                </Button>
+              </div>
+            </div>
+            <div className="relative lg:block hidden">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/7f4f9140-16e6-4d2a-b775-4df6a962bf40.png"
+                  alt="AI Agent Development"
+                  className="w-full h-auto max-w-md mx-auto animate-fade-up"
+                  style={{ animationDelay: '0.3s' }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Your One-Stop Shop Section */}
+      <section className="py-16 lg:py-24 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Your One-Stop Shop for AI Agent Development Services</h2>
+          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="lg:col-span-1">
+              <div className="flex flex-col space-y-2">
+                {aiServices.map((service, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveServiceTab(index)}
+                    className={`text-left p-4 rounded-lg transition-all duration-200 ${
+                      activeServiceTab === index
+                        ? 'bg-primary text-primary-foreground shadow-lg'
+                        : 'bg-background hover:bg-muted border border-border'
+                    }`}
+                  >
+                    <span className="font-medium">{service.title}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="lg:col-span-2">
+              <Card className="h-full">
+                <CardHeader>
+                  <CardTitle className="text-xl">{aiServices[activeServiceTab].title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {aiServices[activeServiceTab].content}
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
@@ -230,6 +411,60 @@ const AIAgentDevelopment = () => {
             <p className="text-lg text-muted-foreground text-center leading-relaxed mb-8">
               With years of expertise in AI and automation, we specialize in building intelligent AI agents that solve real business problems. Whether you're looking to improve customer service, streamline operations, or generate more leads, our AI agents are designed to deliver measurable results. We focus on delivering custom, scalable, and secure AI solutions that align with your business objectives and seamlessly integrate with your existing systems.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Agent Solutions for Industries */}
+      <section className="py-16 lg:py-24 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">AI Agent Solutions for Industries</h2>
+          <div className="max-w-4xl mx-auto space-y-4">
+            {industries.map((industry) => (
+              <Collapsible
+                key={industry.id}
+                open={openIndustryAccordion === industry.id}
+                onOpenChange={(open) => setOpenIndustryAccordion(open ? industry.id : null)}
+              >
+                <Card className="overflow-hidden">
+                  <CollapsibleTrigger className="w-full">
+                    <CardHeader className="flex flex-row items-center justify-between p-6 hover:bg-muted/50 transition-colors">
+                      <div className="flex items-center gap-4">
+                        <industry.icon className="h-6 w-6 text-primary" />
+                        <CardTitle className="text-left">{industry.title}</CardTitle>
+                      </div>
+                      <ChevronDown 
+                        className={`h-5 w-5 transition-transform duration-200 ${
+                          openIndustryAccordion === industry.id ? 'rotate-180' : ''
+                        }`} 
+                      />
+                    </CardHeader>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <CardContent className="pt-0 pb-6">
+                      <div className="grid md:grid-cols-3 gap-6">
+                        <div className="md:col-span-2">
+                          <p className="text-muted-foreground leading-relaxed mb-4">
+                            {industry.content}
+                          </p>
+                          <ul className="space-y-2">
+                            {industry.bullets.map((bullet, index) => (
+                              <li key={index} className="flex items-center gap-2">
+                                <div className="w-2 h-2 bg-primary rounded-full" />
+                                <span className="text-sm">{bullet}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="flex items-center justify-center">
+                          <industry.icon className="h-16 w-16 text-primary/20" />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </CollapsibleContent>
+                </Card>
+              </Collapsible>
+            ))}
           </div>
         </div>
       </section>
