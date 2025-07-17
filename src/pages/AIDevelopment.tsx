@@ -1,12 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Brain, Network, Zap, Target, TrendingUp, Shield, CheckCircle, Bot, MessageSquare, BarChart3, Cog, Eye, Lightbulb, Settings } from 'lucide-react';
+import { ArrowRight, Brain, Network, Zap, Target, TrendingUp, Shield, CheckCircle, Bot, MessageSquare, BarChart3, Cog, Eye, Lightbulb, Settings, ChevronDown } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import FloatingChatbot from '../components/FloatingChatbot';
 
 const AIDevelopment = () => {
   const [mounted, setMounted] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState<number | null>(0);
 
   useEffect(() => {
     setMounted(true);
@@ -119,6 +120,29 @@ const AIDevelopment = () => {
     }
   ];
 
+  const strategicAdvantages = [
+    {
+      title: "Profound AI Consulting Insights",
+      content: "We don't just build solutions; we provide expert guidance to help you navigate the complexities of digital adoption. Our seasoned consultants bring a wealth of knowledge and experience, offering strategic insights that align with your business goals and unlock the full potential of AI. From assessing your readiness to AI strategy consulting, we're your trusted advisors on the journey to intelligent transformation."
+    },
+    {
+      title: "Seasoned AI Developers",
+      content: "Our development team comprises top-tier AI engineers with proven experience in building scalable, production-grade AI applications using technologies like Python, TensorFlow, PyTorch, OpenAI APIs, and more."
+    },
+    {
+      title: "Diverse Niche Expertise",
+      content: "Whether you're in healthcare, finance, retail, logistics, or real estate — our AI solutions are tailored to industry-specific challenges, enabling faster deployment and higher ROI."
+    },
+    {
+      title: "Security and Ethical AI",
+      content: "We follow strict ethical AI practices and embed enterprise-grade security protocols in every solution to ensure your systems are safe, compliant, and bias-free."
+    }
+  ];
+
+  const toggleAccordion = (index: number) => {
+    setOpenAccordion(openAccordion === index ? null : index);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground font-inter">
       <Navigation />
@@ -212,6 +236,52 @@ const AIDevelopment = () => {
         </div>
       </section>
 
+      {/* Strategic Advantage Accordion Section */}
+      <section className="py-20 bg-muted/20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold font-manrope mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Why Choose Us as Your Trusted AI Development Partner
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {strategicAdvantages.map((advantage, index) => (
+              <div key={index} className="glass rounded-xl overflow-hidden shadow-lg">
+                <button
+                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-muted/10 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                  onClick={() => toggleAccordion(index)}
+                  aria-expanded={openAccordion === index}
+                  aria-controls={`accordion-content-${index}`}
+                >
+                  <h3 className="text-xl font-semibold pr-4">{advantage.title}</h3>
+                  <ChevronDown 
+                    className={`w-6 h-6 text-primary transition-transform duration-300 flex-shrink-0 ${
+                      openAccordion === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                
+                <div
+                  id={`accordion-content-${index}`}
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                    openAccordion === index 
+                      ? 'max-h-96 opacity-100' 
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="px-8 pb-6">
+                    <div className="w-full h-px bg-border mb-6"></div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {advantage.content}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Case Studies Section */}
       <section className="py-20 bg-muted/30">
