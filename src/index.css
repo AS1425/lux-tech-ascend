@@ -134,6 +134,40 @@
     animation: connectionPulse 6s ease-in-out infinite;
   }
 
+  /* Animated particles background */
+  .particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--primary) / 0.15);
+    border-radius: 50%;
+    animation: floatParticle 15s linear infinite;
+  }
+
+  .particle:nth-child(2n) {
+    width: 6px;
+    height: 6px;
+    background: hsl(var(--secondary) / 0.1);
+    animation-duration: 12s;
+  }
+
+  .particle:nth-child(3n) {
+    width: 3px;
+    height: 3px;
+    background: hsl(var(--accent) / 0.2);
+    animation-duration: 18s;
+  }
+
   /* CTA Button Ripple Effect */
   .cta-ripple {
     position: relative;
@@ -291,6 +325,23 @@
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px) rotate(360deg);
+    opacity: 0;
   }
 }
 

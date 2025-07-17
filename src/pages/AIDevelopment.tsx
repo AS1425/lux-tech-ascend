@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Brain, Network, Zap, Target, TrendingUp, Shield, CheckCircle } from 'lucide-react';
+import { ArrowRight, Brain, Network, Zap, Target, TrendingUp, Shield, CheckCircle, Bot, MessageSquare, BarChart3, Cog, Eye, Lightbulb, Settings } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import FloatingChatbot from '../components/FloatingChatbot';
@@ -23,35 +23,72 @@ const AIDevelopment = () => {
       }
     };
 
+    // Create animated particles
+    const createParticles = () => {
+      const container = document.querySelector('.particles-container');
+      if (!container) return;
+
+      // Clear existing particles
+      container.innerHTML = '';
+
+      // Create particles
+      const particleCount = 30;
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 10 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        container.appendChild(particle);
+      }
+    };
+
     window.addEventListener('scroll', updateScrollProgress);
+    createParticles();
     return () => window.removeEventListener('scroll', updateScrollProgress);
   }, []);
 
-  const services = [
+  const aiServices = [
     {
       icon: Brain,
-      title: "Machine Learning",
-      description: "Custom ML models that learn from your data to automate decision-making and predict outcomes."
+      title: "Custom AI Model Development",
+      description: "We design and train models tailored to your data, goals, and industry-specific use cases."
+    },
+    {
+      icon: MessageSquare,
+      title: "AI Chatbots & Virtual Assistants",
+      description: "Engage users with smart, conversational AI agents for websites, apps, and enterprise tools."
+    },
+    {
+      icon: BarChart3,
+      title: "Predictive Analytics",
+      description: "Extract future-ready insights from historical data to improve decision-making and outcomes."
+    },
+    {
+      icon: Cog,
+      title: "AI-Powered Automation",
+      description: "Streamline internal workflows, customer support, and operations using intelligent automation."
     },
     {
       icon: Network,
-      title: "Natural Language Processing",
-      description: "Enable your applications to understand, interpret, and generate human language naturally."
+      title: "Natural Language Processing (NLP)",
+      description: "Build NLP-based tools that analyze, understand, and generate human language data."
     },
     {
-      icon: Zap,
-      title: "AI Model Training",
-      description: "Train sophisticated AI models tailored to your specific business requirements and data."
+      icon: Eye,
+      title: "Computer Vision Solutions",
+      description: "Enable your systems to see, detect, and process visual content using powerful vision models."
     },
     {
-      icon: TrendingUp,
-      title: "Predictive Analytics",
-      description: "Leverage AI to forecast trends, behaviors, and outcomes to stay ahead of the competition."
+      icon: Lightbulb,
+      title: "AI Strategy Consulting",
+      description: "Define the right roadmap for adopting AI within your organization, from idea to execution."
     },
     {
-      icon: Target,
-      title: "AI-powered Automation",
-      description: "Streamline your operations with intelligent automation that adapts and improves over time."
+      icon: Settings,
+      title: "Model Optimization & Integration",
+      description: "Fine-tune, scale, and deploy AI models across cloud, edge, and on-prem infrastructure."
     }
   ];
 
@@ -88,80 +125,77 @@ const AIDevelopment = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background pt-20">
-        {/* Neural Network Background */}
-        <div className="neural-network"></div>
+        {/* Animated Particles Background */}
+        <div className="particles-container absolute inset-0 z-0"></div>
 
         {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-5 z-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0)`,
             backgroundSize: '50px 50px'
           }}></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Hero Badge */}
-          <div className={`inline-flex items-center glass px-4 py-2 rounded-full mb-8 transition-all duration-700 ${
-            mounted ? 'animate-fade-up opacity-100' : 'opacity-0'
-          }`} style={{ animationDelay: '0.1s' }}>
-            <Brain className="w-4 h-4 text-primary mr-2" />
-            <span className="text-sm font-medium text-muted-foreground">
-              Leading AI Development Solutions
-            </span>
-          </div>
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+            {/* Left Column - Content */}
+            <div className={`lg:pr-8 transition-all duration-700 ${
+              mounted ? 'animate-fade-up opacity-100' : 'opacity-0'
+            }`} style={{ animationDelay: '0.3s' }}>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-manrope mb-6">
+                <span className="bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent bg-300% animate-gradient">
+                  AI Development Services
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+                Transform your business with intelligent AI solutions that automate processes, 
+                enhance decision-making, and drive unprecedented growth.
+              </p>
 
-          {/* Main Heading */}
-          <h1 className={`text-5xl md:text-7xl lg:text-8xl font-bold font-manrope mb-6 transition-all duration-700 ${
-            mounted ? 'animate-fade-up opacity-100' : 'opacity-0'
-          }`} style={{ animationDelay: '0.3s' }}>
-            <span className="bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent bg-300% animate-gradient">
-              AI Development
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Services
-            </span>
-          </h1>
+              <button className={`group cta-ripple glass px-8 py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold text-lg hover:scale-105 transition-all duration-300 pulse-glow flex items-center relative overflow-hidden ${
+                mounted ? 'animate-scale-in opacity-100' : 'opacity-0'
+              }`} style={{ animationDelay: '0.7s' }}>
+                Get in Touch
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </div>
 
-          {/* Subheading */}
-          <p className={`text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed transition-all duration-700 ${
-            mounted ? 'animate-fade-right opacity-100' : 'opacity-0'
-          }`} style={{ animationDelay: '0.5s' }}>
-            Transform your business with intelligent AI solutions that automate processes, 
-            enhance decision-making, and drive unprecedented growth.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-700 ${
-            mounted ? 'animate-scale-in opacity-100' : 'opacity-0'
-          }`} style={{ animationDelay: '0.7s' }}>
-            <button className="group cta-ripple glass px-8 py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold text-lg hover:scale-105 transition-all duration-300 pulse-glow flex items-center relative overflow-hidden">
-              Get in Touch
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </button>
-            <button className="glass px-8 py-4 rounded-full text-foreground border border-primary/30 hover:bg-primary/10 hover:scale-105 transition-all duration-300 font-semibold text-lg card-hover">
-              Request a Demo
-            </button>
+            {/* Right Column - 3D Robot Image */}
+            <div className={`flex justify-center lg:justify-end transition-all duration-700 ${
+              mounted ? 'animate-fade-in opacity-100' : 'opacity-0'
+            }`} style={{ animationDelay: '0.5s' }}>
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/d6b03295-4c8e-4590-9476-2ae8c6c42cc9.png" 
+                  alt="3D AI Robot" 
+                  className="w-full max-w-lg h-auto object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-3xl -z-10 scale-110"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* AI Services We Provide Section */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold font-manrope mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Our AI Development Offerings
+              AI Solutions Tailored for Your Business Goals
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive AI solutions tailored to your business needs
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+              We offer a wide range of AI services designed to help startups and enterprises accelerate innovation and automate intelligently.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="glass p-8 rounded-xl card-hover">
-                <service.icon className="w-12 h-12 text-primary mb-6" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {aiServices.map((service, index) => (
+              <div key={index} className="glass p-8 rounded-xl card-hover group">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-8 h-8 text-primary" />
+                </div>
                 <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   {service.description}
@@ -169,8 +203,15 @@ const AIDevelopment = () => {
               </div>
             ))}
           </div>
+
+          <div className="text-center">
+            <button className="glass px-8 py-4 rounded-full text-primary border border-primary/30 hover:bg-primary/10 hover:scale-105 transition-all duration-300 font-semibold text-lg">
+              Explore All Services →
+            </button>
+          </div>
         </div>
       </section>
+
 
       {/* Case Studies Section */}
       <section className="py-20 bg-muted/30">
