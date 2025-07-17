@@ -1,12 +1,58 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { MessageCircle, Clock, Users, BarChart3, Zap, Brain, Globe, Shield } from 'lucide-react';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { MessageCircle, Clock, Users, BarChart3, Zap, Brain, Globe, Shield, ChevronDown, Settings, Bot, Lightbulb, Palette, Monitor, Database, TrendingUp, MessageSquare } from 'lucide-react';
 
 const AIChatbotDevelopment = () => {
+  const [openAccordion, setOpenAccordion] = useState<number | null>(0);
+
+  const chatbotServices = [
+    {
+      title: "Chatbot Fine-Tuning & Optimization",
+      description: "We continuously refine chatbot logic and models based on user behavior and feedback, ensuring consistent performance and responsiveness.",
+      icon: Settings
+    },
+    {
+      title: "Generative AI Integration",
+      description: "Leverage the power of LLMs like GPT-4 to create intelligent, context-aware, dynamic chatbot experiences.",
+      icon: Bot
+    },
+    {
+      title: "Conversational UX & Flow Design",
+      description: "Build natural, intuitive user interactions that feel human, reduce drop-offs, and improve satisfaction.",
+      icon: Palette
+    },
+    {
+      title: "AI Chatbot Strategy & Consulting",
+      description: "We guide you through architecture, use-case planning, and cost optimization to align AI with business goals.",
+      icon: Lightbulb
+    },
+    {
+      title: "Multi-Platform Chatbot Integration",
+      description: "Seamlessly deploy across web, mobile, Slack, WhatsApp, Facebook Messenger, and more.",
+      icon: Monitor
+    },
+    {
+      title: "Custom Chatbot Architecture",
+      description: "Tailored backend systems to support NLP, API calls, integrations, and modular business logic.",
+      icon: Database
+    },
+    {
+      title: "Analytics & Data-Driven Insights",
+      description: "Track performance, feedback loops, conversation quality, and optimize using real data.",
+      icon: TrendingUp
+    },
+    {
+      title: "Natural Language Understanding (NLU)",
+      description: "Train your bot to truly understand user intent, context, and extract meaning from complex queries.",
+      icon: MessageSquare
+    }
+  ];
+
   const features = [
     {
       icon: Clock,
@@ -96,36 +142,86 @@ const AIChatbotDevelopment = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 neural-network">
-          {[...Array(15)].map((_, i) => (
+      <section className="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
+        {/* Animated Particle Background */}
+        <div className="ai-particle-bg">
+          {[...Array(20)].map((_, i) => (
             <div
               key={i}
-              className="neural-node"
+              className="ai-particle"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 8}s`,
+                animationDuration: `${8 + Math.random() * 4}s`
               }}
             />
           ))}
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              AI Chatbot Development Services
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              Transform your customer interactions with intelligent, automated AI chatbots.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.4s' }}>
-              <Button size="lg" className="glass px-8 py-3 text-lg cta-ripple hover:scale-105 transition-transform">
-                Request a Demo
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-3 text-lg hover:scale-105 transition-transform">
-                Contact Our Team
-              </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            {/* Left Side - Text Content */}
+            <div className="space-y-8">
+              <h1 className="text-4xl md:text-6xl font-bold animate-fade-up bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                AI Chatbot Development Services
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground animate-fade-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
+                Build intelligent, conversational AI chatbots that enhance user experience, automate support, and drive business efficiency.
+              </p>
+              <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
+                <Button size="lg" className="glass px-8 py-3 text-lg cta-ripple hover:scale-105 transition-transform">
+                  Get in Touch
+                </Button>
+              </div>
+            </div>
+            
+            {/* Right Side - 3D Robot Image */}
+            <div className="flex justify-center lg:justify-end animate-fade-up" style={{ animationDelay: '0.3s' }}>
+              <img 
+                src="/lovable-uploads/b7e6617b-9a85-47ac-bdaf-a469bd5fb993.png" 
+                alt="AI Chatbot 3D Robot with Speech Bubble"
+                className="w-full max-w-md lg:max-w-lg hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Chatbot Services Accordion Section */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold font-manrope mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Our AI Chatbot Services Include
+              </h2>
+            </div>
+            
+            <div className="space-y-4">
+              {chatbotServices.map((service, index) => (
+                <div key={index} className="glass rounded-lg overflow-hidden">
+                  <Collapsible
+                    open={openAccordion === index}
+                    onOpenChange={(isOpen) => setOpenAccordion(isOpen ? index : null)}
+                  >
+                    <CollapsibleTrigger className="w-full p-6 text-left flex items-center justify-between hover:bg-muted/20 transition-colors">
+                      <div className="flex items-center gap-4">
+                        <service.icon className="h-6 w-6 text-primary" />
+                        <h3 className="text-lg font-semibold">{service.title}</h3>
+                      </div>
+                      <ChevronDown 
+                        className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${
+                          openAccordion === index ? 'rotate-180' : ''
+                        }`} 
+                      />
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="p-6 pt-0 text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </CollapsibleContent>
+                  </Collapsible>
+                </div>
+              ))}
             </div>
           </div>
         </div>
