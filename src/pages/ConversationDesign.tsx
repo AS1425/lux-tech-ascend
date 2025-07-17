@@ -1,93 +1,170 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { MessageCircle, Users, Target, Zap, BarChart3, Shield, Clock, Globe, Brain, Cog } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { MessageCircle, Users, Target, Zap, BarChart3, Shield, Clock, Globe, Brain, Cog, Bot, Mic, Palette, Search, Settings, Cpu, Headphones, GraduationCap, RefreshCw, Map, UserCheck, Workflow, Heart, Key } from 'lucide-react';
 
 const ConversationDesign = () => {
-  const features = [
+  const [activeTab, setActiveTab] = useState("customer-support");
+
+  // Accordion services data
+  const services = [
     {
-      icon: Users,
-      title: "User-Centered Approach",
-      description: "We put the user at the center of every design decision, ensuring that the conversation flows naturally and intuitively."
+      id: "chatbot-development",
+      title: "Chatbot Development",
+      icon: Bot,
+      content: "We design and develop intelligent chatbots that provide seamless customer interactions across multiple platforms. Our chatbots are built with advanced NLP capabilities to understand context, intent, and sentiment, delivering personalized responses that enhance user experience and drive business outcomes."
+    },
+    {
+      id: "voice-assistant",
+      title: "Voice Assistant Development",
+      icon: Mic,
+      content: "Design and build Alexa, Google Assistant, or custom voice interfaces for smart devices, enhancing customer accessibility and user experience."
+    },
+    {
+      id: "conversation-design",
+      title: "Conversation Design",
+      icon: Palette,
+      content: "Craft human-like conversational flows and scripts using NLU/NLP to ensure intuitive, accurate, and emotionally intelligent responses."
+    },
+    {
+      id: "ai-consulting",
+      title: "Conversational AI Consulting",
+      icon: Search,
+      content: "Expert-led strategy and technical guidance on implementing scalable Conversational AI that aligns with your operational and CX goals."
+    },
+    {
+      id: "ai-integration",
+      title: "Conversational AI Integration",
+      icon: Settings,
+      content: "Seamless integration with CRM, ERP, contact centers, websites, and apps—empowering unified, AI-driven user interactions."
+    },
+    {
+      id: "optimization",
+      title: "Chatbot Fine-Tuning and Optimization",
+      icon: RefreshCw,
+      content: "Continuous monitoring, training, and enhancement of your chatbot performance using user behavior data and LLMs."
+    },
+    {
+      id: "generative-ai",
+      title: "Generative AI Integration",
+      icon: Cpu,
+      content: "Deploy advanced LLM-based agents to handle complex inquiries, content generation, and context-aware responses."
+    },
+    {
+      id: "managed-services",
+      title: "Managed Services",
+      icon: Headphones,
+      content: "Full-service management of your AI assistants including training, updates, analytics, and performance improvement."
+    },
+    {
+      id: "training",
+      title: "Conversation Design Training",
+      icon: GraduationCap,
+      content: "Upskill your in-house team with tailored training on conversation design, persona creation, and user journey mapping."
+    }
+  ];
+
+  // Benefits data
+  const benefits = [
+    {
+      icon: RefreshCw,
+      title: "Full-cycle Conversational AI",
+      description: "We plan, design, develop, deploy, and manage AI-powered assistants from end to end."
     },
     {
       icon: Globe,
-      title: "Seamless Multi-Channel Integration",
-      description: "Our conversational designs work across platforms such as websites, mobile apps, social media, and messaging services."
+      title: "Omnichannel Approach",
+      description: "Deploy bots on web, mobile, WhatsApp, Messenger, Slack, voice platforms, and more."
     },
     {
-      icon: Target,
-      title: "Personalized Conversations",
-      description: "By leveraging user data and insights, we design conversations that are tailored to each individual, ensuring relevance and engagement."
+      icon: Settings,
+      title: "Integration Capabilities",
+      description: "Seamless API-based and plug-in integrations with enterprise tools and cloud platforms."
     },
-    {
-      icon: Brain,
-      title: "Conversational AI Models",
-      description: "We build AI models that understand and process user inputs accurately, delivering intelligent, human-like responses."
-    },
-    {
-      icon: BarChart3,
-      title: "Performance Monitoring",
-      description: "We analyze and optimize the effectiveness of conversations based on metrics like user engagement, response time, and satisfaction."
-    }
-  ];
-
-  const useCases = [
     {
       icon: MessageCircle,
-      title: "Customer Support Chatbots",
-      description: "Design automated customer support agents that resolve issues and answer questions with a personalized approach."
+      title: "Flexible Communication",
+      description: "Supports multi-lingual, voice, and text-based interactions across time zones and devices."
     },
     {
-      icon: Target,
-      title: "Sales & Lead Generation",
-      description: "Build lead qualification bots that engage customers, answer product queries, and generate sales opportunities."
-    },
-    {
-      icon: Zap,
-      title: "E-commerce Assistance",
-      description: "Design AI-driven shopping assistants that guide users through the buying process, recommend products, and answer questions."
-    },
-    {
-      icon: Users,
-      title: "HR and Recruitment",
-      description: "Create AI assistants that screen resumes, answer job-related queries, and schedule interviews."
+      icon: Shield,
+      title: "Data Privacy and Security",
+      description: "Enterprise-grade encryption and compliance with GDPR, HIPAA, and other standards."
     }
   ];
 
+  // Use cases data for tabs
+  const useCasesData = {
+    "customer-support": [
+      "FAQ bots",
+      "Agent assist bots", 
+      "Ticket generation bots",
+      "Escalation workflows",
+      "Voice support AI",
+      "24/7 multilingual support"
+    ],
+    "business-automation": [
+      "Knowledge base integration",
+      "Notification/chat alerts",
+      "Appointment scheduling", 
+      "Invoice and billing automation",
+      "Employee onboarding",
+      "Inventory sync"
+    ],
+    "marketing-sales": [
+      "Lead qualification bots",
+      "Conversational landing pages",
+      "Personalized upselling bots",
+      "Newsletter bots",
+      "WhatsApp and SMS campaigns",
+      "Generative content agents"
+    ]
+  };
+
+  // New design process steps
   const designProcess = [
+    { step: "01", title: "Discovery" },
+    { step: "02", title: "Data Analysis" },
+    { step: "03", title: "Use Case Prioritization" },
+    { step: "04", title: "User Persona Identification" },
+    { step: "05", title: "User Journey Mapping" },
+    { step: "06", title: "Bot Persona Development" },
+    { step: "07", title: "Flow Chart Creation & Dialog Development" },
+    { step: "08", title: "AI Design Development/Tuning" },
+    { step: "09", title: "User Testing" },
+    { step: "10", title: "AI Optimization Post-Launch" }
+  ];
+
+  // Conversation design offerings
+  const offerings = [
     {
-      step: "01",
-      title: "Research & Understanding",
-      description: "We begin by analyzing your customer personas, understanding pain points, and determining key goals for the conversation."
+      id: "consulting",
+      title: "Conversation Design Consulting",
+      icon: Search,
+      content: "Strategic guidance on implementing conversational AI solutions that align with your business objectives.",
+      expectations: [
+        "AI strategy development",
+        "Training & workshops", 
+        "Persona-based flow creation",
+        "Business process optimization"
+      ]
     },
     {
-      step: "02",
-      title: "Designing Conversation Flows",
-      description: "We design intuitive conversation flows that cater to different user intents and scenarios, ensuring smooth navigation through interactions."
+      id: "services", 
+      title: "Conversation Design Services",
+      icon: Palette,
+      content: "End-to-end design of conversational flows, persona blueprints, and NLU structures for chat and voice-based agents."
     },
     {
-      step: "03",
-      title: "Prototyping & Iteration",
-      description: "We build prototypes and conduct iterative testing to refine the dialogues, ensuring they are both functional and human-like."
-    },
-    {
-      step: "04",
-      title: "Voice & Tone Design",
-      description: "We develop the chatbot's personality, tone, and voice, ensuring it aligns with your brand and resonates with users."
-    },
-    {
-      step: "05",
-      title: "Integration & Testing",
-      description: "We integrate the conversational design with your existing platforms, test for quality assurance, and optimize based on user feedback."
-    },
-    {
-      step: "06",
-      title: "Monitoring & Optimization",
-      description: "Post-launch, we continuously monitor the conversations and optimize them based on analytics, ensuring they remain effective and engaging."
+      id: "training-services",
+      title: "Conversation Design Training", 
+      icon: GraduationCap,
+      content: "Interactive sessions, custom training kits, and platform-specific tutorials to empower internal teams to create better AI experiences."
     }
   ];
 
@@ -112,62 +189,78 @@ const ConversationDesign = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Conversational Design Services
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              Craft seamless, human-like conversations with our expert conversational design solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.4s' }}>
-              <Button size="lg" className="glass px-8 py-3 text-lg cta-ripple hover:scale-105 transition-transform">
-                Request a Demo
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-3 text-lg hover:scale-105 transition-transform">
-                Talk to Our Experts
-              </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-left">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Conversational Design Services
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+                Craft seamless, human-like conversations with our expert conversational design solutions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-start animate-fade-up" style={{ animationDelay: '0.4s' }}>
+                <Button variant="outline" size="lg" className="px-8 py-3 text-lg hover:scale-105 transition-transform">
+                  Talk to Our Experts
+                </Button>
+              </div>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <img 
+                src="/lovable-uploads/c0dfdb39-5392-4fa4-b163-7df42d5aadd3.png" 
+                alt="Conversational AI Robot"
+                className="max-w-full h-auto animate-fade-up"
+                style={{ animationDelay: '0.6s' }}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Introduction Section */}
+      {/* Section 1: Our Conversational AI Services Include */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Conversational AI Services Include</h2>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">What is Conversational Design?</h2>
-            <p className="text-lg text-muted-foreground text-center leading-relaxed">
-              Conversational design is the process of creating natural, engaging, and intuitive dialogues between users and AI-powered systems. By focusing on Natural Language Processing (NLP) and user-centered design principles, we craft conversations that enhance user experience, build trust, and drive outcomes. Our conversational design services are aimed at developing AI interactions that feel intuitive, efficient, and human, whether in chatbots, virtual assistants, or other automated communication platforms.
-            </p>
+            <Accordion type="single" collapsible defaultValue="chatbot-development" className="space-y-4">
+              {services.map((service) => (
+                <AccordionItem key={service.id} value={service.id} className="border rounded-lg glass">
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                    <div className="flex items-center gap-4">
+                      <service.icon className="h-8 w-8 text-primary" />
+                      <span className="text-lg font-semibold text-left">{service.title}</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="flex gap-6">
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <service.icon className="h-8 w-8 text-primary" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-muted-foreground leading-relaxed">{service.content}</p>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Conversational Design Section */}
+      {/* Section 2: Key Benefits */}
       <section className="py-16 lg:py-24 bg-muted/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Why Conversational Design is Critical for Your Business</h2>
-            <p className="text-lg text-muted-foreground text-center leading-relaxed">
-              As AI continues to shape customer interactions, conversational design ensures these interactions are meaningful and seamless. It allows businesses to build more natural, personalized, and effective communication with their customers. A well-designed conversation flow helps reduce customer frustration, increases satisfaction, and ensures that every interaction drives positive outcomes. With expertly designed dialogues, your business can foster deeper customer relationships, improve engagement, and ensure every interaction feels like a genuine conversation.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Key Features Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Key Features of Our Conversational Design Services</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="glass card-hover">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Key Benefits of Our Conversational AI Services</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+            {benefits.map((benefit, index) => (
+              <Card key={index} className="glass card-hover text-center">
                 <CardHeader>
-                  <feature.icon className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                  <benefit.icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <CardTitle className="text-lg">{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base">{feature.description}</CardDescription>
+                  <CardDescription className="text-sm">{benefit.description}</CardDescription>
                 </CardContent>
               </Card>
             ))}
@@ -175,62 +268,131 @@ const ConversationDesign = () => {
         </div>
       </section>
 
-      {/* Design Process Section */}
+      {/* Section 3: Use Cases for Conversational AI */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Use Cases for Conversational Artificial Intelligence</h2>
+          <div className="max-w-6xl mx-auto">
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
+              <TabsList className="grid w-full grid-cols-3">
+                <TabsTrigger value="customer-support">Customer Support</TabsTrigger>
+                <TabsTrigger value="business-automation">Business Process Automation</TabsTrigger>
+                <TabsTrigger value="marketing-sales">Marketing & Sales</TabsTrigger>
+              </TabsList>
+              
+              {Object.entries(useCasesData).map(([key, cases]) => (
+                <TabsContent key={key} value={key} className="space-y-6">
+                  <Card className="glass">
+                    <CardContent className="p-8">
+                      <div className="grid md:grid-cols-2 gap-8">
+                        <div className="space-y-4">
+                          {cases.map((useCase, index) => (
+                            <div key={index} className="flex items-center gap-3">
+                              <div className="w-2 h-2 rounded-full bg-primary"></div>
+                              <span className="text-lg">{useCase}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="flex items-center justify-center">
+                          <div className="w-48 h-48 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                            <MessageCircle className="h-24 w-24 text-primary" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-8 text-center">
+                        <Button size="lg" className="glass px-8 py-3 text-lg cta-ripple hover:scale-105 transition-transform">
+                          Request a Quote
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              ))}
+            </Tabs>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Our Proven Conversation Design Process */}
       <section className="py-16 lg:py-24 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Conversational Design Process</h2>
-          <div className="max-w-4xl mx-auto">
-            {designProcess.map((process, index) => (
-              <div key={index} className="flex gap-6 mb-8 last:mb-0">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
-                    {process.step}
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Proven Conversation Design Process</h2>
+          <div className="max-w-6xl mx-auto">
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-1/2 transform -translate-x-0.5 h-full w-0.5 bg-primary/20 hidden lg:block"></div>
+              
+              <div className="grid lg:grid-cols-2 gap-8">
+                {designProcess.map((process, index) => (
+                  <div key={index} className={`flex items-center gap-6 ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}>
+                    <div className="flex-1">
+                      <Card className="glass card-hover">
+                        <CardContent className="p-6">
+                          <div className="flex items-center gap-4 mb-4">
+                            <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
+                              {process.step}
+                            </div>
+                            <h3 className="text-xl font-semibold">{process.title}</h3>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{process.title}</h3>
-                  <p className="text-muted-foreground">{process.description}</p>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Use Cases Section */}
+      {/* Section 5: Our Conversation Design Offerings */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Conversational Design Use Cases</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {useCases.map((useCase, index) => (
-              <Card key={index} className="glass card-hover">
-                <CardHeader>
-                  <useCase.icon className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle className="text-xl">{useCase.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">{useCase.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-16 lg:py-24 bg-muted/50">
-        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Conversation Design Offerings</h2>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Why Choose Us for Conversational Design?</h2>
-            <p className="text-lg text-muted-foreground text-center leading-relaxed mb-8">
-              We specialize in creating highly engaging and intuitive conversational experiences. With our deep expertise in conversational AI and design, we deliver solutions that not only meet your business goals but also enhance customer satisfaction. We focus on humanizing your digital interactions, ensuring your chatbot or virtual assistant communicates naturally, aligns with your brand, and delivers value at every touchpoint.
-            </p>
+            <Accordion type="single" collapsible className="space-y-4">
+              {offerings.map((offering) => (
+                <AccordionItem key={offering.id} value={offering.id} className="border rounded-lg glass">
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                    <div className="flex items-center gap-4">
+                      <offering.icon className="h-8 w-8 text-primary" />
+                      <span className="text-lg font-semibold text-left">{offering.title}</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="flex gap-6">
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <offering.icon className="h-8 w-8 text-primary" />
+                        </div>
+                      </div>
+                      <div className="flex-1 space-y-4">
+                        <p className="text-muted-foreground leading-relaxed">{offering.content}</p>
+                        {offering.expectations && (
+                          <div>
+                            <h4 className="font-semibold mb-2">What You Can Expect:</h4>
+                            <ul className="space-y-2">
+                              {offering.expectations.map((expectation, idx) => (
+                                <li key={idx} className="flex items-center gap-2">
+                                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                                  <span className="text-muted-foreground">{expectation}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24">
+      <section className="py-16 lg:py-24 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready to Transform Your Customer Conversations?</h2>
