@@ -241,7 +241,7 @@ const AIDevelopment = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold font-manrope mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Why Choose Us as Your Trusted AI Development Partner
+              The Advantage of Partnering with Us for AI Development
             </h2>
           </div>
 
