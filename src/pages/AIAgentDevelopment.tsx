@@ -73,31 +73,31 @@ const AIAgentDevelopment = () => {
     },
     {
       title: "Frictionless Embedding into Existing System",
-      content: "Our integration services ensure seamless compatibility with your current software environment—without costly reengineering."
+      content: "We ensure AI agents integrate seamlessly into your existing tech stack with minimal disruption. Whether through APIs or custom middleware, we align with your tools and workflows for a frictionless deployment experience."
     },
     {
       title: "Custom AI Agent Engineering",
-      content: "Build AI agents tailored to your workflows, data structure, and user needs with scalable architecture."
+      content: "From conceptualization to deployment, we build AI agents tailored to your business logic, customer needs, and data structure. Our solutions include workflow automation, NLP processing, and integration with your CRM or ERP."
     },
     {
       title: "Intelligent Virtual Assistants",
-      content: "Develop virtual assistants capable of smart dialogue management, contextual understanding, and continuous learning."
+      content: "Deploy intelligent assistants that handle support tickets, answer customer queries, and provide contextual help using NLP and LLMs. Designed for omnichannel platforms including chat, voice, and web."
     },
     {
       title: "Human-Like Capabilities",
-      content: "Add advanced NLP, speech synthesis, and real-time response systems that make your AI feel natural and intuitive."
+      content: "Our AI agents mimic human interactions using advanced sentiment analysis, emotion detection, and real-time adaptive responses — enhancing user trust and engagement."
     },
     {
       title: "In-depth Audit & Enhancement",
-      content: "Optimize existing agents with performance tuning, analytics, and retraining based on real user data."
+      content: "Already using AI tools? We perform comprehensive audits of your current AI agents, analyze gaps, and optimize performance for better results, lower cost, and future scalability."
     },
     {
       title: "Agent Assist Systems",
-      content: "Equip your teams with AI copilots and workflow enhancers that boost productivity and customer service."
+      content: "AI-powered tools that enhance your human agents' productivity by offering suggestions, summarizing conversations, and automating repetitive tasks — improving resolution time and accuracy."
     },
     {
       title: "Enterprise AI Agents",
-      content: "Create and manage scalable, secure AI agent deployments across departments and touchpoints."
+      content: "Scalable, secure, and multi-functional AI agents designed for enterprise use cases — from employee onboarding and compliance to analytics and knowledge management systems."
     }
   ];
 
@@ -290,23 +290,29 @@ const AIAgentDevelopment = () => {
                   <button
                     key={index}
                     onClick={() => setActiveServiceTab(index)}
-                    className={`text-left p-4 rounded-lg transition-all duration-300 hover:shadow-md ${
+                    className={`group text-left p-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.01] ${
                       activeServiceTab === index
-                        ? 'bg-primary text-primary-foreground shadow-lg transform scale-[1.02]'
-                        : 'bg-background hover:bg-muted border border-border hover:border-primary/20'
+                        ? 'bg-primary text-primary-foreground shadow-lg transform scale-[1.02] border-2 border-primary'
+                        : 'bg-background hover:bg-muted border border-border hover:border-primary/30 hover:shadow-md'
                     }`}
                   >
-                    <span className="font-medium text-sm leading-tight">{service.title}</span>
+                    <span className={`font-medium text-sm leading-tight transition-colors duration-200 ${
+                      activeServiceTab === index ? 'text-primary-foreground' : 'group-hover:text-primary'
+                    }`}>
+                      {service.title}
+                    </span>
                   </button>
                 ))}
               </div>
             </div>
             <div className="lg:col-span-8">
-              <Card className="h-full shadow-lg border-0 bg-background/95 backdrop-blur">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold">{aiServices[activeServiceTab].title}</CardTitle>
+              <Card className="h-full shadow-xl border-0 bg-background/95 backdrop-blur transition-all duration-500 ease-in-out">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    {aiServices[activeServiceTab].title}
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="animate-fade-in">
                   <p className="text-muted-foreground leading-relaxed text-lg">
                     {aiServices[activeServiceTab].content}
                   </p>
