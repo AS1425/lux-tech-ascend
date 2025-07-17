@@ -261,7 +261,7 @@ const AIAgentDevelopment = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
                 <Button size="lg" className="glass px-8 py-3 text-lg cta-ripple hover:scale-105 transition-transform">
-                  Contact Our Team
+                  Get in Touch
                 </Button>
               </div>
             </div>
@@ -283,31 +283,31 @@ const AIAgentDevelopment = () => {
       <section className="py-16 lg:py-24 bg-muted/50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Your One-Stop Shop for AI Agent Development Services</h2>
-          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="lg:col-span-1">
-              <div className="flex flex-col space-y-2">
+          <div className="grid lg:grid-cols-12 gap-8 max-w-6xl mx-auto">
+            <div className="lg:col-span-4">
+              <div className="flex flex-col space-y-3">
                 {aiServices.map((service, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveServiceTab(index)}
-                    className={`text-left p-4 rounded-lg transition-all duration-200 ${
+                    className={`text-left p-4 rounded-lg transition-all duration-300 hover:shadow-md ${
                       activeServiceTab === index
-                        ? 'bg-primary text-primary-foreground shadow-lg'
-                        : 'bg-background hover:bg-muted border border-border'
+                        ? 'bg-primary text-primary-foreground shadow-lg transform scale-[1.02]'
+                        : 'bg-background hover:bg-muted border border-border hover:border-primary/20'
                     }`}
                   >
-                    <span className="font-medium">{service.title}</span>
+                    <span className="font-medium text-sm leading-tight">{service.title}</span>
                   </button>
                 ))}
               </div>
             </div>
-            <div className="lg:col-span-2">
-              <Card className="h-full">
+            <div className="lg:col-span-8">
+              <Card className="h-full shadow-lg border-0 bg-background/95 backdrop-blur">
                 <CardHeader>
-                  <CardTitle className="text-xl">{aiServices[activeServiceTab].title}</CardTitle>
+                  <CardTitle className="text-2xl font-bold">{aiServices[activeServiceTab].title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-lg">
                     {aiServices[activeServiceTab].content}
                   </p>
                 </CardContent>
@@ -416,58 +416,81 @@ const AIAgentDevelopment = () => {
       </section>
 
       {/* AI Agent Solutions for Industries */}
-      <section className="py-16 lg:py-24 bg-muted/50">
-        <div className="container mx-auto px-4">
+      <section className="py-16 lg:py-24 relative">
+        {/* Particle Background for this section */}
+        {init && (
+          <Particles
+            id="industry-particles"
+            options={{
+              ...particlesOptions,
+              particles: {
+                ...particlesOptions.particles,
+                number: {
+                  density: {
+                    enable: true,
+                  },
+                  value: 30,
+                },
+                opacity: {
+                  value: 0.1,
+                },
+              },
+            }}
+            className="absolute inset-0 z-0"
+          />
+        )}
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">AI Agent Solutions for Industries</h2>
           <div className="max-w-4xl mx-auto space-y-4">
             {industries.map((industry) => (
               <Collapsible
                 key={industry.id}
                 open={openIndustryAccordion === industry.id}
-                onOpenChange={(open) => setOpenIndustryAccordion(open ? industry.id : null)}
+                onOpenChange={() => setOpenIndustryAccordion(openIndustryAccordion === industry.id ? null : industry.id)}
               >
-                <Card className="overflow-hidden">
-                  <CollapsibleTrigger className="w-full">
-                    <CardHeader className="flex flex-row items-center justify-between p-6 hover:bg-muted/50 transition-colors">
+                <CollapsibleTrigger className="w-full">
+                  <Card className="glass card-hover cursor-pointer">
+                    <CardHeader className="flex flex-row items-center justify-between">
                       <div className="flex items-center gap-4">
-                        <industry.icon className="h-6 w-6 text-primary" />
-                        <CardTitle className="text-left">{industry.title}</CardTitle>
+                        <industry.icon className="h-8 w-8 text-primary" />
+                        <CardTitle className="text-xl text-left">{industry.title}</CardTitle>
                       </div>
-                      <ChevronDown 
-                        className={`h-5 w-5 transition-transform duration-200 ${
-                          openIndustryAccordion === industry.id ? 'rotate-180' : ''
-                        }`} 
-                      />
+                      <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${
+                        openIndustryAccordion === industry.id ? 'rotate-180' : ''
+                      }`} />
                     </CardHeader>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <CardContent className="pt-0 pb-6">
-                      <div className="grid md:grid-cols-3 gap-6">
-                        <div className="md:col-span-2">
+                  </Card>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="transition-all duration-300">
+                  <Card className="mt-2 bg-background/95 backdrop-blur shadow-lg">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-6">
+                        <div className="flex-shrink-0">
+                          <industry.icon className="h-12 w-12 text-primary" />
+                        </div>
+                        <div className="flex-1">
                           <p className="text-muted-foreground leading-relaxed mb-4">
                             {industry.content}
                           </p>
                           <ul className="space-y-2">
                             {industry.bullets.map((bullet, index) => (
                               <li key={index} className="flex items-center gap-2">
-                                <div className="w-2 h-2 bg-primary rounded-full" />
-                                <span className="text-sm">{bullet}</span>
+                                <div className="w-2 h-2 rounded-full bg-primary"></div>
+                                <span className="text-sm text-muted-foreground">{bullet}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
-                        <div className="flex items-center justify-center">
-                          <industry.icon className="h-16 w-16 text-primary/20" />
-                        </div>
                       </div>
                     </CardContent>
-                  </CollapsibleContent>
-                </Card>
+                  </Card>
+                </CollapsibleContent>
               </Collapsible>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="py-16 lg:py-24">
