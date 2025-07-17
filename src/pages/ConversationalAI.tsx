@@ -16,55 +16,55 @@ const ConversationalAI = () => {
       id: "chatbot-development",
       title: "Chatbot Development",
       icon: Bot,
-      content: "Build intelligent chatbots that understand context, handle complex conversations, and integrate seamlessly with your business systems."
+      content: "Provide an overview of chatbot use cases and applications. We build intelligent chatbots that understand context, handle complex conversations, and integrate seamlessly with your business systems to enhance customer interactions and automate support processes."
     },
     {
       id: "voice-assistant",
       title: "Voice Assistant Development", 
       icon: Mic,
-      content: "Create voice-powered AI assistants that respond to natural speech patterns and provide hands-free customer experiences."
+      content: "Design and build Alexa, Google Assistant, or custom voice interfaces for smart devices, enhancing customer accessibility and user experience."
     },
     {
       id: "conversation-design",
       title: "Conversation Design",
       icon: MessageCircle,
-      content: "Design natural conversation flows that guide users effectively while maintaining engagement and achieving business goals."
+      content: "Craft human-like conversational flows and scripts using NLU/NLP to ensure intuitive, accurate, and emotionally intelligent responses."
     },
     {
       id: "consulting",
       title: "Conversational AI Consulting",
       icon: Lightbulb,
-      content: "Strategic guidance on implementing conversational AI solutions that align with your business objectives and technical requirements."
+      content: "Expert-led strategy and technical guidance on implementing scalable Conversational AI that aligns with your operational and CX goals."
     },
     {
       id: "integration",
       title: "Conversational AI Integration",
       icon: Link,
-      content: "Seamlessly integrate conversational AI with your existing CRM, helpdesk, and business systems for unified operations."
+      content: "Seamless integration with CRM, ERP, contact centers, websites, and apps—empowering unified, AI-driven user interactions."
     },
     {
       id: "optimization",
       title: "Chatbot Fine-Tuning and Optimization",
       icon: Settings,
-      content: "Continuously improve chatbot performance through data analysis, user feedback, and advanced optimization techniques."
+      content: "Continuous monitoring, training, and enhancement of your chatbot performance using user behavior data and LLMs."
     },
     {
       id: "generative-ai",
       title: "Generative AI Integration",
       icon: Sparkles,
-      content: "Integrate cutting-edge generative AI capabilities to create more dynamic, creative, and contextually aware responses."
+      content: "Deploy advanced LLM-based agents to handle complex inquiries, content generation, and context-aware responses."
     },
     {
       id: "managed-services",
       title: "Managed Services",
       icon: Wrench,
-      content: "End-to-end management of your conversational AI systems including monitoring, updates, and performance optimization."
+      content: "Full-service management of your AI assistants including training, updates, analytics, and performance improvement."
     },
     {
       id: "training",
       title: "Conversation Design Training",
       icon: GraduationCap,
-      content: "Train your team in conversation design principles, AI implementation strategies, and best practices for ongoing success."
+      content: "Upskill your in-house team with tailored training on conversation design, persona creation, and user journey mapping."
     }
   ];
 
@@ -72,27 +72,27 @@ const ConversationalAI = () => {
     {
       icon: CheckCircle,
       title: "Full-cycle Conversational AI",
-      description: "We are a full-cycle development company that plans, designs, builds, and maintains conversational AI solutions."
+      description: "We plan, design, develop, deploy, and manage AI-powered assistants from end to end."
     },
     {
       icon: Globe,
       title: "Omnichannel Approach", 
-      description: "Our solutions span across chat, voice, apps, and devices to deliver seamless customer experiences."
+      description: "Deploy bots on web, mobile, WhatsApp, Messenger, Slack, voice platforms, and more."
     },
     {
       icon: Link,
       title: "Integration Capabilities",
-      description: "Easily connect with CRMs, help desks, analytics tools, and internal APIs."
+      description: "Seamless API-based and plug-in integrations with enterprise tools and cloud platforms."
     },
     {
       icon: Languages,
       title: "Flexible Communication",
-      description: "Support for multiple languages, contexts, intents, and personalized responses."
+      description: "Supports multi-lingual, voice, and text-based interactions across time zones and devices."
     },
     {
       icon: Lock,
       title: "Data Privacy and Security",
-      description: "Enterprise-grade security protocols and compliance with global privacy standards."
+      description: "Enterprise-grade encryption and compliance with GDPR, HIPAA, and other standards."
     }
   ];
 
@@ -100,34 +100,34 @@ const ConversationalAI = () => {
     "customer-support": {
       title: "Customer Support",
       items: [
-        "24/7 Automated Customer Service",
-        "Intelligent Ticket Routing",
-        "FAQ and Knowledge Base Integration", 
-        "Escalation to Human Agents",
-        "Multi-language Support",
-        "Customer Satisfaction Tracking"
+        "FAQ bots",
+        "Agent assist bots",
+        "Ticket generation bots",
+        "Escalation workflows",
+        "Voice support AI",
+        "24/7 multilingual support"
       ]
     },
     "business-automation": {
       title: "Business Process Automation",
       items: [
-        "Knowledge Base Integration",
-        "Appointment Scheduling",
-        "Notification Chatbots",
-        "Automated Billing and Invoicing",
-        "Inventory Management",
-        "Employee Onboarding"
+        "Knowledge base integration",
+        "Notification/chat alerts",
+        "Appointment scheduling",
+        "Invoice and billing automation",
+        "Employee onboarding",
+        "Inventory sync"
       ]
     },
     "marketing-sales": {
-      title: "Marketing and Sales",
+      title: "Marketing & Sales",
       items: [
-        "Lead Generation and Qualification",
-        "Product Recommendations",
-        "Sales Funnel Automation",
-        "Customer Feedback Collection",
-        "Promotional Campaign Management",
-        "Cross-selling and Upselling"
+        "Lead qualification bots",
+        "Conversational landing pages",
+        "Personalized upselling bots",
+        "Newsletter bots",
+        "WhatsApp and SMS campaigns",
+        "Generative content agents"
       ]
     }
   };
@@ -204,28 +204,80 @@ const ConversationalAI = () => {
   const developmentProcess = [
     {
       step: "01",
-      title: "Consultation and Requirement Analysis",
-      description: "Understanding your goals and customer needs to define the scope of the AI solution."
+      title: "Discovery",
+      description: "Understanding your business goals, customer needs, and technical requirements to define the scope of the AI solution."
     },
     {
       step: "02",
-      title: "AI Design and Development",
-      description: "We create the AI models, develop conversational flows, and ensure natural language understanding through advanced NLP techniques."
+      title: "Data Analysis",
+      description: "Analyzing existing customer data, conversation patterns, and business processes to inform AI design."
     },
     {
       step: "03",
-      title: "Integration with Systems",
-      description: "Our team integrates conversational AI with your existing systems, including CRMs, customer support tools, and communication platforms."
+      title: "Use Case Prioritization",
+      description: "Identifying and prioritizing the most impactful conversational AI use cases for your business."
     },
     {
       step: "04",
-      title: "Testing and Quality Assurance",
-      description: "Comprehensive testing to ensure the AI performs as expected in real-world scenarios."
+      title: "User Persona Identification",
+      description: "Defining target user personas and their specific needs, preferences, and communication styles."
     },
     {
       step: "05",
-      title: "Deployment and Continuous Optimization",
-      description: "Post-deployment support and continuous improvement based on performance analytics and user feedback."
+      title: "User Journey Mapping",
+      description: "Mapping customer journey touchpoints and conversation flows to optimize user experience."
+    },
+    {
+      step: "06",
+      title: "Bot Persona Development",
+      description: "Creating a consistent AI personality that aligns with your brand voice and customer expectations."
+    },
+    {
+      step: "07",
+      title: "Flow Chart Creation & Dialog Development",
+      description: "Designing conversation flows and developing natural language processing capabilities."
+    },
+    {
+      step: "08",
+      title: "AI Design Development/Tuning",
+      description: "Building and fine-tuning AI models using advanced machine learning and NLP techniques."
+    },
+    {
+      step: "09",
+      title: "User Testing",
+      description: "Comprehensive testing with real users to ensure the AI performs as expected in real-world scenarios."
+    },
+    {
+      step: "10",
+      title: "AI Optimization Post-Launch",
+      description: "Continuous improvement and optimization based on performance analytics and user feedback."
+    }
+  ];
+
+  const conversationDesignOfferings = [
+    {
+      id: "consulting",
+      title: "Conversation Design Consulting",
+      icon: Lightbulb,
+      content: "Strategic consultation on conversation design best practices, AI implementation strategies, and user experience optimization.",
+      expectations: [
+        "AI strategy development",
+        "Training & workshops", 
+        "Persona-based flow creation",
+        "Business process optimization"
+      ]
+    },
+    {
+      id: "services",
+      title: "Conversation Design Services",
+      icon: MessageCircle,
+      content: "End-to-end design of conversational flows, persona blueprints, and NLU structures for chat and voice-based agents."
+    },
+    {
+      id: "training",
+      title: "Conversation Design Training",
+      icon: GraduationCap,
+      content: "Interactive sessions, custom training kits, and platform-specific tutorials to empower internal teams to create better AI experiences."
     }
   ];
 
@@ -266,7 +318,7 @@ const ConversationalAI = () => {
             </div>
             <div className="flex justify-center lg:justify-end">
               <img 
-                src="/lovable-uploads/dc9c8990-8b64-4b46-a506-f5eee530e06f.png" 
+                src="/lovable-uploads/a76869f7-65d2-4e13-9b9a-6d18a319c0d7.png" 
                 alt="AI Robot Assistant" 
                 className="w-80 h-80 object-contain animate-float"
               />
@@ -280,7 +332,7 @@ const ConversationalAI = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Conversational AI Services Include</h2>
           <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible defaultValue="chatbot-development" className="space-y-4">
               {services.map((service) => (
                 <AccordionItem key={service.id} value={service.id} className="border rounded-lg bg-background shadow-sm">
                   <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-muted/50 transition-colors">
@@ -290,7 +342,14 @@ const ConversationalAI = () => {
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-6">
-                    <p className="text-muted-foreground leading-relaxed">{service.content}</p>
+                    <div className="flex gap-6 items-start">
+                      <div className="flex-1">
+                        <p className="text-muted-foreground leading-relaxed">{service.content}</p>
+                      </div>
+                      <div className="flex-shrink-0 w-16 h-16 bg-muted/20 rounded-lg flex items-center justify-center">
+                        <service.icon className="h-8 w-8 text-primary" />
+                      </div>
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -363,24 +422,74 @@ const ConversationalAI = () => {
         </div>
       </section>
 
-      {/* Development Process Section */}
+      {/* Our Proven Conversation Design Process Section */}
       <section className="py-16 lg:py-24 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Conversational AI Development Process</h2>
-          <div className="max-w-4xl mx-auto">
-            {developmentProcess.map((process, index) => (
-              <div key={index} className="flex gap-6 mb-8 last:mb-0">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
-                    {process.step}
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Proven Conversation Design Process</h2>
+          <div className="max-w-6xl mx-auto">
+            <div className="relative">
+              {/* Semi-circular timeline layout */}
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+                {developmentProcess.map((process, index) => (
+                  <div key={index} className="text-center">
+                    <div className="relative mb-4">
+                      <div className="w-16 h-16 mx-auto rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-lg">
+                        {process.step}
+                      </div>
+                      {index < developmentProcess.length - 1 && (
+                        <div className="hidden md:block absolute top-8 left-16 w-full h-0.5 bg-primary/30"></div>
+                      )}
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2">{process.title}</h3>
+                    <p className="text-sm text-muted-foreground">{process.description}</p>
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{process.title}</h3>
-                  <p className="text-muted-foreground">{process.description}</p>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Conversation Design Offerings Section */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Conversation Design Offerings</h2>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {conversationDesignOfferings.map((offering) => (
+                <AccordionItem key={offering.id} value={offering.id} className="border rounded-lg bg-background shadow-sm">
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-muted/50 transition-colors">
+                    <div className="flex items-center gap-4">
+                      <offering.icon className="h-6 w-6 text-primary" />
+                      <span className="text-lg font-semibold text-left">{offering.title}</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="flex gap-6 items-start">
+                      <div className="flex-1">
+                        <p className="text-muted-foreground leading-relaxed mb-4">{offering.content}</p>
+                        {offering.expectations && (
+                          <div>
+                            <h4 className="font-semibold mb-2">What You Can Expect:</h4>
+                            <ul className="space-y-1">
+                              {offering.expectations.map((expectation, index) => (
+                                <li key={index} className="flex items-center gap-2 text-muted-foreground">
+                                  <CheckCircle className="h-4 w-4 text-primary" />
+                                  {expectation}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
+                      <div className="flex-shrink-0 w-16 h-16 bg-muted/20 rounded-lg flex items-center justify-center">
+                        <offering.icon className="h-8 w-8 text-primary" />
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
@@ -422,8 +531,8 @@ const ConversationalAI = () => {
                       ))}
                     </div>
                     <div className="text-center">
-                      <Button className="glass px-8 py-3 cta-ripple hover:scale-105 transition-transform">
-                        🟧 Request a Quote
+                      <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                        Request a Quote
                       </Button>
                     </div>
                   </CardContent>
