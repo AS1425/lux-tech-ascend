@@ -20,12 +20,7 @@ const TechStackTabs = () => {
       id: 'ml',
       title: 'Machine Learning for Smarter Models',
       icon: Settings,
-      description: 'Our LLM solutions are backed by powerful ML techniques—supervised, unsupervised, reinforcement, and deep learning. As part of our machine learning consultancy, we tailor algorithms to optimize model accuracy and adaptability.',
-      techStack: [
-        '**Machine Learning**: TensorFlow, Keras, PyTorch',
-        '**DL Models**: RNN, LSTM, CNN, GAN',
-        '**Platforms**: AWS, GCP, Azure'
-      ]
+      description: 'Our LLM solutions are backed by powerful ML techniques—supervised, unsupervised, reinforcement, and deep learning. As part of our machine learning consultancy, we tailor algorithms to optimize model accuracy and adaptability.'
     },
     {
       id: 'training',
@@ -56,20 +51,40 @@ const TechStackTabs = () => {
   return (
     <div className="w-full">
       {/* Tab Navigation */}
-      <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start overflow-x-auto pb-2">
-        {techStackData.map((tab, index) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(index)}
-            className={`px-6 py-3 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 ${
-              activeTab === index
-                ? 'bg-primary text-primary-foreground shadow-lg'
-                : 'bg-background border border-border hover:bg-muted/80 text-muted-foreground hover:text-foreground'
-            }`}
-          >
-            {tab.title}
-          </button>
-        ))}
+      <div className="flex flex-col items-center gap-3 mb-8">
+        {/* First row with 4 buttons */}
+        <div className="flex flex-wrap gap-3 justify-center">
+          {techStackData.slice(0, 4).map((tab, index) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(index)}
+              className={`px-6 py-3 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 ${
+                activeTab === index
+                  ? 'bg-primary text-primary-foreground shadow-lg'
+                  : 'bg-background border border-border hover:bg-muted/80 text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              {tab.title}
+            </button>
+          ))}
+        </div>
+        
+        {/* Second row with 2 centered buttons */}
+        <div className="flex gap-3 justify-center">
+          {techStackData.slice(4).map((tab, index) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(index + 4)}
+              className={`px-6 py-3 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 ${
+                activeTab === index + 4
+                  ? 'bg-primary text-primary-foreground shadow-lg'
+                  : 'bg-background border border-border hover:bg-muted/80 text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              {tab.title}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Tab Content */}
@@ -82,21 +97,9 @@ const TechStackTabs = () => {
             <h3 className="text-2xl font-bold mb-4 text-foreground">
               {techStackData[activeTab].title}
             </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               {techStackData[activeTab].description}
             </p>
-            {techStackData[activeTab].techStack && (
-              <div className="space-y-2">
-                <h4 className="text-lg font-semibold text-foreground mb-3">🔧 Tech Stack:</h4>
-                <ul className="space-y-2">
-                  {techStackData[activeTab].techStack.map((item, idx) => (
-                    <li key={idx} className="text-muted-foreground">
-                      <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </div>
         </div>
       </div>
