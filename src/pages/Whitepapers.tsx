@@ -158,40 +158,39 @@ const Whitepapers = () => {
           </section>
         )}
 
-        {/* Resource Grid - Balanced Masonry Layout */}
         <section id="resources" className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style={{ gridAutoFlow: 'dense' }}>
               {regularWhitepapers.map((whitepaper, index) => (
                 <Card 
                   key={whitepaper.id} 
-                  className="group hover:shadow-xl transition-all duration-300 hover:scale-105 border-primary/10 hover:border-primary/30 w-full h-fit"
+                  className="group hover:shadow-xl transition-all duration-300 hover:scale-105 border-primary/10 hover:border-primary/30 w-full h-full flex flex-col"
                   style={{
                     // Create the balanced masonry effect
                     ...(index === 3 && { gridColumn: '1' }), // 4th card (Marketing ROI) goes under 1st card
                     ...(index === 4 && { gridColumn: '2' }), // 5th card (Analytics) goes under 2nd card
                   }}
                 >
-                  <CardHeader className="text-center">
+                  <CardHeader className="text-center flex-shrink-0">
                     <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
                       {whitepaper.icon}
                     </div>
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors mb-3">
                       {whitepaper.title}
                     </CardTitle>
-                    <CardDescription className="text-sm">
+                    <CardDescription className="text-sm text-muted-foreground">
                       {whitepaper.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
+                  <CardContent className="flex flex-col flex-grow justify-between space-y-4 pt-0">
+                    <div className="flex flex-wrap gap-2 justify-center">
                       {whitepaper.tags.map((tag) => (
                         <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary text-xs">
                           {tag}
                         </Badge>
                       ))}
                     </div>
-                    <Button className="w-full bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90">
+                    <Button className="w-full mt-auto bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90">
                       <Download className="mr-2 h-4 w-4" />
                       Download PDF
                     </Button>
