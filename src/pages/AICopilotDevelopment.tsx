@@ -1,8 +1,9 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Brain, Bot, Zap, Users, BarChart3, Settings, CheckCircle, ArrowRight, Lightbulb, Target, Workflow, TrendingUp } from 'lucide-react';
+import { Brain, Bot, Zap, Users, BarChart3, Settings, CheckCircle, ArrowRight, Lightbulb, Target, Workflow, TrendingUp, FileText, Database, Rocket, Wrench, Plug, RefreshCw } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const AICopilotDevelopment = () => {
   const [visibleSections, setVisibleSections] = useState<number[]>([]);
@@ -222,14 +223,133 @@ const AICopilotDevelopment = () => {
         </div>
       </section>
 
-      {/* Why AI Copilot Section */}
-      <section className="py-20">
+      {/* Our AI Copilot Development Services Section */}
+      <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={addToRefs}
             data-section="2"
             className={`text-center mb-16 transition-all duration-1000 ${
               visibleSections.includes(2) ? 'animate-fade-up opacity-100' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold font-manrope mb-6">
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Our AI Copilot Development Services
+              </span>
+            </h2>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" defaultValue="item-1" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="glass border border-primary/20 rounded-2xl overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline text-left">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                      <FileText className="w-6 h-6 text-primary" />
+                    </div>
+                    <span className="text-xl font-semibold">Strategic Blueprinting & Discovery</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-6">
+                  <div className="text-muted-foreground leading-relaxed">
+                    Before a single line of code is written, we immerse ourselves in your world. Our seasoned AI strategists collaborate closely with your team to pinpoint the precise opportunities where an intelligent assistant can deliver maximum impact. We dive deep into your operational intricacies, discussing workflows and identifying bottlenecks ripe for AI-powered augmentation. This detailed phase is about more than just planning. It's about creating a strategic blueprint that aligns your business objectives with the transformative potential of custom AI copilot development.
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="glass border border-primary/20 rounded-2xl overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline text-left">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                      <Database className="w-6 h-6 text-primary" />
+                    </div>
+                    <span className="text-xl font-semibold">Data Landscape Analysis & Preparation</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-6">
+                  <div className="text-muted-foreground leading-relaxed">
+                    Great copilots run on great data. In this phase, we assess the availability, quality, and structure of your internal data. We clean, tag, label, and enrich your datasets to ensure the copilot learns from accurate, real-world examples. From CRM logs to operational databases, we organize your data foundation for optimal AI learning and output reliability.
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="glass border border-primary/20 rounded-2xl overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline text-left">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                      <Rocket className="w-6 h-6 text-primary" />
+                    </div>
+                    <span className="text-xl font-semibold">Rapid Prototyping & Validation</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-6">
+                  <div className="text-muted-foreground leading-relaxed">
+                    Speed matters. We develop quick, functional prototypes to validate AI use cases before full-scale deployment. These early builds are tested with real users in real scenarios, helping identify friction points and ensuring the copilot delivers real value—not just theoretical benefits.
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="glass border border-primary/20 rounded-2xl overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline text-left">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                      <Bot className="w-6 h-6 text-primary" />
+                    </div>
+                    <span className="text-xl font-semibold">Tailored AI Companion Engineering</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-6">
+                  <div className="text-muted-foreground leading-relaxed">
+                    We custom-develop your AI copilot using advanced large language models, fine-tuned for your exact domain and needs. Whether it's scheduling, summarizing meetings, guiding workflows, or handling internal queries, the AI is trained to become a seamless part of your team's daily operations.
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="glass border border-primary/20 rounded-2xl overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline text-left">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                      <Plug className="w-6 h-6 text-primary" />
+                    </div>
+                    <span className="text-xl font-semibold">Seamless System Integration & Deployment</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-6">
+                  <div className="text-muted-foreground leading-relaxed">
+                    Your copilot won't work in isolation. We ensure it integrates securely with your tech stack—whether that's CRM, ERP, ticketing systems, or custom APIs. Our deployment strategy includes staging, user training, and phased rollout to minimize disruption while maximizing adoption.
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="glass border border-primary/20 rounded-2xl overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline text-left">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                      <RefreshCw className="w-6 h-6 text-primary" />
+                    </div>
+                    <span className="text-xl font-semibold">Continuous Enhancement & Dedicated Support</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-6">
+                  <div className="text-muted-foreground leading-relaxed">
+                    AI evolution never stops. Post-launch, we closely monitor user feedback, performance metrics, and edge cases to iteratively improve your copilot. From adding new skills to fine-tuning responses, our dedicated support team ensures your AI continues to grow with your business.
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Why AI Copilot Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div 
+            ref={addToRefs}
+            data-section="3"
+            className={`text-center mb-16 transition-all duration-1000 ${
+              visibleSections.includes(3) ? 'animate-fade-up opacity-100' : 'opacity-0 translate-y-8'
             }`}
           >
             <h2 className="text-4xl md:text-5xl font-bold font-manrope mb-6">
@@ -245,7 +365,7 @@ const AICopilotDevelopment = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
-              const isVisible = visibleSections.includes(2);
+              const isVisible = visibleSections.includes(3);
               
               return (
                 <div
@@ -272,9 +392,9 @@ const AICopilotDevelopment = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={addToRefs}
-            data-section="3"
+            data-section="4"
             className={`text-center mb-16 transition-all duration-1000 ${
-              visibleSections.includes(3) ? 'animate-fade-up opacity-100' : 'opacity-0 translate-y-8'
+              visibleSections.includes(4) ? 'animate-fade-up opacity-100' : 'opacity-0 translate-y-8'
             }`}
           >
             <h2 className="text-4xl md:text-5xl font-bold font-manrope mb-6">
@@ -289,7 +409,7 @@ const AICopilotDevelopment = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {processSteps.map((step, index) => {
-              const isVisible = visibleSections.includes(3);
+              const isVisible = visibleSections.includes(4);
               
               return (
                 <div
@@ -320,9 +440,9 @@ const AICopilotDevelopment = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div 
               ref={addToRefs}
-              data-section="4"
+              data-section="5"
               className={`transition-all duration-1000 ${
-                visibleSections.includes(4) ? 'animate-fade-up opacity-100' : 'opacity-0 translate-y-8'
+                visibleSections.includes(5) ? 'animate-fade-up opacity-100' : 'opacity-0 translate-y-8'
               }`}
             >
               <h2 className="text-4xl md:text-5xl font-bold font-manrope mb-6">
@@ -354,7 +474,7 @@ const AICopilotDevelopment = () => {
             </div>
             <div 
               className={`transition-all duration-1000 delay-300 ${
-                visibleSections.includes(4) ? 'animate-fade-left opacity-100' : 'opacity-0 translate-x-8'
+                visibleSections.includes(5) ? 'animate-fade-left opacity-100' : 'opacity-0 translate-x-8'
               }`}
             >
               <div className="glass p-8 rounded-3xl border border-primary/20">
