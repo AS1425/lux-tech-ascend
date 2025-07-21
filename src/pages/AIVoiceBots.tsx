@@ -1,12 +1,82 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mic, MessageSquare, Clock, Bot, Zap, Users, Phone, Calendar, ShoppingCart, Headphones } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Mic, MessageSquare, Clock, Bot, Zap, Users, Phone, Calendar, ShoppingCart, Headphones, UserCheck, Target, UserCog, ClipboardCheck, CreditCard, Handshake, BarChart3, Volume2, FileText, TrendingUp } from 'lucide-react';
 
 const AIVoiceBots = () => {
+  const [activeIndustryTab, setActiveIndustryTab] = useState(0);
+
+  const industryUseCases = [
+    {
+      id: 'client-support',
+      title: 'Client Support',
+      icon: Headphones,
+      description: 'Deliver exceptionally helpful 24/7 voice bots that handle inquiries, troubleshoot issues, and provide instant resolutions. No more long wait times – just human-like interactions that boost customer satisfaction while cutting down operational costs.'
+    },
+    {
+      id: 'lead-qualification',
+      title: 'Lead Qualification in Sales',
+      icon: Target,
+      description: 'Automatically qualify prospects with intelligent voice bots that ask the right questions, assess customer needs, and route high-quality leads to your sales team for faster conversions.'
+    },
+    {
+      id: 'recruitment',
+      title: 'Streamlining Recruitment',
+      icon: UserCog,
+      description: 'Transform your hiring process with AI voice bots that conduct initial candidate screenings, schedule interviews, and collect essential information, saving HR teams countless hours.'
+    },
+    {
+      id: 'appointment-booking',
+      title: 'Effortless Appointment Booking',
+      icon: ClipboardCheck,
+      description: 'Enable seamless appointment scheduling with voice bots that check availability, book appointments, send confirmations, and handle rescheduling requests automatically.'
+    },
+    {
+      id: 'debt-recovery',
+      title: 'Simplified Debt Recovery',
+      icon: CreditCard,
+      description: 'Handle debt collection calls professionally with AI voice bots that maintain compliance, negotiate payment plans, and provide options while preserving customer relationships.'
+    }
+  ];
+
+  const voiceBotFeatures = [
+    {
+      id: 'handoff',
+      title: 'Handoff from Chatbot to Human Agent',
+      icon: Handshake,
+      description: 'Get a flawless user journey with seamless bot-to-agent handoff. When a query requires a personal touch, the AI smoothly transfers the call to a live agent – complete with contact history and insights – so no client ever has to repeat themselves.',
+      defaultOpen: true
+    },
+    {
+      id: 'performance',
+      title: 'Call Performance Evaluation',
+      icon: BarChart3,
+      description: 'Automatically analyze bot calls for quality, sentiment, and resolution accuracy.'
+    },
+    {
+      id: 'speech-recognition',
+      title: 'Speech Recognition Technology',
+      icon: Volume2,
+      description: 'Leverage advanced speech-to-text engines to recognize accents, tones, and variations.'
+    },
+    {
+      id: 'call-recaps',
+      title: 'Intelligent Call Recaps',
+      icon: FileText,
+      description: 'Summarize calls and push structured data into your CRM for next-step actions.'
+    },
+    {
+      id: 'metrics',
+      title: 'Actionable Metrics & Reporting',
+      icon: TrendingUp,
+      description: 'Access dashboards to track KPIs, agent escalations, resolution rate, and more.'
+    }
+  ];
+
   const features = [
     {
       icon: Clock,
@@ -170,6 +240,82 @@ const AIVoiceBots = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Use Cases - Speech-Enabled Bots Section */}
+      <section className="py-16 lg:py-24 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Industry Use Cases – Speech-Enabled Bots</h2>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-12 gap-8">
+              {/* Left Column: Vertical Navigation Tabs */}
+              <div className="lg:col-span-4">
+                <div className="flex flex-col gap-3">
+                  {industryUseCases.map((useCase, index) => (
+                    <button
+                      key={useCase.id}
+                      onClick={() => setActiveIndustryTab(index)}
+                      className={`px-6 py-4 rounded-full font-semibold text-left transition-all duration-300 ${
+                        activeIndustryTab === index
+                          ? 'bg-primary text-primary-foreground shadow-lg'
+                          : 'bg-background border border-border hover:bg-muted/80 text-muted-foreground hover:text-foreground'
+                      }`}
+                    >
+                      {useCase.title}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Column: Dynamic Content */}
+              <div className="lg:col-span-8">
+                <div className="bg-background rounded-lg shadow-lg p-8 h-full flex items-center animate-fade-in">
+                  <div className="w-full text-center">
+                    <div className="flex justify-center mb-6">
+                      {React.createElement(industryUseCases[activeIndustryTab].icon, {
+                        className: "h-16 w-16 text-primary"
+                      })}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4 text-foreground">
+                      {industryUseCases[activeIndustryTab].title}
+                    </h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      {industryUseCases[activeIndustryTab].description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Voice Bot Feature Accordion Section */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Powerful Features That Elevate Your Voice Bot Experience</h2>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" defaultValue="handoff" collapsible>
+              {voiceBotFeatures.map((feature) => (
+                <AccordionItem key={feature.id} value={feature.id} className="border rounded-lg mb-4 shadow-sm">
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                    <div className="flex items-center gap-4">
+                      {React.createElement(feature.icon, {
+                        className: "h-6 w-6 text-primary"
+                      })}
+                      <span className="font-semibold text-left">{feature.title}</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
