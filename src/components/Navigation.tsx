@@ -93,7 +93,7 @@ const Navigation = () => {
     { label: 'Blog', href: '/blog' },
     { label: 'Whitepapers', href: '#whitepapers' },
     { label: 'Webinars', href: '#webinars' },
-    { label: 'AI Guides', href: '#guides' },
+    { label: 'AI Guides', href: '/ai-guide' },
   ];
 
   const companyItems = [
