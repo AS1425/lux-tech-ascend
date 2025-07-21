@@ -1,9 +1,11 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { 
   Brain, 
   Target, 
@@ -15,7 +17,17 @@ import {
   ArrowRight,
   Zap,
   BarChart3,
-  Settings
+  Settings,
+  Bot,
+  MessageSquare,
+  Headphones,
+  Sparkles,
+  Palette,
+  Workflow,
+  BarChart,
+  Gauge,
+  TrendingDown,
+  Megaphone
 } from 'lucide-react';
 
 const AIConsulting = () => {
@@ -282,6 +294,267 @@ const AIConsulting = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solve Real Business Challenges with AI */}
+      <section className="py-20 bg-accent/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-6 text-foreground">
+                Solve Real Business Challenges with AI
+              </h2>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Left Column - Tabs */}
+              <div className="lg:col-span-1">
+                <Tabs defaultValue="ai-agents" orientation="vertical" className="w-full">
+                  <TabsList className="flex flex-col h-auto w-full bg-background/50 p-2">
+                    <TabsTrigger value="ai-agents" className="w-full justify-start py-3 px-4 text-left data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                      <Bot className="mr-2 h-4 w-4" />
+                      AI Agents
+                    </TabsTrigger>
+                    <TabsTrigger value="conversational-bots" className="w-full justify-start py-3 px-4 text-left data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                      <MessageSquare className="mr-2 h-4 w-4" />
+                      Conversational Bots
+                    </TabsTrigger>
+                    <TabsTrigger value="customer-support" className="w-full justify-start py-3 px-4 text-left data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                      <Headphones className="mr-2 h-4 w-4" />
+                      Customer Support Strategy
+                    </TabsTrigger>
+                    <TabsTrigger value="generative-ai" className="w-full justify-start py-3 px-4 text-left data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                      <Sparkles className="mr-2 h-4 w-4" />
+                      Generative AI Solutions
+                    </TabsTrigger>
+                    <TabsTrigger value="conversational-design" className="w-full justify-start py-3 px-4 text-left data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                      <Palette className="mr-2 h-4 w-4" />
+                      Conversational AI & Design
+                    </TabsTrigger>
+                    <TabsTrigger value="ai-copilot" className="w-full justify-start py-3 px-4 text-left data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                      <Workflow className="mr-2 h-4 w-4" />
+                      AI Copilot
+                    </TabsTrigger>
+                    <TabsTrigger value="conversational-analytics" className="w-full justify-start py-3 px-4 text-left data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                      <BarChart className="mr-2 h-4 w-4" />
+                      Conversational Analytics
+                    </TabsTrigger>
+                  </TabsList>
+                </Tabs>
+              </div>
+
+              {/* Right Column - Content */}
+              <div className="lg:col-span-2">
+                <Tabs defaultValue="ai-agents" orientation="vertical" className="w-full">
+                  <TabsContent value="ai-agents" className="mt-0">
+                    <Card className="glass rounded-2xl shadow-lg">
+                      <CardContent className="p-8">
+                        <h3 className="text-2xl font-semibold mb-4 text-foreground">AI Agents</h3>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                          Supercharge productivity with autonomous tools that think, learn, and act. From optimizing workflows to making real-time decisions, we build agents that handle complexity, reduce manual effort, and scale across departments—so your team can focus on impact.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  <TabsContent value="conversational-bots" className="mt-0">
+                    <Card className="glass rounded-2xl shadow-lg">
+                      <CardContent className="p-8">
+                        <h3 className="text-2xl font-semibold mb-4 text-foreground">Conversational Bots</h3>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                          Transform customer interactions with intelligent bots that understand context, sentiment, and intent. Our conversational solutions provide 24/7 support, streamline operations, and deliver personalized experiences at scale.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  <TabsContent value="customer-support" className="mt-0">
+                    <Card className="glass rounded-2xl shadow-lg">
+                      <CardContent className="p-8">
+                        <h3 className="text-2xl font-semibold mb-4 text-foreground">Customer Support Strategy</h3>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                          Revolutionize your support operations with AI-powered strategies that reduce response times, improve resolution rates, and enhance customer satisfaction through intelligent routing and automated assistance.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  <TabsContent value="generative-ai" className="mt-0">
+                    <Card className="glass rounded-2xl shadow-lg">
+                      <CardContent className="p-8">
+                        <h3 className="text-2xl font-semibold mb-4 text-foreground">Generative AI Solutions</h3>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                          Unlock creative potential with generative AI that produces content, designs, and solutions tailored to your brand. From automated content creation to personalized recommendations, boost efficiency and innovation.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  <TabsContent value="conversational-design" className="mt-0">
+                    <Card className="glass rounded-2xl shadow-lg">
+                      <CardContent className="p-8">
+                        <h3 className="text-2xl font-semibold mb-4 text-foreground">Conversational AI & Design</h3>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                          Craft seamless conversational experiences with human-centered design principles. We create intuitive dialogue flows, natural language understanding, and engaging interactions that feel genuinely helpful.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  <TabsContent value="ai-copilot" className="mt-0">
+                    <Card className="glass rounded-2xl shadow-lg">
+                      <CardContent className="p-8">
+                        <h3 className="text-2xl font-semibold mb-4 text-foreground">AI Copilot</h3>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                          Empower your workforce with intelligent AI assistants that work alongside teams, providing real-time insights, automating routine tasks, and enhancing decision-making capabilities across all business functions.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  <TabsContent value="conversational-analytics" className="mt-0">
+                    <Card className="glass rounded-2xl shadow-lg">
+                      <CardContent className="p-8">
+                        <h3 className="text-2xl font-semibold mb-4 text-foreground">Conversational Analytics</h3>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                          Gain deep insights from every conversation with advanced analytics that reveal customer patterns, sentiment trends, and optimization opportunities to continuously improve your AI solutions.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                </Tabs>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Consulting Advantages */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-6 text-foreground">
+                AI Consulting Advantages to Your Company's Efficiency
+              </h2>
+            </div>
+
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              <AccordionItem value="operational-efficiency" className="border rounded-lg px-6 bg-background/50">
+                <AccordionTrigger className="text-left hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Gauge className="h-4 w-4 text-primary" />
+                    </div>
+                    <span className="text-lg font-semibold">Operational Efficiency</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-0 pb-6 text-muted-foreground text-base leading-relaxed">
+                  By analyzing your workflow system, AI consultants can pinpoint specific areas where digital automation could significantly boost productivity, reduce costs, and organize operations, setting the stage for a more efficient business model.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="data-driven-decisions" className="border rounded-lg px-6 bg-background/50">
+                <AccordionTrigger className="text-left hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                      <BarChart3 className="h-4 w-4 text-primary" />
+                    </div>
+                    <span className="text-lg font-semibold">Data-Driven Decision Making</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-0 pb-6 text-muted-foreground text-base leading-relaxed">
+                  Transform your decision-making process with AI-powered analytics that provide real-time insights, predictive modeling, and actionable intelligence to drive strategic business choices with confidence and precision.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="marketing-optimization" className="border rounded-lg px-6 bg-background/50">
+                <AccordionTrigger className="text-left hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Megaphone className="h-4 w-4 text-primary" />
+                    </div>
+                    <span className="text-lg font-semibold">Marketing Strategy Optimization</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-0 pb-6 text-muted-foreground text-base leading-relaxed">
+                  Revolutionize your marketing approach with AI-driven strategies that personalize customer experiences, optimize campaign performance, and maximize ROI through intelligent targeting and automated optimization.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Step-by-Step Consulting Process */}
+      <section className="py-20 bg-accent/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-6 text-foreground">
+                Enjoy the Journey to AI Excellence with Our Step-by-Step Approach
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+                Join us on a strategic journey where your business aspirations meet our expertise. Our AI consulting services help take the complexity out of technology implementation, providing a clear and concise roadmap that transforms your strategic vision into an innovative reality.
+              </p>
+            </div>
+
+            {/* Desktop/Tablet: Horizontal Steps */}
+            <div className="hidden md:grid md:grid-cols-6 gap-4 mb-8">
+              {[
+                { title: "Project Initiation", step: "01" },
+                { title: "Discovery and Planning", step: "02" },
+                { title: "Business Strategy and Change Management", step: "03" },
+                { title: "Implementation Planning", step: "04" },
+                { title: "Handover and Knowledge Transfer", step: "05" },
+                { title: "Post-launch Support and Evaluation", step: "06", highlighted: true }
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className={`relative p-6 rounded-lg text-center transition-all duration-300 hover:scale-105 ${
+                    item.highlighted 
+                      ? 'bg-primary text-primary-foreground shadow-lg animate-pulse' 
+                      : 'bg-background/50 border border-border hover:shadow-md'
+                  }`}
+                >
+                  <div className={`text-2xl font-bold mb-2 ${item.highlighted ? 'text-primary-foreground' : 'text-primary'}`}>
+                    {item.step}
+                  </div>
+                  <h3 className={`text-sm font-semibold leading-tight ${item.highlighted ? 'text-primary-foreground' : 'text-foreground'}`}>
+                    {item.title}
+                  </h3>
+                  {index < 5 && (
+                    <ArrowRight className="absolute top-1/2 -right-2 transform -translate-y-1/2 h-4 w-4 text-primary bg-background rounded-full p-0.5 hidden lg:block" />
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile: Vertical Steps */}
+            <div className="md:hidden space-y-4">
+              {[
+                { title: "Project Initiation", step: "01" },
+                { title: "Discovery and Planning", step: "02" },
+                { title: "Business Strategy and Change Management", step: "03" },
+                { title: "Implementation Planning", step: "04" },
+                { title: "Handover and Knowledge Transfer", step: "05" },
+                { title: "Post-launch Support and Evaluation", step: "06", highlighted: true }
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className={`p-6 rounded-lg transition-all duration-300 ${
+                    item.highlighted 
+                      ? 'bg-primary text-primary-foreground shadow-lg' 
+                      : 'bg-background/50 border border-border'
+                  }`}
+                >
+                  <div className="flex items-center space-x-4">
+                    <div className={`text-2xl font-bold ${item.highlighted ? 'text-primary-foreground' : 'text-primary'}`}>
+                      {item.step}
+                    </div>
+                    <h3 className={`text-lg font-semibold ${item.highlighted ? 'text-primary-foreground' : 'text-foreground'}`}>
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
