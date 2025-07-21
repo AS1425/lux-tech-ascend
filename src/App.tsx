@@ -22,6 +22,7 @@ import MachineLearningConsulting from "./pages/MachineLearningConsulting";
 import AISecurityConsulting from "./pages/AISecurityConsulting";
 import HealthcareAIConsulting from "./pages/HealthcareAIConsulting";
 import CustomSoftwareDevelopment from "./pages/CustomSoftwareDevelopment";
+import SoftwareProductDevelopment from "./pages/SoftwareProductDevelopment";
 import PoCDevelopment from "./pages/PoCDevelopment";
 import MobileAppDevelopment from "./pages/MobileAppDevelopment";
 import ConnectorDevelopment from "./pages/ConnectorDevelopment";
@@ -71,6 +72,7 @@ const App = () => (
           <Route path="/ai-security-consulting" element={<AISecurityConsulting />} />
           <Route path="/healthcare-ai-consulting" element={<HealthcareAIConsulting />} />
           <Route path="/custom-software-development" element={<CustomSoftwareDevelopment />} />
+          <Route path="/software-product-development" element={<SoftwareProductDevelopment />} />
           <Route path="/poc-development-services" element={<PoCDevelopment />} />
           <Route path="/mobile-app-development" element={<MobileAppDevelopment />} />
           <Route path="/connector-development" element={<ConnectorDevelopment />} />

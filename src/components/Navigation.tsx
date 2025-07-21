@@ -46,7 +46,7 @@ const Navigation = () => {
       { label: 'Healthcare AI Consulting', href: '/healthcare-ai-consulting' },
     ],
     'Development': [
-      { label: 'Software Product Development', href: '#software-product-development' },
+      { label: 'Software Product Development', href: '/software-product-development' },
       { label: 'PoC Development Services', href: '/poc-development-services' },
       { label: 'Mobile App Development', href: '/mobile-app-development' },
       { label: 'Connector Development', href: '/connector-development' },
@@ -59,7 +59,6 @@ const Navigation = () => {
       { label: 'IT Recruiting Services', href: '/it-recruiting-services' },
       { label: 'Conversational Analytics', href: '/conversational-analytics' },
       { label: 'AI Copilot Development', href: '/ai-copilot-development' },
-      { label: 'LLM-Orchestrator Open Source Framework', href: '#llm-orchestrator-framework' },
     ],
   };
 
