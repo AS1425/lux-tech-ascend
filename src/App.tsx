@@ -41,6 +41,7 @@ import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import AIGuide from "./pages/AIGuide";
 import CaseStudies from "./pages/CaseStudies";
+import ClientSuccessStories from "./pages/ClientSuccessStories";
 import Webinar from "./pages/Webinar";
 import Whitepapers from "./pages/Whitepapers";
 
@@ -91,6 +92,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
         <Route path="/ai-guide" element={<AIGuide />} />
         <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/client-success-stories" element={<ClientSuccessStories />} />
         <Route path="/webinar" element={<Webinar />} />
         <Route path="/whitepapers" element={<Whitepapers />} />
         </Routes>
