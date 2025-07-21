@@ -1,10 +1,12 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, Shield, DollarSign, Users, Target, TrendingUp } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { CheckCircle, Shield, DollarSign, Users, Target, TrendingUp, Zap } from 'lucide-react';
 
 const PoCDevelopment = () => {
   const benefits = [
@@ -65,6 +67,72 @@ const PoCDevelopment = () => {
       number: "06",
       title: "Presentation & Reporting",
       description: "We provide a detailed report outlining the PoC's success, challenges, and next steps for further development."
+    }
+  ];
+
+  const whenDoYouNeedPocTabs = [
+    {
+      id: "confirm-ideas",
+      title: "Confirm Ideas",
+      content: "When you have an innovative concept and need to verify its feasibility before full-scale development, PoC allows you to test key features and user interactions. This process helps identify potential challenges and necessary improvements early on, saving time and resources in the long run."
+    },
+    {
+      id: "risk-mitigation",
+      title: "Risk Mitigation",
+      content: "PoC helps identify potential technical and business risks in the early stages of development, enabling better decision-making and preventing costly mistakes."
+    },
+    {
+      id: "investor-confidence",
+      title: "Investor Confidence",
+      content: "Demonstrating a functional prototype builds investor confidence by showcasing the idea's viability and expected ROI."
+    },
+    {
+      id: "market-testing",
+      title: "Market Testing",
+      content: "PoCs can be used to validate product-market fit and collect feedback from early users or stakeholders."
+    },
+    {
+      id: "technical-feasibility",
+      title: "Technical Feasibility",
+      content: "Test integrations, scalability, and tech stack compatibility before committing full resources to the final build."
+    },
+    {
+      id: "resource-allocation",
+      title: "Resource Allocation",
+      content: "Helps in assessing whether current internal resources are enough or if additional expertise is required."
+    }
+  ];
+
+  const mainBenefits = [
+    {
+      id: "deep-expertise",
+      title: "Deep Expertise",
+      content: "Our custom software development team brings deep expertise across diverse industries, offering robust solutions that are thoroughly validated and tailored to client needs."
+    },
+    {
+      id: "realistic-deadlines",
+      title: "Realistic Deadlines",
+      content: "We commit to timelines that are achievable without compromising quality or innovation."
+    },
+    {
+      id: "professional-teams",
+      title: "Professional Teams",
+      content: "You work with dedicated experts in development, UI/UX, QA, and project management—aligned with your goals."
+    },
+    {
+      id: "smooth-delivery",
+      title: "Smooth Delivery",
+      content: "A structured delivery plan ensures clarity, consistent updates, and on-time milestones."
+    },
+    {
+      id: "security-reliability",
+      title: "Security & Reliability",
+      content: "Every prototype is built with secure architecture and data handling practices from day one."
+    },
+    {
+      id: "flexible-engagement",
+      title: "Flexible Engagement Models",
+      content: "Choose from fixed-cost, hourly, or team-augmentation models based on what suits your project best."
     }
   ];
 
@@ -156,6 +224,95 @@ const PoCDevelopment = () => {
               <div className="absolute inset-0 bg-gradient-to-tl from-secondary/10 to-primary/10 rounded-2xl" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* When Do You Need PoC Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              When Do You Need PoC?
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Identify the right time to validate your innovative concepts
+            </p>
+          </div>
+          
+          <Tabs defaultValue="confirm-ideas" className="w-full">
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Left side - Tabs list */}
+              <div className="lg:col-span-1">
+                <TabsList className="flex flex-col h-auto w-full bg-transparent space-y-2">
+                  {whenDoYouNeedPocTabs.map((tab) => (
+                    <TabsTrigger
+                      key={tab.id}
+                      value={tab.id}
+                      className="w-full justify-start p-4 text-left data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-lg transition-all duration-300"
+                    >
+                      {tab.title}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
+              
+              {/* Right side - Content */}
+              <div className="lg:col-span-2">
+                {whenDoYouNeedPocTabs.map((tab) => (
+                  <TabsContent
+                    key={tab.id}
+                    value={tab.id}
+                    className="mt-0 space-y-4"
+                  >
+                    <Card className="card-hover glass border-0 shadow-lg">
+                      <CardContent className="p-8">
+                        <div className="flex items-start space-x-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shrink-0">
+                            <Zap className="w-6 h-6 text-white" />
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-foreground mb-4">
+                              {tab.title}
+                            </h3>
+                            <p className="text-lg text-muted-foreground leading-relaxed">
+                              {tab.content}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                ))}
+              </div>
+            </div>
+          </Tabs>
+        </div>
+      </section>
+
+      {/* Main Benefits Section */}
+      <section className="py-20 px-4 bg-accent/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Main Benefits of Choosing Our PoC Development Services
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Discover why our PoC development approach delivers exceptional value
+            </p>
+          </div>
+          
+          <Accordion type="single" collapsible defaultValue="deep-expertise" className="w-full space-y-4">
+            {mainBenefits.map((benefit) => (
+              <AccordionItem key={benefit.id} value={benefit.id} className="border-0">
+                <AccordionTrigger className="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 hover:bg-white/90 transition-all duration-300 text-left text-lg font-semibold text-foreground shadow-sm">
+                  {benefit.title}
+                </AccordionTrigger>
+                <AccordionContent className="bg-white/60 backdrop-blur-sm rounded-b-lg px-6 py-4 text-muted-foreground leading-relaxed">
+                  {benefit.content}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
