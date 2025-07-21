@@ -347,28 +347,6 @@ const GenerativeAIDevelopment = () => {
         </div>
       </section>
 
-      {/* Development Process Section */}
-      <section className="py-16 lg:py-24 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Generative AI Development Process</h2>
-          <div className="max-w-4xl mx-auto">
-            {developmentProcess.map((process, index) => (
-              <div key={index} className="flex gap-6 mb-8 last:mb-0">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
-                    {process.step}
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{process.title}</h3>
-                  <p className="text-muted-foreground">{process.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Use Cases Section */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
