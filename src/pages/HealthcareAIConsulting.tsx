@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowRight, Activity, Brain, Heart, Shield, Users, Zap, TrendingUp, Target, Database, Stethoscope, UserCheck } from 'lucide-react';
 
 const HealthcareAIConsulting = () => {
@@ -245,8 +246,138 @@ const HealthcareAIConsulting = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* AI Healthcare Consulting Areas Section */}
       <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              AI Healthcare Consulting Areas We Cover
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive AI solutions tailored for every aspect of healthcare transformation and optimization.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible defaultValue="item-0" className="space-y-4">
+              <AccordionItem
+                value="item-0"
+                className="bg-card rounded-lg border shadow-md"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <span className="text-lg font-bold text-foreground">
+                    GenAI-Powered Agents
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 pt-0">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Think of these as your digital assistant for desk and nursing assistants rolled into one. Our intelligent virtual helpers take the pressure off staff by handling routine questions and generating patient information through human-like conversations. They're smart enough to guide personalized guidance while staying within clinical policies – freeing up your team to focus on what matters most: face-to-face patient care.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-1"
+                className="bg-card rounded-lg border shadow-md"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <span className="text-lg font-bold text-foreground">
+                    Medical Analytics & Data Infrastructure
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 pt-0">
+                  <p className="text-muted-foreground leading-relaxed">
+                    From clinical data pipelines to patient data lakes, we help hospitals and research centers set up secure, scalable, and interoperable systems. Our expertise ensures compliant, insightful use of health data to drive diagnoses, treatment planning, and operational efficiency.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-2"
+                className="bg-card rounded-lg border shadow-md"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <span className="text-lg font-bold text-foreground">
+                    Pharmaceutical Innovation Acceleration
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 pt-0">
+                  <p className="text-muted-foreground leading-relaxed">
+                    We assist pharma companies in leveraging AI to shorten drug discovery cycles, model molecular interactions, and identify promising candidates faster with predictive algorithms and simulation.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-3"
+                className="bg-card rounded-lg border shadow-md"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <span className="text-lg font-bold text-foreground">
+                    Next-Gen Health Tech Platforms
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 pt-0">
+                  <p className="text-muted-foreground leading-relaxed">
+                    We build and integrate next-gen platforms powered by conversational AI, virtual assistants, and LLMs to assist both patients and professionals in improving access, triage, and engagement.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-4"
+                className="bg-card rounded-lg border shadow-md"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <span className="text-lg font-bold text-foreground">
+                    Intelligent Care Coordination
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 pt-0">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Ensure continuity of care with AI systems that monitor, recommend, and escalate interventions across the care journey. From remote monitoring to smart alerts, care gaps are minimized.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-5"
+                className="bg-card rounded-lg border shadow-md"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <span className="text-lg font-bold text-foreground">
+                    Operational Excellence Engineering
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 pt-0">
+                  <p className="text-muted-foreground leading-relaxed">
+                    We optimize resource allocation, workforce productivity, and logistics through AI-powered forecasting, workflow automation, and root cause analysis.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-6"
+                className="bg-card rounded-lg border shadow-md"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <span className="text-lg font-bold text-foreground">
+                    Public Health Intelligence Systems
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 pt-0">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Support large-scale public health decisions with AI dashboards, predictive outbreak modeling, and real-time reporting. Our tools empower health agencies to act proactively, not reactively.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-accent/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative animate-fade-right">
