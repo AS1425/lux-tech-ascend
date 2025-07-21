@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { 
   Cloud, 
   Settings, 
@@ -150,6 +151,150 @@ const DigitalPlatformDevelopment = () => {
         </div>
       </section>
 
+      {/* MOCG End-to-End Digital Platform Development Services */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              MOCG End-to-End Digital Platform Development Services
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive development services covering every aspect of your digital platform journey.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
+              <AccordionItem value="item-0" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Settings className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Project Blueprint Creation</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Every great digital platform begins with a meticulously crafted roadmap. During the discovery phase, we conduct in-depth stakeholder interviews, client research, and holistic evaluations to define precise requirements and scope. With this helps us determine a full MVP scope and the right approach to validate the idea and gather early feedback. The result? A cycle-precise proposal that aligns with your strategic vision, mitigating risks and securing a successful launch.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-1" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Layers className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Platform Architecture & UX Design</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    We create scalable, high-performing architectures and intuitive UX that meets user expectations and drives platform engagement.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Monitor className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Development of Framework's Core Functionality</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    We build custom backend and frontend components tailored to your platform needs using robust frameworks and technologies.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Globe className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">System Interoperability & API Integration</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Seamlessly connect your platform to external systems and third-party services with our deep API integration capabilities.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Database className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Advanced Data Engineering & Storage Solutions</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Utilize secure and scalable data pipelines, warehouses, and analytics tools to drive platform intelligence.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Shield className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Compliance & Security Fortification</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Ensure GDPR, HIPAA, and other compliance standards through robust security protocols and architecture.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Zap className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Optimization & Automation of IT Infrastructure</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Automate platform deployment and monitoring using DevOps best practices to ensure high availability and performance.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-7" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Cloud className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Legacy Ecosystem Modernization & Improvement</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Upgrade outdated infrastructure and refactor monolithic code to adopt microservices, cloud, and agile development.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-8" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Users className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Continuous Support & Platform Management</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Maintain platform health post-launch with proactive support, monitoring, and optimization.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
       {/* Why Digital Platform Development Section */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -249,8 +394,124 @@ const DigitalPlatformDevelopment = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* What Sets Our Digital Platform Development Services Apart */}
       <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              What Sets Our Digital Platform Development Services Apart
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Discover the unique advantages that make our digital platform development services stand out in the industry.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
+              <AccordionItem value="item-0" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Globe className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Industry-Agnostic Expertise</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Our proficiency spans diverse sectors, allowing us to grasp your unique challenges and deliver bespoke platform solutions that perfectly align with your agency's objectives.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-1" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Database className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Deep Domain Knowledge</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    We bring years of experience across industries, giving us valuable context to tailor platform features to your operational needs.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <BarChart3 className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Turning Data into Action</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    We help you transform raw data into actionable insights with integrated analytics, dashboards, and intelligent workflows.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <CheckCircle className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">On-Time, On-Budget, On-Point</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Proven methodologies and agile execution ensure that your platform is delivered efficiently, aligned with scope and timeline.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Shield className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Ironclad Security</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    We employ enterprise-grade security protocols and proactive monitoring to protect your data and reputation.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Zap className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Hassle-Free Development Journey</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    From planning to deployment, our communication, collaboration, and transparency ensure smooth sailing throughout.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Settings className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Flexible Engagement Models</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Choose from T&M, fixed price, or dedicated team models tailored to your project type, budget, and timeline.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-right">
