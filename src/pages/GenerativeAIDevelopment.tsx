@@ -9,7 +9,7 @@ import { Sparkles, Cpu, Palette, Music, FileText, Image, Zap, BarChart3, Cog, Br
 
 const GenerativeAIDevelopment = () => {
   const [activeServiceTab, setActiveServiceTab] = useState("llm-chatbots");
-  const [activeProcessStep, setActiveProcessStep] = useState(4); // LOFT highlighted by default
+  const [activeProcessStep, setActiveProcessStep] = useState(1); // First step highlighted by default
 
   const features = [
     {
@@ -214,19 +214,12 @@ const GenerativeAIDevelopment = () => {
     },
     {
       id: 4,
-      title: "LOFT (Framework Acceleration)",
-      description: "Experts speed up delivery with our internal LOFT framework built for efficient generative AI development.",
-      icon: Zap,
-      highlighted: true
-    },
-    {
-      id: 5,
       title: "Fine-tuning",
       description: "Refine the model with real-world data and use case feedback to improve contextual response and control.",
       icon: Target
     },
     {
-      id: 6,
+      id: 5,
       title: "Deployment & Maintenance",
       description: "Deploy to your environment and provide ongoing support, updates, and performance monitoring.",
       icon: Wrench
@@ -498,39 +491,39 @@ const GenerativeAIDevelopment = () => {
           
           {/* Desktop Horizontal Scroll */}
           <div className="hidden lg:block">
-            <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-8 justify-center">
-              <div className="flex gap-6 min-w-max">
+            <div className="overflow-x-auto scrollbar-hide pb-8">
+              <div className="flex gap-6 justify-start px-4" style={{ minWidth: 'max-content' }}>
                 {processSteps.map((step) => (
                   <div
                     key={step.id}
                     onClick={() => setActiveProcessStep(step.id)}
-                    className={`cursor-pointer transition-all duration-300 rounded-xl p-6 min-w-[280px] max-w-[280px] ${
-                      activeProcessStep === step.id || step.highlighted
+                    className={`cursor-pointer transition-all duration-300 rounded-xl p-6 w-[280px] flex-shrink-0 ${
+                      activeProcessStep === step.id
                         ? 'bg-primary text-primary-foreground shadow-lg scale-105'
                         : 'bg-card text-card-foreground hover:bg-muted/80'
                     }`}
                     style={{
-                      boxShadow: activeProcessStep === step.id || step.highlighted 
+                      boxShadow: activeProcessStep === step.id 
                         ? '0 8px 24px rgba(0, 0, 0, 0.15)' 
                         : '0 2px 8px rgba(0, 0, 0, 0.08)'
                     }}
                   >
                     <div className="text-center">
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold ${
-                        activeProcessStep === step.id || step.highlighted
+                        activeProcessStep === step.id
                           ? 'bg-primary-foreground text-primary'
                           : 'bg-primary text-primary-foreground'
                       }`}>
                         {step.id}
                       </div>
                       <step.icon className={`h-8 w-8 mx-auto mb-4 ${
-                        activeProcessStep === step.id || step.highlighted
+                        activeProcessStep === step.id
                           ? 'text-primary-foreground'
                           : 'text-primary'
                       }`} />
                       <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
                       <p className={`text-sm leading-relaxed ${
-                        activeProcessStep === step.id || step.highlighted
+                        activeProcessStep === step.id
                           ? 'text-primary-foreground/90'
                           : 'text-muted-foreground'
                       }`}>
@@ -549,7 +542,7 @@ const GenerativeAIDevelopment = () => {
                   key={step.id}
                   onClick={() => setActiveProcessStep(step.id)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    activeProcessStep === step.id || step.highlighted
+                    activeProcessStep === step.id
                       ? 'bg-primary scale-125'
                       : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
                   }`}
@@ -565,7 +558,7 @@ const GenerativeAIDevelopment = () => {
                 key={step.id}
                 onClick={() => setActiveProcessStep(activeProcessStep === step.id ? 0 : step.id)}
                 className={`cursor-pointer transition-all duration-300 rounded-xl overflow-hidden ${
-                  activeProcessStep === step.id || step.highlighted
+                  activeProcessStep === step.id
                     ? 'bg-primary text-primary-foreground shadow-lg'
                     : 'bg-card text-card-foreground'
                 }`}
@@ -573,14 +566,14 @@ const GenerativeAIDevelopment = () => {
                 <div className="p-6">
                   <div className="flex items-center gap-4">
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${
-                      activeProcessStep === step.id || step.highlighted
+                      activeProcessStep === step.id
                         ? 'bg-primary-foreground text-primary'
                         : 'bg-primary text-primary-foreground'
                     }`}>
                       {step.id}
                     </div>
                     <step.icon className={`h-6 w-6 ${
-                      activeProcessStep === step.id || step.highlighted
+                      activeProcessStep === step.id
                         ? 'text-primary-foreground'
                         : 'text-primary'
                     }`} />
@@ -588,12 +581,12 @@ const GenerativeAIDevelopment = () => {
                   </div>
                   
                   <div className={`mt-4 transition-all duration-300 ${
-                    activeProcessStep === step.id || step.highlighted
+                    activeProcessStep === step.id
                       ? 'max-h-96 opacity-100'
                       : 'max-h-0 opacity-0 overflow-hidden'
                   }`}>
                     <p className={`text-sm leading-relaxed ${
-                      activeProcessStep === step.id || step.highlighted
+                      activeProcessStep === step.id
                         ? 'text-primary-foreground/90'
                         : 'text-muted-foreground'
                     }`}>
