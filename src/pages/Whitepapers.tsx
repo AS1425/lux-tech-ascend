@@ -2,11 +2,52 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Download, FileText, Brain, Zap, Users, TrendingUp, Lightbulb } from 'lucide-react';
+import { Download, FileText, Brain, Zap, Users, TrendingUp, Lightbulb, Database, Settings, Bot, Wrench, Target, Rocket } from 'lucide-react';
 import Layout from '@/components/Layout';
 
 const Whitepapers = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [activeProcessStep, setActiveProcessStep] = useState(4); // LOFT is highlighted by default
+
+  const processSteps = [
+    {
+      id: 1,
+      title: 'Data collection and requirements',
+      description: 'Understand goals, data sources, and constraints.',
+      icon: <Database className="h-6 w-6" />
+    },
+    {
+      id: 2,
+      title: 'Planning & determining technologies',
+      description: 'Select tools, models, and project structure.',
+      icon: <Settings className="h-6 w-6" />
+    },
+    {
+      id: 3,
+      title: 'Model training',
+      description: 'Train foundational or fine-tuned AI models.',
+      icon: <Bot className="h-6 w-6" />
+    },
+    {
+      id: 4,
+      title: 'LOFT',
+      description: 'Experts speed up delivery with our framework for efficient Generative AI development.',
+      icon: <Wrench className="h-6 w-6" />,
+      highlighted: true
+    },
+    {
+      id: 5,
+      title: 'Fine-tuning',
+      description: 'Customize model performance to user-specific data.',
+      icon: <Target className="h-6 w-6" />
+    },
+    {
+      id: 6,
+      title: 'Deployment & maintenance',
+      description: 'Final testing, deployment, and ongoing support.',
+      icon: <Rocket className="h-6 w-6" />
+    }
+  ];
 
   const categories = ['All', 'AI & Machine Learning', 'Marketing Automation', 'Product Innovation', 'Digital Transformation', 'Industry Insights'];
 
@@ -104,6 +145,93 @@ const Whitepapers = () => {
               >
                 Explore Resources
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Generative AI Solutions Development Process */}
+        <section className="py-20 bg-gradient-to-r from-background via-primary/5 to-background">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-4xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                Our Generative AI Solutions Development Process
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Discover our proven methodology for delivering cutting-edge AI solutions
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 max-w-7xl mx-auto">
+              {processSteps.map((step) => (
+                <Card
+                  key={step.id}
+                  className={`group cursor-pointer transition-all duration-500 transform hover:scale-105 ${
+                    activeProcessStep === step.id
+                      ? 'bg-gradient-to-br from-primary to-purple-600 text-white shadow-2xl shadow-primary/30 scale-105'
+                      : 'bg-gradient-to-br from-background to-primary/5 hover:from-primary/10 hover:to-purple-500/10 hover:shadow-xl border-primary/20'
+                  }`}
+                  onClick={() => setActiveProcessStep(step.id)}
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      setActiveProcessStep(step.id);
+                    }
+                  }}
+                  role="button"
+                  aria-pressed={activeProcessStep === step.id}
+                >
+                  <CardHeader className="text-center p-4">
+                    <div className={`mx-auto mb-3 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      activeProcessStep === step.id
+                        ? 'bg-white/20 text-white scale-110'
+                        : 'bg-gradient-to-br from-primary/20 to-purple-600/20 text-primary group-hover:scale-110'
+                    }`}>
+                      {step.icon}
+                    </div>
+                    <div className={`w-8 h-8 rounded-full mx-auto mb-3 flex items-center justify-center text-sm font-bold transition-colors duration-300 ${
+                      activeProcessStep === step.id
+                        ? 'bg-white/20 text-white'
+                        : 'bg-primary/20 text-primary group-hover:bg-primary/30'
+                    }`}>
+                      {step.id}
+                    </div>
+                    <CardTitle className={`text-base font-semibold mb-2 transition-colors duration-300 ${
+                      activeProcessStep === step.id
+                        ? 'text-white'
+                        : 'text-foreground group-hover:text-primary'
+                    }`}>
+                      {step.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className={`p-4 pt-0 transition-all duration-500 ${
+                    activeProcessStep === step.id
+                      ? 'opacity-100 max-h-32'
+                      : 'opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-32'
+                  }`}>
+                    <p className={`text-sm transition-colors duration-300 ${
+                      activeProcessStep === step.id
+                        ? 'text-white/90'
+                        : 'text-muted-foreground'
+                    }`}>
+                      {step.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            {/* Active Step Description (Mobile Fallback) */}
+            <div className="mt-8 lg:hidden">
+              <Card className="bg-gradient-to-br from-primary to-purple-600 text-white">
+                <CardContent className="p-6 text-center">
+                  <h3 className="text-xl font-semibold mb-3">
+                    Step {activeProcessStep}: {processSteps.find(s => s.id === activeProcessStep)?.title}
+                  </h3>
+                  <p className="text-white/90">
+                    {processSteps.find(s => s.id === activeProcessStep)?.description}
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
