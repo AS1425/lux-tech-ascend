@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { 
   Zap, 
   Settings, 
@@ -20,7 +21,11 @@ import {
   Target,
   DollarSign,
   UserCheck,
-  Timer
+  Timer,
+  Bot,
+  Lightbulb,
+  Briefcase,
+  FileText
 } from 'lucide-react';
 
 const BusinessProcessAutomation = () => {
@@ -160,6 +165,131 @@ const BusinessProcessAutomation = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* RPA vs BPA Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              RPA vs. BPA—What's the Difference?
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Top Row */}
+            <Card className="card-hover h-full">
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-4">
+                  <Bot className="h-8 w-8 text-primary" />
+                  <CardTitle className="text-xl">Robotic Process Automation</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base mb-4">
+                  RPA focuses on automating individual, rule-based tasks through bots, mimicking human interactions with software systems. It's ideal for simple, repetitive workflows like data entry, report generation, and notifications.
+                </CardDescription>
+                <CardDescription className="text-base">
+                  While RPA delivers immediate productivity gains, it works best in siloed tasks rather than end-to-end automation.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="card-hover h-full">
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-4">
+                  <Workflow className="h-8 w-8 text-primary" />
+                  <CardTitle className="text-xl">Business Process Automation</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base mb-4">
+                  BPA optimizes entire business workflows by analyzing and redesigning how processes function from start to finish. It integrates systems, data, and people to streamline multi-step operations.
+                </CardDescription>
+                <CardDescription className="text-base">
+                  Unlike RPA, BPA is designed for long-term transformation, often using low-code tools, AI, and analytics for smarter workflows and greater flexibility.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            {/* Bottom Row */}
+            <Card className="card-hover h-full">
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-4">
+                  <Lightbulb className="h-8 w-8 text-primary" />
+                  <CardTitle className="text-xl">Use Cases for RPA</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base mb-4">
+                  When RPA is applied to clearly defined, frequent human-to-system interactions, the benefits are immediate. Examples include invoice processing, login authentication, and updating spreadsheets.
+                </CardDescription>
+                <CardDescription className="text-base">
+                  RPA reduces manual error and cost per task—making it the better application for bandwidth.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="card-hover h-full">
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-4">
+                  <Briefcase className="h-8 w-8 text-primary" />
+                  <CardTitle className="text-xl">Use Cases for BPA</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base mb-4">
+                  Unlike RPA, BPA is designed for scale and sustainability. It's ideal for complex approval processes, end-to-end onboarding, inventory reconciliation, or claims processing.
+                </CardDescription>
+                <CardDescription className="text-base">
+                  BPA ensures long-term gains in efficiency, visibility, compliance, and cost savings across multiple systems.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* End-to-End Services Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              End-to-End Business Process Automation Services
+            </h2>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
+              <AccordionItem value="item-0">
+                <AccordionTrigger className="text-xl font-semibold text-left">
+                  Tailored Optimization Strategy & Consulting
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground pt-4">
+                  Gain a strategic advantage with our consulting services that map business goals to optimized automation flows. We perform process discovery, audit existing systems, and design intelligent automation plans that reduce operational friction and boost productivity. From selecting the right RPA tools to streamlining human-to-machine workflows, our tailored strategy ensures measurable ROI and enterprise scalability.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-xl font-semibold text-left">
+                  Custom Solution Implementation Done Right
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground pt-4">
+                  Our implementation teams translate strategy into execution with precision. We integrate bots, tools, and platforms into your systems—testing rigorously and ensuring minimal business disruption during rollout.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-xl font-semibold text-left">
+                  Strategic Improvement of Existing Solutions
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground pt-4">
+                  Already using RPA or BPA tools? We help you go further. We optimize legacy automation systems, reduce waste, upgrade outdated workflows, and apply AI/ML models where appropriate.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
