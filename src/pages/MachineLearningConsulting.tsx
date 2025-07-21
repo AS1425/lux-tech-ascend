@@ -1,11 +1,77 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, BarChart3, Brain, Cpu, Database, Lightbulb, Target, TrendingUp, Zap } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { ArrowRight, BarChart3, Brain, Cpu, Database, Lightbulb, Target, TrendingUp, Zap, Layers, MessageSquare, Globe, Star, Shield, Activity, RefreshCw } from 'lucide-react';
 
 const MachineLearningConsulting = () => {
+  const [activeServiceIndex, setActiveServiceIndex] = useState(0);
+  const [activeValuePropIndex, setActiveValuePropIndex] = useState(0);
+
+  const mlServices = [
+    {
+      title: "Comprehensive Machine Learning Development",
+      content: "Benefit from our expertise in crafting scalable, high-performing models that integrate seamlessly into your existing operations. Transform your business with custom machine learning solutions that drive efficiency, innovation, and growth. We leverage the latest technologies to solve complex challenges, from predictive analytics to automated decision-making."
+    },
+    {
+      title: "Strategic Machine Learning Integration",
+      content: "Align your machine learning initiatives with your business strategy to maximize ROI. We help identify where AI can make the greatest impact and ensure seamless integration across functions."
+    },
+    {
+      title: "Advanced Natural Language Processing",
+      content: "Build intelligent applications capable of understanding and processing human language—enabling smarter chatbots, content moderation, sentiment analysis, and more."
+    },
+    {
+      title: "Intelligent Chatbot Solutions",
+      content: "Develop ML-powered chatbots that provide contextual, human-like conversations. Our bots can adapt to behavior, improve with time, and reduce support costs."
+    },
+    {
+      title: "Innovative Big Data Strategies",
+      content: "Leverage vast data assets to uncover patterns, trends, and actionable insights. We assist with big data architecture, engineering, and modeling using ML."
+    },
+    {
+      title: "Cutting-Edge Data Analytics",
+      content: "Empower your teams with powerful tools for real-time analysis, data visualization, and forecasting—enabling fast, data-driven decisions."
+    },
+    {
+      title: "Tailored Deep Learning Services",
+      content: "Harness the capabilities of neural networks to solve vision, speech, or predictive problems. Our solutions are custom-trained and optimized for your unique use case."
+    },
+    {
+      title: "Next-Generation Business Intelligence",
+      content: "Use ML to go beyond dashboards—automate insight generation, anomaly detection, and business forecasting for a competitive edge."
+    },
+    {
+      title: "ML-Driven Product Recommendation System",
+      content: "Boost conversions with AI recommendation engines. Personalize offerings using customer data and behavior patterns to improve user experience and revenue."
+    }
+  ];
+
+  const valuePropositions = [
+    {
+      title: "Data-Driven Decision-Making",
+      content: "We empower stakeholders to make well-considered choices by providing deep insights and predictive analytics derived from the data at your disposal. Our machine learning development services help you understand customer behaviors, optimize operations, and increase profitability by turning complex datasets into actionable intelligence."
+    },
+    {
+      title: "Scalable and Future-Proof Solutions",
+      content: "Our models are designed to grow with your business. Whether you need to expand across platforms, geographies, or data sources, we ensure your ML systems evolve seamlessly."
+    },
+    {
+      title: "Accelerated Innovation and Competitive Edge",
+      content: "Stay ahead of the curve by adopting AI technologies faster. We shorten time-to-value through ready-to-deploy models and strategic consulting."
+    },
+    {
+      title: "Risk Mitigation and Enhanced Security",
+      content: "We apply AI responsibly and securely—ensuring that your data is protected, models are bias-mitigated, and compliance is maintained at every step."
+    },
+    {
+      title: "Effortless LLM Orchestration",
+      content: "Integrate and manage Large Language Models (LLMs) like GPT securely within your stack. Our orchestration helps control costs, accuracy, and content safety."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -265,6 +331,128 @@ const MachineLearningConsulting = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ML Services Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Meet Our Tailored Machine Learning Consulting Services
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive solutions designed to transform your business with intelligent automation and data-driven insights.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Left: Services Accordion */}
+            <div className="space-y-4">
+              <Accordion type="single" collapsible value={`item-${activeServiceIndex}`} onValueChange={(value) => {
+                const index = value ? parseInt(value.split('-')[1]) : 0;
+                setActiveServiceIndex(index);
+              }}>
+                {mlServices.map((service, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className="glass rounded-lg border-0"
+                  >
+                    <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                      <span className="text-lg font-semibold text-foreground">
+                        {service.title}
+                      </span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-6 pt-0">
+                      <p className="text-muted-foreground leading-relaxed">
+                        {service.content}
+                      </p>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+
+            {/* Right: Featured Service Content */}
+            <div className="glass p-8 rounded-2xl h-fit">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Brain className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-semibold text-foreground mb-4">
+                  {mlServices[activeServiceIndex].title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {mlServices[activeServiceIndex].content}
+                </p>
+              </div>
+              <Button className="w-full group">
+                Get Started
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Propositions Section */}
+      <section className="py-20 bg-accent/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Why Leverage the Expertise of Our Machine Learning Consulting Company
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Experience the power of strategic machine learning implementation that delivers measurable business value.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Left: Tabs */}
+            <div className="space-y-2">
+              {valuePropositions.map((prop, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveValuePropIndex(index)}
+                  className={`w-full text-left p-6 rounded-lg transition-all duration-300 ${
+                    activeValuePropIndex === index
+                      ? 'bg-primary text-primary-foreground shadow-lg'
+                      : 'glass hover:bg-accent/50'
+                  }`}
+                >
+                  <div className="flex items-center space-x-4">
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                      activeValuePropIndex === index ? 'bg-primary-foreground/20' : 'bg-primary/20'
+                    }`}>
+                      <Zap className={`h-5 w-5 ${
+                        activeValuePropIndex === index ? 'text-primary-foreground' : 'text-primary'
+                      }`} />
+                    </div>
+                    <span className="font-semibold">{prop.title}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Right: Content */}
+            <div className="glass p-8 rounded-2xl">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BarChart3 className="h-8 w-8 text-secondary" />
+                </div>
+                <h3 className="text-2xl font-semibold text-foreground mb-4">
+                  {valuePropositions[activeValuePropIndex].title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {valuePropositions[activeValuePropIndex].content}
+                </p>
+              </div>
+              <Button variant="outline" className="w-full">
+                Learn More
+              </Button>
+            </div>
           </div>
         </div>
       </section>
