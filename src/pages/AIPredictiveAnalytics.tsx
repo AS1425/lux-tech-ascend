@@ -1,9 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { BarChart3, TrendingUp, Brain, Target, Zap, Shield, Users, DollarSign, Cog, Database, Globe, Eye } from 'lucide-react';
 
 const AIPredictiveAnalytics = () => {
@@ -117,20 +118,29 @@ const AIPredictiveAnalytics = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              AI Predictive Analytics Services
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              Leverage AI to predict future trends, optimize strategies, and unlock new opportunities for your business.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.4s' }}>
-              <Button size="lg" className="glass px-8 py-3 text-lg cta-ripple hover:scale-105 transition-transform">
-                Request a Demo
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-3 text-lg hover:scale-105 transition-transform">
-                Talk to Our Experts
-              </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                AI Predictive Analytics Services
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+                Leverage AI to predict future trends, optimize strategies, and unlock new opportunities for your business.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up" style={{ animationDelay: '0.4s' }}>
+                <Button size="lg" className="glass px-8 py-3 text-lg cta-ripple hover:scale-105 transition-transform">
+                  Request a Demo
+                </Button>
+                <Button variant="outline" size="lg" className="px-8 py-3 text-lg hover:scale-105 transition-transform">
+                  Talk to Our Experts
+                </Button>
+              </div>
+            </div>
+            <div className="relative animate-fade-up" style={{ animationDelay: '0.6s' }}>
+              <img 
+                src="/lovable-uploads/05543f82-a71f-4501-9860-9c274aafec51.png" 
+                alt="AI Predictive Analytics Illustration" 
+                className="w-full h-auto max-w-lg mx-auto"
+              />
             </div>
           </div>
         </div>
@@ -230,6 +240,47 @@ const AIPredictiveAnalytics = () => {
             <p className="text-lg text-muted-foreground text-center leading-relaxed mb-8">
               Our team of experts combines machine learning, data science, and industry-specific knowledge to deliver predictive analytics solutions that provide real, actionable insights. We focus on delivering solutions that not only forecast trends accurately but also enable your team to take data-driven actions. Whether you are looking to improve customer retention, optimize your supply chain, or forecast revenue, our predictive analytics services help you unlock the full potential of your data and achieve tangible results.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-16 lg:py-24 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">
+              Reap the Benefits of AI Predictive Analytics
+            </h2>
+            <div className="space-y-6">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1" className="bg-background rounded-2xl shadow-lg border border-border mb-6">
+                  <AccordionTrigger className="px-6 py-4 text-left hover:bg-muted/50 rounded-2xl transition-colors">
+                    <span className="text-xl font-semibold">Data-Driven Decision Making</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6 text-muted-foreground">
+                    Say goodbye to gut feelings and hello to data-backed conclusions. Custom AI predictive analytics solutions empower you to analyze complex data sets, uncover hidden patterns, and gain actionable insights. Enable yourself to make informed choices that drive growth and maximize profitability.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="bg-background rounded-2xl shadow-lg border border-border mb-6">
+                  <AccordionTrigger className="px-6 py-4 text-left hover:bg-muted/50 rounded-2xl transition-colors">
+                    <span className="text-xl font-semibold">Early Risk Detection</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6 text-muted-foreground">
+                    Leverage AI models to proactively identify risks and anomalies in your operations. Predictive analytics helps prevent potential failures, fraud, or losses before they happen—ensuring smoother and safer business workflows.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="bg-background rounded-2xl shadow-lg border border-border mb-6">
+                  <AccordionTrigger className="px-6 py-4 text-left hover:bg-muted/50 rounded-2xl transition-colors">
+                    <span className="text-xl font-semibold">Optimized Performance</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6 text-muted-foreground">
+                    Use predictive insights to streamline processes, allocate resources efficiently, and optimize performance across departments. From inventory to marketing, AI analytics ensures every move is strategic.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
           </div>
         </div>
       </section>
