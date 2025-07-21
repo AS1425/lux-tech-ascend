@@ -2,7 +2,8 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, BarChart3, Brain, MessageSquare, TrendingUp, Users, Zap, Target, CheckCircle, Eye } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { ArrowRight, BarChart3, Brain, MessageSquare, TrendingUp, Users, Zap, Target, CheckCircle, Eye, Monitor, Mic, FileText, PieChart, Heart, UserCheck } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
@@ -30,6 +31,93 @@ const ConversationalAnalytics = () => {
                 Talk to Our Experts
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-accent/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 animate-fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Key Features of Customer Service Analytics AI
+            </h2>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
+              <AccordionItem value="item-0" className="border border-primary/20 rounded-lg px-6 bg-background/50">
+                <AccordionTrigger className="text-xl font-semibold text-left hover:text-primary transition-colors">
+                  <div className="flex items-center space-x-3">
+                    <Monitor className="h-6 w-6 text-primary" />
+                    <span>Customizable Call Visualization</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground pt-4 pb-2">
+                  Forget pre-set interfaces. We craft intuitive, interactive conversation browsing tools tailored to your specific workflows. Rapidly scan through interactions, pinpoint key moments, and jump to relevant sections — all within a system designed around how your team operates.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-1" className="border border-secondary/20 rounded-lg px-6 bg-background/50">
+                <AccordionTrigger className="text-xl font-semibold text-left hover:text-secondary transition-colors">
+                  <div className="flex items-center space-x-3">
+                    <Mic className="h-6 w-6 text-secondary" />
+                    <span>Bespoke AI Speech Recognition Integration</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground pt-4 pb-2">
+                  Leverage advanced speech recognition models that adapt to your agents' language, accent, and terminology. Our AI captures every spoken nuance, improving transcription accuracy and enabling deeper call analysis.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2" className="border border-primary/20 rounded-lg px-6 bg-background/50">
+                <AccordionTrigger className="text-xl font-semibold text-left hover:text-primary transition-colors">
+                  <div className="flex items-center space-x-3">
+                    <FileText className="h-6 w-6 text-primary" />
+                    <span>Tailored Generative AI Summary Models</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground pt-4 pb-2">
+                  Summarize hours of conversations in seconds. Our AI generates concise, contextual summaries of each interaction, allowing supervisors and agents to grasp key issues, resolutions, and tone—without listening to full calls.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-3" className="border border-secondary/20 rounded-lg px-6 bg-background/50">
+                <AccordionTrigger className="text-xl font-semibold text-left hover:text-secondary transition-colors">
+                  <div className="flex items-center space-x-3">
+                    <PieChart className="h-6 w-6 text-secondary" />
+                    <span>Custom-Built Reporting and Dashboards</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground pt-4 pb-2">
+                  No one-size-fits-all reports. We build dashboards that surface your most important KPIs—average handling time, call sentiment, resolution score, escalation trends—so you can take action faster and smarter.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-4" className="border border-primary/20 rounded-lg px-6 bg-background/50">
+                <AccordionTrigger className="text-xl font-semibold text-left hover:text-primary transition-colors">
+                  <div className="flex items-center space-x-3">
+                    <Heart className="h-6 w-6 text-primary" />
+                    <span>Proprietary Sentiment Analysis Algorithms</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground pt-4 pb-2">
+                  Go beyond surface-level mood tracking. Our deep learning sentiment models are trained on customer service data to accurately identify emotions, dissatisfaction signals, and tone shifts in real time.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-5" className="border border-secondary/20 rounded-lg px-6 bg-background/50">
+                <AccordionTrigger className="text-xl font-semibold text-left hover:text-secondary transition-colors">
+                  <div className="flex items-center space-x-3">
+                    <UserCheck className="h-6 w-6 text-secondary" />
+                    <span>Agent Performance Monitoring Tailored to Your KPIs</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground pt-4 pb-2">
+                  Get clarity on what drives agent success. We align performance monitoring with your custom KPIs—like empathy scores, resolution effectiveness, or compliance adherence—empowering data-backed coaching and growth.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
