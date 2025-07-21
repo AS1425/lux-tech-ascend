@@ -1,11 +1,13 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Zap, Shield, Database, Cloud, Workflow, CheckCircle, Users, TrendingUp, Lock } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { ArrowRight, Zap, Shield, Database, Cloud, Workflow, CheckCircle, Users, TrendingUp, Lock, Key, BookOpen, UserCheck, Calendar, ShoppingCart, CreditCard, Settings } from 'lucide-react';
 
 const ConnectorDevelopment = () => {
   const benefits = [
@@ -164,6 +166,214 @@ const ConnectorDevelopment = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 By creating robust, secure connectors, businesses can integrate disparate applications, enhance data sharing, reduce manual input, and improve operational efficiency. Our custom connectors are built to scale with your business, enabling smooth interactions between new technologies and existing infrastructure.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Integrations Covered by Our Custom Connectors */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              Integrations Covered by Our Custom Connectors
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive integration solutions across multiple platforms and services
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible defaultValue="authentication" className="space-y-4">
+              <AccordionItem value="authentication" className="border border-border rounded-lg px-6 bg-card shadow-sm">
+                <AccordionTrigger className="text-left hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <Key className="w-5 h-5 text-primary" />
+                    <span className="text-lg font-semibold">Authentication</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground">
+                  From user security protocols to OAuth2.0 and token-based authentications, we support SSO integrations including Okta, Google Secure, EntraID (Azure), PingID, SAML-based, and custom solutions for enterprise apps.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="knowledge-base" className="border border-border rounded-lg px-6 bg-card shadow-sm">
+                <AccordionTrigger className="text-left hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <BookOpen className="w-5 h-5 text-primary" />
+                    <span className="text-lg font-semibold">Knowledge Base Setup</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground">
+                  Seamless integration with knowledge management systems, documentation platforms, and content repositories to enable intelligent data retrieval and automated content synchronization across your organization.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="crm-systems" className="border border-border rounded-lg px-6 bg-card shadow-sm">
+                <AccordionTrigger className="text-left hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <Users className="w-5 h-5 text-primary" />
+                    <span className="text-lg font-semibold">CRM Systems</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground">
+                  Connect with leading CRM platforms like Salesforce, HubSpot, Microsoft Dynamics, and custom CRM solutions to synchronize customer data, automate workflows, and enhance sales processes.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="help-desk" className="border border-border rounded-lg px-6 bg-card shadow-sm">
+                <AccordionTrigger className="text-left hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <UserCheck className="w-5 h-5 text-primary" />
+                    <span className="text-lg font-semibold">Help Desk</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground">
+                  Integrate with support platforms like Zendesk, ServiceNow, Freshdesk, and JIRA to streamline ticket management, automate escalations, and provide unified customer support experiences.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="appointment-scheduling" className="border border-border rounded-lg px-6 bg-card shadow-sm">
+                <AccordionTrigger className="text-left hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <Calendar className="w-5 h-5 text-primary" />
+                    <span className="text-lg font-semibold">Appointment Scheduling</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground">
+                  Connect with scheduling platforms like Calendly, Acuity, Microsoft Bookings, and custom booking systems to automate appointment management and synchronize calendars across multiple platforms.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="ecommerce" className="border border-border rounded-lg px-6 bg-card shadow-sm">
+                <AccordionTrigger className="text-left hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <ShoppingCart className="w-5 h-5 text-primary" />
+                    <span className="text-lg font-semibold">eCommerce</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground">
+                  Integrate with e-commerce platforms like Shopify, WooCommerce, Magento, and Amazon to synchronize inventory, automate order processing, and streamline fulfillment workflows.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="payments-transactions" className="border border-border rounded-lg px-6 bg-card shadow-sm">
+                <AccordionTrigger className="text-left hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <CreditCard className="w-5 h-5 text-primary" />
+                    <span className="text-lg font-semibold">Payments & Transactions</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground">
+                  Secure integration with payment gateways like Stripe, PayPal, Square, and banking APIs to automate transaction processing, reconciliation, and financial reporting while ensuring PCI compliance.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* What Services We Provide */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              What Services We Provide
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive connector development services tailored to your business needs
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div className="space-y-4">
+              <Tabs defaultValue="custom-connectors" className="w-full">
+                <TabsList className="grid w-full grid-cols-1 h-auto bg-background">
+                  <TabsTrigger 
+                    value="custom-connectors" 
+                    className="w-full justify-start text-left p-4 h-auto data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  >
+                    <div className="text-left">
+                      <div className="font-semibold">Customized Connectors and Plugin Creation</div>
+                    </div>
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="enhancement" 
+                    className="w-full justify-start text-left p-4 h-auto data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  >
+                    <div className="text-left">
+                      <div className="font-semibold">Enhancement of Existing Connector Capabilities</div>
+                    </div>
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="api-development" 
+                    className="w-full justify-start text-left p-4 h-auto data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  >
+                    <div className="text-left">
+                      <div className="font-semibold">Develop APIs with Additional Features for Improved Usability</div>
+                    </div>
+                  </TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="custom-connectors" className="mt-6">
+                  <Card className="p-6 shadow-lg">
+                    <div className="flex items-start space-x-4">
+                      <Settings className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                      <div className="space-y-4">
+                        <h3 className="text-xl font-semibold text-foreground">
+                          Customized Connectors and Plugin Creation
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          By crafting bespoke solutions, we enable your technology to work harmoniously across ecosystems by reducing manual tasks through smart integrations and plug-ins. We develop connectors with full CRUD APIs, data sync pipelines, and tailored error handling. Our engineers ensure seamless data flow, minimizing latency, enhancing connectivity, and improving operational efficiency.
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                </TabsContent>
+
+                <TabsContent value="enhancement" className="mt-6">
+                  <Card className="p-6 shadow-lg">
+                    <div className="flex items-start space-x-4">
+                      <TrendingUp className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                      <div className="space-y-4">
+                        <h3 className="text-xl font-semibold text-foreground">
+                          Enhancement of Existing Connector Capabilities
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          Transform your current integrations by adding advanced features, improving performance, and extending functionality. We analyze existing connectors to identify optimization opportunities, implement new data transformation capabilities, and enhance security protocols to meet evolving business requirements.
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                </TabsContent>
+
+                <TabsContent value="api-development" className="mt-6">
+                  <Card className="p-6 shadow-lg">
+                    <div className="flex items-start space-x-4">
+                      <Cloud className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                      <div className="space-y-4">
+                        <h3 className="text-xl font-semibold text-foreground">
+                          Develop APIs with Additional Features for Improved Usability
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          Create robust, well-documented APIs with enhanced functionality including rate limiting, caching mechanisms, authentication layers, and comprehensive error handling. Our APIs are designed for scalability, maintainability, and ease of integration to support your growing business needs.
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                </TabsContent>
+              </Tabs>
+            </div>
+
+            <div className="flex items-center justify-center">
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
+                  alt="Custom Connector Development"
+                  className="rounded-2xl shadow-xl object-cover w-full h-96"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl" />
+              </div>
             </div>
           </div>
         </div>
