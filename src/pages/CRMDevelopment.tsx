@@ -1,9 +1,11 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Database, Users, TrendingUp, Shield, BarChart3, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Database, Users, TrendingUp, Shield, BarChart3, Zap, CheckCircle, ArrowRight, Target, Headphones, ShoppingCart, MessageSquare, PieChart } from 'lucide-react';
 
 const CRMDevelopment = () => {
   const benefits = [
@@ -234,6 +236,309 @@ const CRMDevelopment = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Custom CRM Development Services */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="text-4xl md:text-5xl font-bold font-manrope mb-6">
+              Custom CRM Development Services with <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Tailored Functionalities</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Enhance your business operations with our comprehensive CRM development solutions designed for your specific needs.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
+              <AccordionItem value="item-0" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Target className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Precise Marketing & Sales</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    A 360-degree view of your prospects within your CRM provides the detailed profiles and robust analytics needed to identify high-quality leads. Your brand can tap in to use customer data, marketing preferences, their motivations and boost the effectiveness of cross-selling and upselling. Place your salespeople from routine tasks to focus on closing deals, track KPIs, and forecast pipeline with precision.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-1" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Headphones className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Proactive Client Service</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Create responsive service experiences by integrating real-time tracking, centralized communication history, and customer behavior insights. Proactive alerts and SLA management ensure your teams meet client expectations consistently, improving retention and loyalty.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <ShoppingCart className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Smooth Order & Billing Management</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Automate order confirmations, invoices, payment follow-ups, and delivery tracking in one place. Reduce manual errors and speed up operations across billing and fulfillment with seamless ERP/CRM integration.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <MessageSquare className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Omnichannel Feedback Collection</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Capture structured and unstructured feedback from multiple sources—emails, chats, forms, social media—and store them in one centralized hub. Use NLP-based analysis to generate insights and improve customer experience strategies.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <PieChart className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Interactive Reporting</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Build drag-and-drop dashboards that showcase sales metrics, customer satisfaction, churn, and revenue trends. Offer customizable reporting for different departments to align business strategy with real-time data.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Vertical CRM Solutions */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="text-4xl md:text-5xl font-bold font-manrope mb-6">
+              Vertical CRM Solutions: <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Maximize Results</span> in Your Industry
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Industry-specific CRM solutions tailored to meet the unique challenges and requirements of your business sector.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="order-2 lg:order-1">
+              <Tabs defaultValue="telecom" orientation="vertical" className="w-full">
+                <TabsList className="grid w-full grid-cols-1 h-auto bg-card border border-primary/20 p-2">
+                  <TabsTrigger value="telecom" className="justify-start text-left p-4 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
+                    Telecom
+                  </TabsTrigger>
+                  <TabsTrigger value="insurance" className="justify-start text-left p-4 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
+                    Insurance
+                  </TabsTrigger>
+                  <TabsTrigger value="healthcare" className="justify-start text-left p-4 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
+                    Healthcare
+                  </TabsTrigger>
+                  <TabsTrigger value="retail" className="justify-start text-left p-4 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
+                    Retail & eCommerce
+                  </TabsTrigger>
+                  <TabsTrigger value="banking" className="justify-start text-left p-4 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
+                    Banking & Finance
+                  </TabsTrigger>
+                  <TabsTrigger value="automotive" className="justify-start text-left p-4 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
+                    Automotive
+                  </TabsTrigger>
+                  <TabsTrigger value="education" className="justify-start text-left p-4 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
+                    Education
+                  </TabsTrigger>
+                  <TabsTrigger value="travel" className="justify-start text-left p-4 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
+                    Travel & Hospitality
+                  </TabsTrigger>
+                  <TabsTrigger value="airports" className="justify-start text-left p-4 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
+                    Airports and Airlines
+                  </TabsTrigger>
+                </TabsList>
+              </Tabs>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <Tabs defaultValue="telecom" className="w-full">
+                <TabsContent value="telecom" className="mt-0">
+                  <div className="glass p-8 rounded-2xl border border-primary/20">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground">Telecom CRM Solutions</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Complex billing cycles and service usage patterns? No problem. A tailored CRM streamlines customer segmentation, offers personalized promotions, proactively manages churn, and delivers exceptional customer experience.
+                    </p>
+                  </div>
+                </TabsContent>
+                <TabsContent value="insurance" className="mt-0">
+                  <div className="glass p-8 rounded-2xl border border-primary/20">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground">Insurance CRM Solutions</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Enable agents to manage policies, claims, and renewals with AI-enhanced reminders and automation workflows. Ensure compliance with regulatory requirements and enable omnichannel policyholder communication.
+                    </p>
+                  </div>
+                </TabsContent>
+                <TabsContent value="healthcare" className="mt-0">
+                  <div className="glass p-8 rounded-2xl border border-primary/20">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground">Healthcare CRM Solutions</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Manage patient data, appointments, telehealth sessions, and follow-ups in compliance with HIPAA and global health data standards. Provide personalized care journeys and improve health outcomes.
+                    </p>
+                  </div>
+                </TabsContent>
+                <TabsContent value="retail" className="mt-0">
+                  <div className="glass p-8 rounded-2xl border border-primary/20">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground">Retail & eCommerce CRM Solutions</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Track customer behaviors, abandoned carts, loyalty programs, and personalized product recommendations with intelligent CRM-driven insights and automation.
+                    </p>
+                  </div>
+                </TabsContent>
+                <TabsContent value="banking" className="mt-0">
+                  <div className="glass p-8 rounded-2xl border border-primary/20">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground">Banking & Finance CRM Solutions</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Provide secure platforms for loan origination, KYC, credit scoring, and customer onboarding with audit trails and robust reporting dashboards.
+                    </p>
+                  </div>
+                </TabsContent>
+                <TabsContent value="automotive" className="mt-0">
+                  <div className="glass p-8 rounded-2xl border border-primary/20">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground">Automotive CRM Solutions</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Track vehicle inventory, automate test drive bookings, manage leads, and create post-sale service reminders for personalized customer engagement.
+                    </p>
+                  </div>
+                </TabsContent>
+                <TabsContent value="education" className="mt-0">
+                  <div className="glass p-8 rounded-2xl border border-primary/20">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground">Education CRM Solutions</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Automate admissions, student lifecycle tracking, learning analytics, and communications across students, faculty, and parents from a single CRM.
+                    </p>
+                  </div>
+                </TabsContent>
+                <TabsContent value="travel" className="mt-0">
+                  <div className="glass p-8 rounded-2xl border border-primary/20">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground">Travel & Hospitality CRM Solutions</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Centralize booking data, personalize travel offers, manage feedback loops, and automate itinerary and loyalty workflows.
+                    </p>
+                  </div>
+                </TabsContent>
+                <TabsContent value="airports" className="mt-0">
+                  <div className="glass p-8 rounded-2xl border border-primary/20">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground">Airports and Airlines CRM Solutions</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Improve traveler experience by automating check-in assistance, updates, frequent flyer programs, and customer complaint resolutions.
+                    </p>
+                  </div>
+                </TabsContent>
+              </Tabs>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partnership Benefits */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="text-4xl md:text-5xl font-bold font-manrope mb-6">
+              Your Success, Our Priority: The <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Benefits of Partnering</span> for CRM Development
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Experience the advantages of working with our expert CRM development team for your business transformation.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-0" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Users className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Domain Knowledge</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    From insurance and banking to retail and telecom, our CRM specialists offer industry-specific insight to design scalable, future-ready platforms aligned with your operational goals.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-1" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <CheckCircle className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Stress-Free Delivery</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    We manage timelines, scope, and communication to ensure you get a functional CRM on time and within budget, with complete project transparency.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Zap className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Agile Development</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Build in sprints, gather feedback, and iterate continuously to deliver high-value features that align with evolving stakeholder needs.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Users className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Flexible Collaboration Options</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Choose from fixed price, time & material, or dedicated team models depending on your goals and timeline. We adjust to your way of working.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="border border-primary/20 rounded-2xl mb-4 overflow-hidden">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <Shield className="w-6 h-6 text-primary" />
+                    <span className="text-xl font-semibold text-left">Robust Security Measures</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 py-6 bg-card">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Data encryption, role-based access, GDPR & HIPAA compliance, and secure cloud integrations ensure your CRM is protected from day one.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
