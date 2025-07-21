@@ -1,12 +1,16 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, Users, Mic, Eye, FileCheck, CheckCircle, Volume2, Palette, UserCheck, Settings } from 'lucide-react';
+import { Shield, Users, Mic, Eye, FileCheck, CheckCircle, Volume2, Palette, UserCheck, Settings, AlertTriangle, DollarSign, TrendingDown, Scale, Building, Brain, Search, MapPin, HelpCircle, FileText } from 'lucide-react';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
 const EUAccessibilityAudit = () => {
+  const [openPenalties, setOpenPenalties] = useState<string | null>(null);
+  const [openSolutions, setOpenSolutions] = useState<string | null>(null);
+
   const auditProcess = [
     {
       step: "01",
@@ -60,6 +64,73 @@ const EUAccessibilityAudit = () => {
       icon: UserCheck,
       title: "User Testing & Feedback",
       description: "We conduct real-user testing with individuals with disabilities to ensure the chatbot meets their needs and provides a seamless experience."
+    }
+  ];
+
+  const penaltiesData = [
+    {
+      id: 'fines',
+      icon: DollarSign,
+      title: 'Significant Financial Fines',
+      description: 'EU member states can impose substantial financial penalties for non-compliance with accessibility regulations. These fines can range from thousands to millions of euros depending on company size and severity of violations, potentially devastating your bottom line.'
+    },
+    {
+      id: 'brand',
+      icon: TrendingDown,
+      title: 'Severe Brand Damage',
+      description: 'Non-compliance can lead to negative publicity and loss of consumer trust. Your brand reputation, built over years, can be damaged overnight when accessibility violations become public, affecting customer loyalty and market perception.'
+    },
+    {
+      id: 'market-share',
+      icon: Users,
+      title: 'Lost Clients & Market Share',
+      description: 'Failure to provide accessible services excludes a significant portion of potential customers with disabilities, representing up to 15% of the global population. This exclusion directly translates to lost revenue and reduced market competitiveness.'
+    },
+    {
+      id: 'legal',
+      icon: Scale,
+      title: 'Costly Legal Battles & Lawsuits',
+      description: 'Non-compliance opens your business to discrimination lawsuits and lengthy legal proceedings. Legal fees, settlement costs, and court-mandated remediation can far exceed the initial investment in accessibility compliance.'
+    },
+    {
+      id: 'operational',
+      icon: Building,
+      title: 'Forced Service Changes & Operational Halts',
+      description: 'Regulatory authorities may mandate immediate service modifications or temporary shutdowns until compliance is achieved. These operational disruptions can halt business operations and cause significant revenue loss during critical periods.'
+    }
+  ];
+
+  const solutionsData = [
+    {
+      id: 'comprehensive',
+      icon: Brain,
+      title: 'Comprehensive Evaluation',
+      description: 'We leave no stone unturned in our thorough assessment of your chatbot\'s accessibility features, testing every interaction point, navigation element, and user interface component to ensure complete compliance with EU Accessibility Act requirements.',
+      hasImage: true
+    },
+    {
+      id: 'gap-analysis',
+      icon: Search,
+      title: 'Gap Analysis',
+      description: 'Our detailed gap analysis identifies specific areas where your chatbot falls short of accessibility standards, providing you with clear visibility into compliance issues and their potential impact on your business operations.'
+    },
+    {
+      id: 'roadmap',
+      icon: MapPin,
+      title: 'Prioritized Roadmap',
+      description: 'We create a strategic, prioritized roadmap that addresses the most critical accessibility issues first, allowing you to achieve compliance efficiently while minimizing business disruption and optimizing resource allocation.'
+    },
+    {
+      id: 'assistance',
+      icon: HelpCircle,
+      title: 'Expert Assistance',
+      description: 'Our team of accessibility specialists provides ongoing support throughout the remediation process, ensuring that all improvements are implemented correctly and maintained for long-term compliance success.'
+    },
+    {
+      id: 'reporting',
+      icon: FileText,
+      title: 'Detailed Reporting',
+      description: 'Receive comprehensive reports that document your chatbot\'s accessibility status, remediation progress, and compliance verification, providing stakeholders with clear evidence of your commitment to accessibility standards.'
     }
   ];
 
@@ -165,6 +236,107 @@ const EUAccessibilityAudit = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Penalties and Business Impact Section */}
+      <section className="py-16 lg:py-24 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                Penalties and Business Impact of Non-Compliance
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                The EU Accessibility Act for chatbots is a core business reality, with June 28th, 2025, as an important compliance milestone. Non-compliance exposes your organization to severe consequences that extend far beyond regulatory penalties, impacting every aspect of your business operations and market position.
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              {penaltiesData.map((penalty) => (
+                <Card key={penalty.id} className="glass border-l-4 border-l-destructive/20 hover:border-l-destructive/40 transition-colors duration-300">
+                  <Collapsible open={openPenalties === penalty.id} onOpenChange={() => setOpenPenalties(openPenalties === penalty.id ? null : penalty.id)}>
+                    <CollapsibleTrigger className="w-full">
+                      <CardHeader className="flex flex-row items-center space-y-0 space-x-4 cursor-pointer hover:bg-muted/50 transition-colors duration-200 rounded-t-lg">
+                        <div className="w-12 h-12 bg-destructive/10 rounded-full flex items-center justify-center">
+                          <penalty.icon className="h-6 w-6 text-destructive" />
+                        </div>
+                        <div className="flex-1 text-left">
+                          <CardTitle className="text-xl text-foreground">{penalty.title}</CardTitle>
+                        </div>
+                        <div className="w-5 h-5 text-muted-foreground">
+                          {openPenalties === penalty.id ? '−' : '+'}
+                        </div>
+                      </CardHeader>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <CardContent className="pt-0">
+                        <p className="text-muted-foreground leading-relaxed">
+                          {penalty.description}
+                        </p>
+                      </CardContent>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How Our Audit Helps Avoid These Risks Section */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                How Our Audit Helps Avoid These Risks
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                Don't let accessibility be an afterthought that exposes your business to costly penalties and operational disruptions. Our comprehensive EU Accessibility Act audit transforms compliance from a burden into a strategic advantage, protecting your organization while expanding your market reach.
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              {solutionsData.map((solution) => (
+                <Card key={solution.id} className="glass border-l-4 border-l-primary/20 hover:border-l-primary/40 transition-colors duration-300">
+                  <Collapsible open={openSolutions === solution.id} onOpenChange={() => setOpenSolutions(openSolutions === solution.id ? null : solution.id)}>
+                    <CollapsibleTrigger className="w-full">
+                      <CardHeader className="flex flex-row items-center space-y-0 space-x-4 cursor-pointer hover:bg-muted/50 transition-colors duration-200 rounded-t-lg">
+                        <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                          {solution.hasImage ? (
+                            <Brain className="h-6 w-6 text-primary" />
+                          ) : (
+                            <solution.icon className="h-6 w-6 text-primary" />
+                          )}
+                        </div>
+                        <div className="flex-1 text-left">
+                          <CardTitle className="text-xl text-foreground">{solution.title}</CardTitle>
+                        </div>
+                        <div className="w-5 h-5 text-muted-foreground">
+                          {openSolutions === solution.id ? '−' : '+'}
+                        </div>
+                      </CardHeader>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <CardContent className="pt-0">
+                        <div className="flex items-start gap-6">
+                          {solution.hasImage && (
+                            <div className="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center">
+                              <Brain className="h-8 w-8 text-primary" />
+                            </div>
+                          )}
+                          <p className="text-muted-foreground leading-relaxed flex-1">
+                            {solution.description}
+                          </p>
+                        </div>
+                      </CardContent>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
