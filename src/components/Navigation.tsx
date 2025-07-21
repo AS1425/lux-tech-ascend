@@ -92,7 +92,7 @@ const Navigation = () => {
   const resourcesItems = [
     { label: 'Blog', href: '/blog' },
     { label: 'Webinar', href: '/webinar' },
-    { label: 'Whitepapers', href: '#whitepapers' },
+    { label: 'Whitepapers', href: '/whitepapers' },
     { label: 'AI Guides', href: '/ai-guide' },
   ];
 
