@@ -1,12 +1,12 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Shield, Lock, Eye, FileCheck, Users, TrendingUp, Zap } from 'lucide-react';
 
 const AISecurityConsulting = () => {
-  const [activeRiskIndex, setActiveRiskIndex] = useState(0);
 
   const securityRisks = [
     {
@@ -222,50 +222,27 @@ const AISecurityConsulting = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Left: Risk Tabs */}
-            <div className="space-y-2">
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible defaultValue="item-0" className="space-y-4">
               {securityRisks.map((risk, index) => (
-                <button
+                <AccordionItem
                   key={index}
-                  onClick={() => setActiveRiskIndex(index)}
-                  className={`w-full text-left p-6 rounded-lg transition-all duration-300 ${
-                    activeRiskIndex === index
-                      ? 'bg-primary text-primary-foreground shadow-lg'
-                      : 'bg-card border hover:bg-accent/50'
-                  }`}
+                  value={`item-${index}`}
+                  className="bg-card rounded-lg border"
                 >
-                  <div className="flex items-center space-x-4">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                      activeRiskIndex === index ? 'bg-primary-foreground/20' : 'bg-primary/20'
-                    }`}>
-                      <Shield className={`h-5 w-5 ${
-                        activeRiskIndex === index ? 'text-primary-foreground' : 'text-primary'
-                      }`} />
-                    </div>
-                    <span className="font-semibold">{risk.title}</span>
-                  </div>
-                </button>
+                  <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                    <span className="text-lg font-semibold text-foreground">
+                      {risk.title}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6 pt-0">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {risk.content}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
-
-            {/* Right: Risk Content */}
-            <div className="bg-card rounded-2xl p-8 border">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="h-8 w-8 text-accent" />
-                </div>
-                <h3 className="text-2xl font-semibold text-foreground mb-4">
-                  {securityRisks[activeRiskIndex].title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {securityRisks[activeRiskIndex].content}
-                </p>
-              </div>
-              <Button variant="outline" className="w-full">
-                Learn More About This Risk
-              </Button>
-            </div>
+            </Accordion>
           </div>
         </div>
       </section>
