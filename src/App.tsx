@@ -40,6 +40,7 @@ import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import AIGuide from "./pages/AIGuide";
 import CaseStudies from "./pages/CaseStudies";
+import Webinar from "./pages/Webinar";
 
 
 const queryClient = new QueryClient();
@@ -87,6 +88,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
         <Route path="/ai-guide" element={<AIGuide />} />
         <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/webinar" element={<Webinar />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
