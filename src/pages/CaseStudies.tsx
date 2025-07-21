@@ -113,7 +113,7 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* Featured Projects Section */}
+      {/* Featured Success Stories Section */}
       <section className="py-16 relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -123,21 +123,78 @@ const CaseStudies = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-            {featuredProjects.map((project, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
-                <CardHeader className="p-0">
-                  <div className="h-48 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-t-lg flex items-center justify-center">
-                    <div className="text-4xl font-bold text-primary/30">{project.category}</div>
-                  </div>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <div className="text-sm text-muted-foreground mb-2">{project.category}</div>
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-lg font-medium text-primary">{project.result}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+            {/* Tirupati Herbal */}
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-200 to-pink-200 rounded-xl blur opacity-60 group-hover:opacity-80 transition duration-300"></div>
+              <div className="relative bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl border border-purple-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+                <div className="text-xs font-medium text-purple-600 uppercase tracking-wide mb-2">B2B Manufacturing</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Tirupati Herbal Website & SEO</h3>
+                <div className="text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  200% increase in B2B lead inquiries
+                </div>
+              </div>
+            </div>
+
+            {/* Remote StacX Automation */}
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-200 to-pink-200 rounded-xl blur opacity-60 group-hover:opacity-80 transition duration-300"></div>
+              <div className="relative bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl border border-purple-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+                <div className="text-xs font-medium text-purple-600 uppercase tracking-wide mb-2">Internal Automation</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">AI-based Hiring Automation</h3>
+                <div className="text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Reduced onboarding time by 70%
+                </div>
+              </div>
+            </div>
+
+            {/* Vedant Artisans */}
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-200 to-pink-200 rounded-xl blur opacity-60 group-hover:opacity-80 transition duration-300"></div>
+              <div className="relative bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl border border-purple-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+                <div className="text-xs font-medium text-purple-600 uppercase tracking-wide mb-2">E-Commerce Growth</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Epoxy Tables Ad Campaign</h3>
+                <div className="text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  300% growth in paid ad conversions
+                </div>
+              </div>
+            </div>
+
+            {/* Citadel NYC */}
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-200 to-pink-200 rounded-xl blur opacity-60 group-hover:opacity-80 transition duration-300"></div>
+              <div className="relative bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl border border-purple-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+                <div className="text-xs font-medium text-purple-600 uppercase tracking-wide mb-2">Real Estate Lead Gen</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">IDX SEO Optimization</h3>
+                <div className="text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  65% boost in organic search leads
+                </div>
+              </div>
+            </div>
+
+            {/* AeroVersa */}
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-200 to-pink-200 rounded-xl blur opacity-60 group-hover:opacity-80 transition duration-300"></div>
+              <div className="relative bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl border border-purple-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+                <div className="text-xs font-medium text-purple-600 uppercase tracking-wide mb-2">Aviation Careers</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Career Platform Launch</h3>
+                <div className="text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  1,000+ signups in first 30 days
+                </div>
+              </div>
+            </div>
+
+            {/* Hansem Global */}
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-200 to-pink-200 rounded-xl blur opacity-60 group-hover:opacity-80 transition duration-300"></div>
+              <div className="relative bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl border border-purple-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+                <div className="text-xs font-medium text-purple-600 uppercase tracking-wide mb-2">B2B Localization</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">SEO & Content Funnel</h3>
+                <div className="text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  125+ qualified B2B leads
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
