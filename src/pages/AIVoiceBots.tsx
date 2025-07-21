@@ -120,9 +120,6 @@ const AIVoiceBots = () => {
               Enhance customer interactions with intelligent AI voice bots that understand and respond in real-time.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.4s' }}>
-              <Button size="lg" className="glass px-8 py-3 text-lg cta-ripple hover:scale-105 transition-transform">
-                Request a Demo
-              </Button>
               <Button variant="outline" size="lg" className="px-8 py-3 text-lg hover:scale-105 transition-transform">
                 Contact Our Team
               </Button>
