@@ -39,6 +39,7 @@ import MissionVision from "./pages/MissionVision";
 import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import AIGuide from "./pages/AIGuide";
+import CaseStudies from "./pages/CaseStudies";
 
 
 const queryClient = new QueryClient();
@@ -84,7 +85,8 @@ const App = () => (
           <Route path="/mission-vision" element={<MissionVision />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/ai-guide" element={<AIGuide />} />
+        <Route path="/ai-guide" element={<AIGuide />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

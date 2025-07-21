@@ -83,7 +83,7 @@ const Navigation = () => {
   ];
 
   const portfolioItems = [
-    { label: 'Case Studies', href: '#case-studies' },
+    { label: 'Case Studies', href: '/case-studies' },
     { label: 'Client Success Stories', href: '#success-stories' },
     { label: 'Industry Solutions', href: '#industry-solutions' },
     { label: 'Product Demos', href: '#demos' },
