@@ -153,12 +153,12 @@ return (
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {teamMembers.map((member, index) => {
-              const isLastRow = index >= teamMembers.length - (teamMembers.length % 3);
-              const lastRowCount = teamMembers.length % 3;
-              const shouldCenter = lastRowCount === 2 && isLastRow;
+              // Center the last 2 cards (Ankit Kumar and Prabhat Singh)
+              const isLastTwoCards = index >= teamMembers.length - 2;
+              const shouldCenter = isLastTwoCards && index === teamMembers.length - 2; // First of last 2
               
               return (
-                <div key={member.id} className={`flex justify-center ${shouldCenter && index === teamMembers.length - 2 ? 'lg:col-start-2' : ''}`}>
+                <div key={member.id} className={`flex justify-center ${shouldCenter ? 'lg:col-start-2' : ''}`}>
                   <Card 
                     className={`cursor-pointer transition-all duration-300 ease-in-out card-hover ${
                       expandedCard === member.id 
