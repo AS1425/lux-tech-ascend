@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import ParticleBackground from "@/components/ParticleBackground";
+
 import { Badge } from "@/components/ui/badge";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
 import FloatingChatbot from "@/components/FloatingChatbot";
 import { Users, Lightbulb, Globe, TrendingUp, Heart, Shield, Target, Zap, Sparkles } from "lucide-react";
 
@@ -121,9 +120,7 @@ const Careers = () => {
   );
 
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
-      <ParticleBackground />
-      <Navigation />
+    <Layout>
       
       {/* Hero Banner Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -357,10 +354,9 @@ const Careers = () => {
           </Button>
         </div>
       </section>
-
-      <Footer />
+      
       <FloatingChatbot />
-    </div>
+    </Layout>
   );
 };
 

@@ -1,8 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Brain, Network, Zap, Target, TrendingUp, Shield, CheckCircle, Bot, MessageSquare, BarChart3, Cog, Eye, Lightbulb, Settings, ChevronDown } from 'lucide-react';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
+import Layout from '@/components/Layout';
 import FloatingChatbot from '../components/FloatingChatbot';
 
 const AIDevelopment = () => {
@@ -24,29 +23,7 @@ const AIDevelopment = () => {
       }
     };
 
-    // Create animated particles
-    const createParticles = () => {
-      const container = document.querySelector('.particles-container');
-      if (!container) return;
-
-      // Clear existing particles
-      container.innerHTML = '';
-
-      // Create particles
-      const particleCount = 30;
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 10 + 's';
-        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-        container.appendChild(particle);
-      }
-    };
-
     window.addEventListener('scroll', updateScrollProgress);
-    createParticles();
     return () => window.removeEventListener('scroll', updateScrollProgress);
   }, []);
 
@@ -144,13 +121,10 @@ const AIDevelopment = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-inter">
-      <Navigation />
+    <Layout>
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background pt-20">
-        {/* Animated Particles Background */}
-        <div className="particles-container absolute inset-0 z-0"></div>
 
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 opacity-5 z-10">
@@ -368,9 +342,8 @@ const AIDevelopment = () => {
         </div>
       </section>
 
-      <Footer />
       <FloatingChatbot />
-    </div>
+    </Layout>
   );
 };
 

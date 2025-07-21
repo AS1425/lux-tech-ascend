@@ -1,8 +1,7 @@
 
 import React, { useEffect } from 'react';
-import Navigation from '../components/Navigation';
+import Layout from '@/components/Layout';
 import HeroSection from '../components/HeroSection';
-import ParticleBackground from '../components/ParticleBackground';
 
 import WorkflowSection from '../components/WorkflowSection';
 import BlogInsightsSection from '../components/BlogInsightsSection';
@@ -12,7 +11,7 @@ import ServicesSection from '../components/ServicesSection';
 import PortfolioSection from '../components/PortfolioSection';
 import ClientsSection from '../components/ClientsSection';
 import ContactSection from '../components/ContactSection';
-import Footer from '../components/Footer';
+
 import FloatingChatbot from '../components/FloatingChatbot';
 
 const Index = () => {
@@ -34,9 +33,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-inter relative">
-      <ParticleBackground />
-      <Navigation />
+    <Layout>
       <HeroSection />
       <ServicesSection />
       <PortfolioSection />
@@ -46,9 +43,8 @@ const Index = () => {
       <ContactSection />
       <WorkflowSection />
       <BlogInsightsSection />
-      <Footer />
       <FloatingChatbot />
-    </div>
+    </Layout>
   );
 };
 
