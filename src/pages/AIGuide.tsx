@@ -274,6 +274,82 @@ const AIGuide = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-foreground mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Get answers to common questions about our AI Guide implementation
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div className="bg-card rounded-lg p-6 border border-border/50">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    How long does it take to implement an AI Guide?
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Implementation typically takes 4-8 weeks depending on complexity, integrations required, and the scope of your AI agent's capabilities.
+                  </p>
+                </div>
+                
+                <div className="bg-card rounded-lg p-6 border border-border/50">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    Can the AI Guide integrate with our existing systems?
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Yes, our AI Guide is designed to seamlessly integrate with popular CRM, helpdesk, e-commerce, and communication platforms through APIs and webhooks.
+                  </p>
+                </div>
+                
+                <div className="bg-card rounded-lg p-6 border border-border/50">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    What kind of training data is needed?
+                  </h3>
+                  <p className="text-muted-foreground">
+                    We work with your existing customer conversations, FAQs, product documentation, and brand guidelines to train your AI Guide effectively.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="bg-card rounded-lg p-6 border border-border/50">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    Is ongoing maintenance required?
+                  </h3>
+                  <p className="text-muted-foreground">
+                    We provide ongoing monitoring, updates, and improvements to ensure your AI Guide continues to perform optimally and learns from new interactions.
+                  </p>
+                </div>
+                
+                <div className="bg-card rounded-lg p-6 border border-border/50">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    What security measures are in place?
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Our AI solutions comply with industry standards including GDPR, SOC 2, and use enterprise-grade encryption for all data processing and storage.
+                  </p>
+                </div>
+                
+                <div className="bg-card rounded-lg p-6 border border-border/50">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    Can we customize the AI's personality and responses?
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Absolutely! We tailor the AI's tone, personality, and responses to match your brand voice and specific business requirements.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-primary to-accent text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.1),transparent_50%)]" />
@@ -292,7 +368,7 @@ const AIGuide = () => {
                 <Calendar className="w-5 h-5 mr-2" />
                 Book a Free Consultation
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
+              <Button size="lg" variant="outline" className="border-white text-black bg-white hover:bg-white/90 px-8 py-6 text-lg">
                 View Case Studies
               </Button>
             </div>
