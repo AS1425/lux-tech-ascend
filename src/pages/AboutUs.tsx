@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ChevronRight, Target, Eye, Users, Cpu, Globe, CheckCircle, Award } from 'lucide-react';
 import CounterAnimation from '@/components/CounterAnimation';
+import Footer from '@/components/Footer';
+import globeSpinning from '@/assets/globe-spinning.png';
 
 const AboutUs = () => {
   const particlesRef = useRef<HTMLDivElement>(null);
@@ -198,49 +200,22 @@ const AboutUs = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Global Team, Local Impact</h2>
             <p className="text-xl text-muted-foreground">
-              Serving clients across the US, Canada, UK, UAE, and beyond from our India HQ.
+              Serving clients across the US, Canada, UK, UAE, and beyond from our HQ.
             </p>
           </div>
           <div className="relative flex justify-center">
-            <div className="w-96 h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center relative overflow-hidden">
-              <Globe className="w-48 h-48 text-primary animate-spin" style={{ animationDuration: '20s' }} />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent animate-pulse"></div>
+            <div className="w-96 h-96 flex items-center justify-center">
+              <img 
+                src={globeSpinning} 
+                alt="Spinning Globe" 
+                className="w-80 h-80 object-contain animate-spin rounded-full"
+                style={{ animationDuration: '20s' }}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div className="space-y-4">
-              <div className="text-5xl font-bold text-primary">
-                <CounterAnimation target={285} duration={2000} isVisible={true} />
-              </div>
-              <p className="text-lg font-semibold">Projects Delivered</p>
-            </div>
-            <div className="space-y-4">
-              <div className="text-5xl font-bold text-primary">
-                <CounterAnimation target={50} duration={2000} isVisible={true} />
-              </div>
-              <p className="text-lg font-semibold">Global Clients</p>
-            </div>
-            <div className="space-y-4">
-              <div className="text-5xl font-bold text-primary">
-                <CounterAnimation target={35} duration={2000} isVisible={true} />
-              </div>
-              <p className="text-lg font-semibold">Specialists</p>
-            </div>
-            <div className="space-y-4">
-              <div className="text-5xl font-bold text-primary">
-                <CounterAnimation target={97} duration={2000} isVisible={true} suffix="%" />
-              </div>
-              <p className="text-lg font-semibold">Client Retention</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Work Philosophy */}
       <section className="py-20 relative overflow-hidden">
@@ -306,6 +281,8 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
