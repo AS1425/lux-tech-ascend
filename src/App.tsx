@@ -36,6 +36,7 @@ import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import OurTeam from "./pages/OurTeam";
 import MissionVision from "./pages/MissionVision";
+import Careers from "./pages/Careers";
 
 
 const queryClient = new QueryClient();
@@ -79,7 +80,7 @@ const App = () => (
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/our-team" element={<OurTeam />} />
           <Route path="/mission-vision" element={<MissionVision />} />
-          
+          <Route path="/careers" element={<Careers />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -100,6 +100,7 @@ const Navigation = () => {
     { label: 'About Us', href: '/about-us' },
     { label: 'Our Team', href: '/our-team' },
     { label: 'Mission & Vision', href: '/mission-vision' },
+    { label: 'Careers', href: '/careers' },
     { label: 'Contact Us', href: '/contact-us' },
   ];
 
@@ -243,15 +244,6 @@ const Navigation = () => {
                     </NavigationMenuContent>
                   </NavigationMenuItem>
 
-                  {/* Careers */}
-                  <NavigationMenuItem>
-                    <NavigationMenuLink 
-                      href="#careers"
-                      className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium px-4 py-2 rounded-md hover:bg-accent/10"
-                    >
-                      Careers
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
 
