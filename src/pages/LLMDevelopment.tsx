@@ -1,10 +1,108 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Brain, MessageSquare, FileText, BarChart3, Languages, Zap, Target, Database, Cog, Globe, Users, TrendingUp } from 'lucide-react';
+import { Brain, MessageSquare, FileText, BarChart3, Languages, Zap, Target, Database, Cog, Globe, Users, TrendingUp, Settings, BarChart, Wrench } from 'lucide-react';
+
+const TechStackTabs = () => {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const techStackData = [
+    {
+      id: 'nlp',
+      title: 'NLP for Deeper Understanding',
+      icon: Brain,
+      description: 'Unlock language with precision. We use NLP tools like SpaCy, NLTK, and Transformers to help LLMs interpret context, tone, and semantics—enabling accurate and context-aware outputs across all tasks.'
+    },
+    {
+      id: 'ml',
+      title: 'Machine Learning for Smarter Models',
+      icon: Settings,
+      description: 'Our LLM solutions are backed by powerful ML techniques—supervised, unsupervised, reinforcement, and deep learning. As part of our machine learning consultancy, we tailor algorithms to optimize model accuracy and adaptability.',
+      techStack: [
+        '**Machine Learning**: TensorFlow, Keras, PyTorch',
+        '**DL Models**: RNN, LSTM, CNN, GAN',
+        '**Platforms**: AWS, GCP, Azure'
+      ]
+    },
+    {
+      id: 'training',
+      title: 'Tailored LLM Training',
+      icon: Target,
+      description: 'We don\'t believe in one-size-fits-all. Our experts provide customized LLM training pipelines to match your domain, industry, and target use cases—resulting in high-performing, business-aligned models.'
+    },
+    {
+      id: 'optimization',
+      title: 'LLM Adaptation & Optimization',
+      icon: Wrench,
+      description: 'We fine-tune pre-trained LLMs to meet your evolving needs, enhancing performance, reducing hallucinations, and improving output fluency through efficient hyperparameter tuning and prompt engineering.'
+    },
+    {
+      id: 'sentiment',
+      title: 'Sentiment Analysis at Scale',
+      icon: BarChart,
+      description: 'Analyze millions of interactions in real time. We integrate sentiment detection into LLM pipelines to help you understand customer feedback, detect emotion, and personalize interactions at scale.'
+    },
+    {
+      id: 'transfer',
+      title: 'Transfer Learning for Faster Results',
+      icon: Zap,
+      description: 'We use pretrained models and apply transfer learning to dramatically reduce training time, cost, and data requirements—accelerating time-to-market and maximizing LLM ROI.'
+    }
+  ];
+
+  return (
+    <div className="w-full">
+      {/* Tab Navigation */}
+      <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start overflow-x-auto pb-2">
+        {techStackData.map((tab, index) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(index)}
+            className={`px-6 py-3 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 ${
+              activeTab === index
+                ? 'bg-primary text-primary-foreground shadow-lg'
+                : 'bg-background border border-border hover:bg-muted/80 text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            {tab.title}
+          </button>
+        ))}
+      </div>
+
+      {/* Tab Content */}
+      <div className="bg-background rounded-2xl p-8 shadow-lg border border-border">
+        <div className="flex flex-col lg:flex-row items-start gap-6">
+          <div className="flex-shrink-0">
+            {React.createElement(techStackData[activeTab].icon, { className: "h-16 w-16 text-primary" })}
+          </div>
+          <div className="flex-1">
+            <h3 className="text-2xl font-bold mb-4 text-foreground">
+              {techStackData[activeTab].title}
+            </h3>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              {techStackData[activeTab].description}
+            </p>
+            {techStackData[activeTab].techStack && (
+              <div className="space-y-2">
+                <h4 className="text-lg font-semibold text-foreground mb-3">🔧 Tech Stack:</h4>
+                <ul className="space-y-2">
+                  {techStackData[activeTab].techStack.map((item, idx) => (
+                    <li key={idx} className="text-muted-foreground">
+                      <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const LLMDevelopment = () => {
   const features = [
@@ -252,6 +350,19 @@ const LLMDevelopment = () => {
                 Talk to Our Experts
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack Section */}
+      <section className="py-16 lg:py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">
+              The Tech Stack Behind Our LLM Services
+            </h2>
+            
+            <TechStackTabs />
           </div>
         </div>
       </section>
