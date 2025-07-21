@@ -1,9 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { 
   Bot, 
   Lightbulb, 
@@ -106,6 +107,41 @@ const GenerativeAIConsulting = () => {
       icon: BarChart3,
       title: "Scalable Solutions",
       description: "Our AI solutions are scalable, enabling you to handle growing workloads and content demands as your business expands"
+    }
+  ];
+
+  const consultingServices = [
+    {
+      title: "Strategy Development and Roadmapping",
+      content: "We begin by deeply analyzing your goals, competitive landscape, and data infrastructure. This sets the stage to identify implementation opportunities, assess feasibility, and design a tailored roadmap. Our experts provide actionable strategies that minimize risks and align your GenAI initiatives with measurable business objectives."
+    },
+    {
+      title: "Opportunity Discovery & Assessment",
+      content: "Our consultants evaluate your business workflows to uncover high-impact areas where Generative AI can unlock value. We assess process gaps, automation potential, and innovation opportunities to drive efficiency and competitiveness."
+    },
+    {
+      title: "GAI Governance, Compliance, and Ethical Frameworks",
+      content: "We ensure your GenAI solutions follow best practices in security, transparency, and ethical use. This includes model auditability, data privacy alignment (e.g., GDPR, CCPA), and responsible AI use policies to build stakeholder trust."
+    },
+    {
+      title: "Technology Assessment, Advisory, and Selection",
+      content: "Our team evaluates leading GenAI platforms, APIs, and cloud solutions to help you select the right tech stack. We guide vendor selection, build-versus-buy decisions, and integration strategies aligned with your business needs."
+    },
+    {
+      title: "Data Engineering and Advanced AI Modeling",
+      content: "We design scalable data pipelines and curate structured datasets tailored for GenAI training and optimization. Our team implements advanced AI models with fine-tuning, reinforcement learning, and prompt engineering."
+    },
+    {
+      title: "GenAI Development and Customization",
+      content: "We create custom GenAI applications — chatbots, copilots, content generators, and internal assistants — built for your unique business use cases. Every solution is branded, secure, and optimized for scalability."
+    },
+    {
+      title: "Deployment, System Integration, and Optimization",
+      content: "We ensure seamless deployment across your ecosystem — including CRM, CMS, ERP, or proprietary tools. Our experts handle integration, automation, and real-time data flow for peak performance."
+    },
+    {
+      title: "GenAI Empowerment, Training, and Maintenance Support",
+      content: "We don't just deliver tech—we enable your teams to use it effectively. This includes stakeholder training, custom documentation, and continuous support to monitor, maintain, and evolve your GenAI assets."
     }
   ];
 
@@ -213,6 +249,40 @@ const GenerativeAIConsulting = () => {
                 </Card>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Consulting Services Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-6 text-foreground">
+                Our Generative AI Consulting Services for Your Excellence
+              </h2>
+            </div>
+
+            <Accordion type="single" collapsible defaultValue="item-0" className="space-y-4">
+              {consultingServices.map((service, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="glass rounded-lg border-0"
+                >
+                  <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                    <span className="text-lg font-semibold text-foreground">
+                      {service.title}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6 pt-0">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {service.content}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
