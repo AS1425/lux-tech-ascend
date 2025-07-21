@@ -9,6 +9,7 @@ import { Sparkles, Cpu, Palette, Music, FileText, Image, Zap, BarChart3, Cog, Br
 
 const GenerativeAIDevelopment = () => {
   const [activeServiceTab, setActiveServiceTab] = useState("llm-chatbots");
+  const [activeProcessStep, setActiveProcessStep] = useState(4); // LOFT highlighted by default
 
   const features = [
     {
@@ -189,6 +190,46 @@ const GenerativeAIDevelopment = () => {
       icon: Bot,
       title: "Gen AI Agents",
       description: "Create autonomous AI agents that can perform complex tasks and make decisions across various business processes."
+    }
+  ];
+
+  const processSteps = [
+    {
+      id: 1,
+      title: "Data Collection & Requirements",
+      description: "We gather domain-specific data and define project objectives to shape a successful Gen AI strategy.",
+      icon: BarChart3
+    },
+    {
+      id: 2,
+      title: "Planning & Determining Technologies",
+      description: "Our team selects the right models, frameworks, and infrastructure for seamless AI solution development.",
+      icon: Settings
+    },
+    {
+      id: 3,
+      title: "Model Training",
+      description: "Train large-scale generative models using curated datasets, optimized for accuracy and efficiency.",
+      icon: Brain
+    },
+    {
+      id: 4,
+      title: "LOFT (Framework Acceleration)",
+      description: "Experts speed up delivery with our internal LOFT framework built for efficient generative AI development.",
+      icon: Zap,
+      highlighted: true
+    },
+    {
+      id: 5,
+      title: "Fine-tuning",
+      description: "Refine the model with real-world data and use case feedback to improve contextual response and control.",
+      icon: Target
+    },
+    {
+      id: 6,
+      title: "Deployment & Maintenance",
+      description: "Deploy to your environment and provide ongoing support, updates, and performance monitoring.",
+      icon: Wrench
     }
   ];
 
@@ -430,6 +471,138 @@ const GenerativeAIDevelopment = () => {
             <p className="text-lg text-muted-foreground text-center leading-relaxed mb-8">
               With deep expertise in AI and machine learning, we specialize in developing custom generative AI solutions that unlock new possibilities for your business. Whether you're looking to automate content creation, enhance product design, or improve customer engagement, we provide scalable, innovative solutions that align with your business goals. Our team ensures that each generative AI model we develop is finely tuned, highly accurate, and delivers real value for your business.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Generative AI Solutions Development Process Section */}
+      <section className="py-16 lg:py-24 bg-muted/50 relative overflow-hidden">
+        {/* Particle Background */}
+        <div className="absolute inset-0 opacity-30">
+          {[...Array(50)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-primary rounded-full animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 2}s`,
+              }}
+            />
+          ))}
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Generative AI Solutions Development Process</h2>
+          
+          {/* Desktop Horizontal Scroll */}
+          <div className="hidden lg:block">
+            <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-8 justify-center">
+              <div className="flex gap-6 min-w-max">
+                {processSteps.map((step) => (
+                  <div
+                    key={step.id}
+                    onClick={() => setActiveProcessStep(step.id)}
+                    className={`cursor-pointer transition-all duration-300 rounded-xl p-6 min-w-[280px] max-w-[280px] ${
+                      activeProcessStep === step.id || step.highlighted
+                        ? 'bg-primary text-primary-foreground shadow-lg scale-105'
+                        : 'bg-card text-card-foreground hover:bg-muted/80'
+                    }`}
+                    style={{
+                      boxShadow: activeProcessStep === step.id || step.highlighted 
+                        ? '0 8px 24px rgba(0, 0, 0, 0.15)' 
+                        : '0 2px 8px rgba(0, 0, 0, 0.08)'
+                    }}
+                  >
+                    <div className="text-center">
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold ${
+                        activeProcessStep === step.id || step.highlighted
+                          ? 'bg-primary-foreground text-primary'
+                          : 'bg-primary text-primary-foreground'
+                      }`}>
+                        {step.id}
+                      </div>
+                      <step.icon className={`h-8 w-8 mx-auto mb-4 ${
+                        activeProcessStep === step.id || step.highlighted
+                          ? 'text-primary-foreground'
+                          : 'text-primary'
+                      }`} />
+                      <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
+                      <p className={`text-sm leading-relaxed ${
+                        activeProcessStep === step.id || step.highlighted
+                          ? 'text-primary-foreground/90'
+                          : 'text-muted-foreground'
+                      }`}>
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Scroll Indicators */}
+            <div className="flex justify-center gap-2 mt-8">
+              {processSteps.map((step) => (
+                <button
+                  key={step.id}
+                  onClick={() => setActiveProcessStep(step.id)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    activeProcessStep === step.id || step.highlighted
+                      ? 'bg-primary scale-125'
+                      : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+          
+          {/* Mobile Vertical Stack */}
+          <div className="lg:hidden space-y-4">
+            {processSteps.map((step) => (
+              <div
+                key={step.id}
+                onClick={() => setActiveProcessStep(activeProcessStep === step.id ? 0 : step.id)}
+                className={`cursor-pointer transition-all duration-300 rounded-xl overflow-hidden ${
+                  activeProcessStep === step.id || step.highlighted
+                    ? 'bg-primary text-primary-foreground shadow-lg'
+                    : 'bg-card text-card-foreground'
+                }`}
+              >
+                <div className="p-6">
+                  <div className="flex items-center gap-4">
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${
+                      activeProcessStep === step.id || step.highlighted
+                        ? 'bg-primary-foreground text-primary'
+                        : 'bg-primary text-primary-foreground'
+                    }`}>
+                      {step.id}
+                    </div>
+                    <step.icon className={`h-6 w-6 ${
+                      activeProcessStep === step.id || step.highlighted
+                        ? 'text-primary-foreground'
+                        : 'text-primary'
+                    }`} />
+                    <h3 className="text-lg font-semibold flex-1">{step.title}</h3>
+                  </div>
+                  
+                  <div className={`mt-4 transition-all duration-300 ${
+                    activeProcessStep === step.id || step.highlighted
+                      ? 'max-h-96 opacity-100'
+                      : 'max-h-0 opacity-0 overflow-hidden'
+                  }`}>
+                    <p className={`text-sm leading-relaxed ${
+                      activeProcessStep === step.id || step.highlighted
+                        ? 'text-primary-foreground/90'
+                        : 'text-muted-foreground'
+                    }`}>
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
