@@ -1,11 +1,40 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
-import { Shield, Lock, Eye, FileCheck, Users, TrendingUp } from 'lucide-react';
+import { Shield, Lock, Eye, FileCheck, Users, TrendingUp, Zap } from 'lucide-react';
 
 const AISecurityConsulting = () => {
+  const [activeRiskIndex, setActiveRiskIndex] = useState(0);
+
+  const securityRisks = [
+    {
+      title: "Jailbreak and Prompt Injection Attacks",
+      content: "When LLMs are fed malicious prompts, they are tricked into revealing sensitive insights or executing unauthorized commands. By integrating advanced guardrails and training models to recognize manipulative input, we neutralize these risks and keep your systems secure."
+    },
+    {
+      title: "Excessive Agency and Malicious Intent",
+      content: "Overly autonomous AI systems can act beyond intended limits. We define strict boundaries and embed behavioral constraints to prevent unintended actions."
+    },
+    {
+      title: "Insecure Plugin Design",
+      content: "Poorly secured plugins can expose AI systems to external threats. We audit and test plugins rigorously to ensure safe integrations with third-party tools."
+    },
+    {
+      title: "Insufficient Monitoring, Logging, and Rate Limiting",
+      content: "Without real-time monitoring, threats go undetected. We implement detailed logging, rate-limiting, and alert mechanisms to detect anomalies early."
+    },
+    {
+      title: "Lack of Output Validation",
+      content: "AI systems may generate harmful, biased, or incorrect outputs. We apply multi-layered filters, validation techniques, and human-in-the-loop mechanisms to ensure output quality."
+    },
+    {
+      title: "Dynamic LLM Testing",
+      content: "Static testing can't capture evolving threats. We simulate real-world attacks using adversarial testing, red teaming, and stress scenarios to ensure resilience."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -149,28 +178,93 @@ const AISecurityConsulting = () => {
               </p>
             </div>
 
-            <div className="bg-card rounded-xl p-6 border">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-primary font-bold">4</span>
+            {/* Second row cards - centered */}
+            <div className="lg:col-start-1 lg:col-end-2 md:col-start-1 md:col-end-3 lg:translate-x-1/2">
+              <div className="bg-card rounded-xl p-6 border">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                    <span className="text-primary font-bold">4</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">Implementation & Integration</h3>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Implementation & Integration</h3>
+                <p className="text-muted-foreground">
+                  We implement security measures such as encryption, access controls, and adversarial training to strengthen your AI systems.
+                </p>
               </div>
-              <p className="text-muted-foreground">
-                We implement security measures such as encryption, access controls, and adversarial training to strengthen your AI systems.
-              </p>
             </div>
 
-            <div className="bg-card rounded-xl p-6 border">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-secondary font-bold">5</span>
+            <div className="lg:col-start-3 lg:col-end-4 md:col-start-1 md:col-end-3 lg:-translate-x-1/2">
+              <div className="bg-card rounded-xl p-6 border">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mr-4">
+                    <span className="text-secondary font-bold">5</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">Ongoing Monitoring</h3>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Ongoing Monitoring</h3>
+                <p className="text-muted-foreground">
+                  We provide continuous monitoring, threat detection, and maintenance services to ensure your AI systems remain secure as threats evolve.
+                </p>
               </div>
-              <p className="text-muted-foreground">
-                We provide continuous monitoring, threat detection, and maintenance services to ensure your AI systems remain secure as threats evolve.
-              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Security Risks Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Protecting Your AI Systems Against the Top Risks
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+              Safeguard your AI infrastructure from the most critical security threats with our comprehensive protection strategies.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Left: Risk Tabs */}
+            <div className="space-y-2">
+              {securityRisks.map((risk, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveRiskIndex(index)}
+                  className={`w-full text-left p-6 rounded-lg transition-all duration-300 ${
+                    activeRiskIndex === index
+                      ? 'bg-primary text-primary-foreground shadow-lg'
+                      : 'bg-card border hover:bg-accent/50'
+                  }`}
+                >
+                  <div className="flex items-center space-x-4">
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                      activeRiskIndex === index ? 'bg-primary-foreground/20' : 'bg-primary/20'
+                    }`}>
+                      <Shield className={`h-5 w-5 ${
+                        activeRiskIndex === index ? 'text-primary-foreground' : 'text-primary'
+                      }`} />
+                    </div>
+                    <span className="font-semibold">{risk.title}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Right: Risk Content */}
+            <div className="bg-card rounded-2xl p-8 border">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="h-8 w-8 text-accent" />
+                </div>
+                <h3 className="text-2xl font-semibold text-foreground mb-4">
+                  {securityRisks[activeRiskIndex].title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {securityRisks[activeRiskIndex].content}
+                </p>
+              </div>
+              <Button variant="outline" className="w-full">
+                Learn More About This Risk
+              </Button>
             </div>
           </div>
         </div>
