@@ -35,11 +35,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-background border-t border-primary/20">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 border-t border-primary/20">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.1) 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(180,69,255,0.1) 1px, transparent 0)`,
           backgroundSize: '50px 50px'
         }}></div>
       </div>
@@ -73,7 +73,7 @@ const Footer = () => {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-10 h-10 rounded-full border border-primary/20 bg-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/60 transition-all duration-300 hover:scale-110"
+                    className="w-10 h-10 rounded-full glass border border-primary/20 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-300 hover:scale-110"
                   >
                     <social.icon className="w-5 h-5" />
                   </a>
@@ -135,7 +135,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center text-sm">
                   <Mail className="w-4 h-4 text-primary mr-3" />
-                  <span className="text-primary">hello@foreignerds.com</span>
+                  <span className="text-muted-foreground">hello@foreignerds.com</span>
                 </div>
                 <div className="flex items-center text-sm">
                   <Phone className="w-4 h-4 text-primary mr-3" />
@@ -152,7 +152,7 @@ const Footer = () => {
 
         {/* Newsletter */}
         <div className="border-t border-primary/20 py-8">
-          <div className="bg-accent/50 p-8 rounded-3xl border border-primary/20">
+          <div className="glass p-8 rounded-3xl border border-primary/20">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-2">
@@ -166,9 +166,9 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-xl bg-background border border-primary/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="flex-1 px-4 py-3 rounded-xl bg-muted/30 border border-primary/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                 />
-                <button className="bg-primary hover:bg-primary/90 px-6 py-3 rounded-xl text-primary-foreground font-semibold hover:scale-105 transition-all duration-300 whitespace-nowrap">
+                <button className="glass px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold hover:scale-105 transition-all duration-300 whitespace-nowrap">
                   Subscribe
                 </button>
               </div>
@@ -191,7 +191,7 @@ const Footer = () => {
             </a>
             <button
               onClick={scrollToTop}
-              className="w-10 h-10 rounded-full border border-primary/20 bg-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/60 transition-all duration-300 hover:scale-110"
+              className="w-10 h-10 rounded-full glass border border-primary/20 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-300 hover:scale-110"
               aria-label="Back to top"
             >
               <ArrowUp className="w-5 h-5" />
