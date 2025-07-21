@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import ParticleBackground from '@/components/ParticleBackground';
+import Layout from '@/components/Layout';
 
 const CaseStudies = () => {
   const caseStudies = [
@@ -91,9 +91,7 @@ const CaseStudies = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background relative">
-      <ParticleBackground />
-      
+    <Layout>
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
@@ -316,7 +314,7 @@ const CaseStudies = () => {
           </div>
         </div>
       </section>
-    </div>
+    </Layout>
   );
 };
 

@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ChevronRight, Target, Eye, Users, Cpu, Globe, CheckCircle, Award } from 'lucide-react';
 import CounterAnimation from '@/components/CounterAnimation';
-import Footer from '@/components/Footer';
+import Layout from '@/components/Layout';
 import globeSpinning from '@/assets/globe-spinning.png';
 
 const AboutUs = () => {
@@ -69,7 +69,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <Layout>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         <div ref={particlesRef} className="absolute inset-0 z-0" />
@@ -285,9 +285,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

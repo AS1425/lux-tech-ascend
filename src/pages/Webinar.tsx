@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import ParticleBackground from '@/components/ParticleBackground';
+import Layout from '@/components/Layout';
 
 const Webinar = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -125,10 +125,8 @@ const Webinar = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <ParticleBackground />
-      
-      {/* Hero Section */}
+    <Layout>
+      <div className="min-h-screen bg-background">{/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20" />
         <div className="container mx-auto px-4 relative">
@@ -287,8 +285,9 @@ const Webinar = () => {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </Layout>
   );
 };
 

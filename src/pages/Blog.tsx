@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import ParticleBackground from '@/components/ParticleBackground';
+import Layout from '@/components/Layout';
 import { Search, Calendar, User, ArrowRight, Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -128,10 +126,7 @@ const Blog = () => {
   const popularTags = ['AI', 'Machine Learning', 'React', 'TypeScript', 'SEO', 'Automation', 'Chatbots', 'Development'];
 
   return (
-    <div className="min-h-screen bg-background relative">
-      <ParticleBackground />
-      <Navigation />
-      
+    <Layout>
       {/* Hero Banner Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">
@@ -339,9 +334,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Download, FileText, Brain, Zap, Users, TrendingUp } from 'lucide-react';
+import Layout from '@/components/Layout';
 
 const Whitepapers = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -74,8 +75,8 @@ const Whitepapers = () => {
   const regularWhitepapers = filteredWhitepapers.filter(wp => !wp.featured);
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
+    <Layout>
+      <div className="min-h-screen bg-background">{/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-pink-500/20 to-primary/20"></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -159,8 +160,7 @@ const Whitepapers = () => {
       {/* Resource Grid */}
       <section id="resources" className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {regularWhitepapers.map((whitepaper) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">{regularWhitepapers.map((whitepaper) => (
               <Card key={whitepaper.id} className="group hover:shadow-xl transition-all duration-300 hover:scale-105 border-primary/10 hover:border-primary/30">
                 <CardHeader className="text-center">
                   <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
@@ -210,8 +210,9 @@ const Whitepapers = () => {
             </Button>
           </div>
         </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </Layout>
   );
 };
 

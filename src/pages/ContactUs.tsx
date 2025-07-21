@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, Globe, Zap, Shield, MessageSquare, Users, ArrowRight } from 'lucide-react';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
+import Layout from '@/components/Layout';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -45,9 +44,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      
+    <Layout>
       {/* Header Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background"></div>
@@ -263,9 +260,7 @@ const ContactUs = () => {
           </a>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
