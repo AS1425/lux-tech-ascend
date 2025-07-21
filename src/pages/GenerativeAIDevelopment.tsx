@@ -80,52 +80,72 @@ const GenerativeAIDevelopment = () => {
     {
       id: "llm-chatbots",
       title: "LLM-powered Chatbots",
-      icon: MessageCircle
+      icon: MessageCircle,
+      emoji: "🧠",
+      description: "Deliver intelligent, real-time responses to users across platforms. These chatbots understand user context, remember previous interactions, and answer naturally, revolutionizing customer support, onboarding, and internal communication."
     },
     {
       id: "ai-agents",
       title: "AI Agents",
-      icon: Bot
+      icon: Bot,
+      emoji: "🤖",
+      description: "Autonomous digital workers that execute tasks, make decisions, and interact with systems or people using generative intelligence. Ideal for automating repetitive workflows, scheduling, research, and more—with minimal human intervention."
     },
     {
       id: "model-development",
       title: "Gen AI Model Development",
-      icon: Code
+      icon: Code,
+      emoji: "🧬",
+      description: "Build tailored generative models trained on your proprietary datasets. This service includes architecture selection, model training, and optimization for accuracy, speed, and real-world business use."
     },
     {
       id: "model-replication",
       title: "Gen AI Model Replication",
-      icon: Settings
+      icon: Settings,
+      emoji: "⚙️",
+      description: "Deliver instant, intelligent support to every client—anytime, anywhere. Modern Gen AI bots break away from scripted replies. They understand intent, follow conversations, and respond clearly—boosting satisfaction and reducing manual workload."
     },
     {
       id: "gpt-integration",
       title: "GPT Integration",
-      icon: Cpu
+      icon: Cpu,
+      emoji: "🔌",
+      description: "Seamlessly embed OpenAI's GPT into your tools, platforms, or workflows. Enable smart automation, content generation, and human-like interaction in your apps, CRM, knowledge bases, and more."
     },
     {
       id: "ai-consulting",
       title: "Gen AI Consulting",
-      icon: Lightbulb
+      icon: Lightbulb,
+      emoji: "🧭",
+      description: "Unlock the true potential of generative AI in your business with expert-led strategy sessions, use case discovery, ROI analysis, and roadmap planning tailored to your industry."
     },
     {
       id: "llm-grounding",
       title: "Large Language Model Grounding",
-      icon: Target
+      icon: Target,
+      emoji: "🏗️",
+      description: "Enhance accuracy and reliability by anchoring LLMs to your internal knowledge. Prevent hallucinations and ensure factual correctness using retrieval-augmented generation (RAG) techniques."
     },
     {
       id: "llm-testing",
       title: "LLM Testing & Fine-Tuning",
-      icon: TestTube
+      icon: TestTube,
+      emoji: "🛠️",
+      description: "Improve your model's performance through rigorous A/B testing, bias detection, response evaluation, and iterative fine-tuning for tone, context awareness, and task specificity."
     },
     {
       id: "ai-maintenance",
       title: "Generative AI Maintenance",
-      icon: Wrench
+      icon: Wrench,
+      emoji: "🔧",
+      description: "Ensure your Gen AI systems remain optimized and up-to-date. Includes continuous learning, prompt updates, performance audits, and integration management for long-term success."
     },
     {
       id: "llm-security",
       title: "LLM Security Services",
-      icon: Shield
+      icon: Shield,
+      emoji: "🔒",
+      description: "Safeguard your models and data with enterprise-grade AI security. Services include threat monitoring, prompt injection protection, compliance checks (GDPR, HIPAA), and role-based access controls."
     }
   ];
 
@@ -344,38 +364,36 @@ const GenerativeAIDevelopment = () => {
           </p>
           
           <div className="max-w-6xl mx-auto">
-            <div className="flex flex-wrap gap-2 mb-8 justify-center">
+            <div className="flex flex-wrap gap-3 mb-8 justify-center">
               {services.map((service) => (
                 <button
                   key={service.id}
                   onClick={() => setActiveServiceTab(service.id)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                  className={`px-4 py-3 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 hover:scale-105 ${
                     activeServiceTab === service.id
-                      ? 'bg-primary text-primary-foreground shadow-lg'
-                      : 'bg-card text-muted-foreground hover:bg-muted'
+                      ? 'bg-primary text-primary-foreground shadow-lg scale-105'
+                      : 'bg-card text-muted-foreground hover:bg-muted border border-border'
                   }`}
                 >
                   <service.icon className="h-4 w-4" />
-                  {service.title}
+                  <span className="whitespace-nowrap">{service.title}</span>
                 </button>
               ))}
             </div>
             
-            <Card className="glass">
+            <Card className="glass min-h-[300px] transition-all duration-500 ease-in-out">
               <CardContent className="p-8">
-                <div className="text-center">
-                  <div className="mb-4">
-                    {(() => {
-                      const activeService = services.find(s => s.id === activeServiceTab);
-                      const IconComponent = activeService?.icon || MessageCircle;
-                      return <IconComponent className="h-16 w-16 text-primary mx-auto" />;
-                    })()}
+                <div className="text-center animate-fade-in">
+                  <div className="mb-6 transition-all duration-500">
+                    <div className="text-6xl mb-4 animate-scale-in">
+                      {services.find(s => s.id === activeServiceTab)?.emoji}
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6 transition-all duration-500">
                     {services.find(s => s.id === activeServiceTab)?.title}
                   </h3>
-                  <p className="text-lg text-muted-foreground">
-                    Deliver instant, intelligent support to every client—anytime, anywhere. Modern Gen AI bots break away from scripted replies. They understand intent, follow conversations, and respond clearly—boosting satisfaction and reducing manual workload.
+                  <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto transition-all duration-500">
+                    {services.find(s => s.id === activeServiceTab)?.description}
                   </p>
                 </div>
               </CardContent>
