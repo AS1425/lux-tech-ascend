@@ -318,6 +318,114 @@ const ChatbotConsulting = () => {
         </div>
       </section>
 
+      {/* AI Chatbot Journey Steps Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-6 text-foreground">
+                AI Chatbot Journey Steps
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Follow our proven 6-step process to transform your customer interactions with intelligent chatbot solutions
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+              {/* Step 1 */}
+              <Card className="glass card-hover group animate-fade-up" style={{ animationDelay: '0.1s' }}>
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-primary font-bold text-lg">1</span>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">
+                    Comprehensive Business Analysis
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Define goals and identify the best-fit use case through deep requirement gathering.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Step 2 */}
+              <Card className="glass card-hover group animate-fade-up" style={{ animationDelay: '0.2s' }}>
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-primary font-bold text-lg">2</span>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">
+                    Tailored Chatbot Planning
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Develop a personalized strategy that aligns with your business model and audience.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Step 3 */}
+              <Card className="glass card-hover group animate-fade-up" style={{ animationDelay: '0.3s' }}>
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-primary font-bold text-lg">3</span>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">
+                    Agile Bot Design & Development
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Build user-centric bots through rapid iteration and fail-proof engineering.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Step 4 */}
+              <Card className="glass card-hover group animate-fade-up" style={{ animationDelay: '0.4s' }}>
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-primary font-bold text-lg">4</span>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">
+                    Integration & Validation
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Connect seamlessly with your stack and ensure performance meets business KPIs.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Step 5 */}
+              <Card className="glass card-hover group animate-fade-up" style={{ animationDelay: '0.5s' }}>
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-primary font-bold text-lg">5</span>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">
+                    Deployment & Team Enablement
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Ensure a smooth launch with robust testing and hands-on training for your team.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Step 6 - Highlighted */}
+              <Card className="bg-gradient-to-br from-primary to-secondary text-white card-hover group animate-fade-up hover:scale-105 transition-all duration-300" style={{ animationDelay: '0.6s' }}>
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-white font-bold text-lg">6</span>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3 text-white">
+                    Ongoing Optimization
+                  </h3>
+                  <p className="text-sm text-white/90">
+                    Monitor results, iterate models, and proactively improve performance through AI insights.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
