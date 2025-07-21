@@ -71,18 +71,18 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         <div ref={particlesRef} className="absolute inset-0 z-0" />
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground leading-tight">
                 We Build the Future of Digital with{' '}
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   AI, Code & Creativity
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 At Foreignerds, we are more than an agency — we're your innovation partner, 
                 powered by people, driven by AI.
               </p>
@@ -95,9 +95,9 @@ const AboutUs = () => {
                 <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl flex items-center justify-center">
-                <Cpu className="w-32 h-32 text-primary animate-pulse" />
+            <div className="relative order-first lg:order-last">
+              <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl flex items-center justify-center">
+                <Cpu className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 text-primary animate-pulse" />
               </div>
             </div>
           </div>
