@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Download, FileText, Brain, Zap, Users, TrendingUp } from 'lucide-react';
+import { Download, FileText, Brain, Zap, Users, TrendingUp, Lightbulb } from 'lucide-react';
 import Layout from '@/components/Layout';
 
 const Whitepapers = () => {
@@ -54,6 +54,15 @@ const Whitepapers = () => {
       category: 'AI & Machine Learning',
       tags: ['Analytics', 'AI', 'Data'],
       icon: <Brain className="h-8 w-8" />,
+      featured: false
+    },
+    {
+      id: 7,
+      title: 'AI Adoption Roadmap for Enterprises',
+      description: 'A step-by-step guide for enterprise leaders to implement AI effectively—covering infrastructure, team readiness, risk mitigation, and real-world examples.',
+      category: 'AI & Machine Learning',
+      tags: ['AI', 'Enterprise', 'Roadmap', 'Strategy'],
+      icon: <Lightbulb className="h-8 w-8" />,
       featured: false
     },
     {
@@ -160,16 +169,11 @@ const Whitepapers = () => {
 
         <section id="resources" className="py-16">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style={{ gridAutoFlow: 'dense' }}>
-              {regularWhitepapers.map((whitepaper, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {regularWhitepapers.map((whitepaper) => (
                 <Card 
                   key={whitepaper.id} 
                   className="group hover:shadow-xl transition-all duration-300 hover:scale-105 border-primary/10 hover:border-primary/30 w-full h-full flex flex-col"
-                  style={{
-                    // Create the balanced masonry effect
-                    ...(index === 3 && { gridColumn: '1' }), // 4th card (Marketing ROI) goes under 1st card
-                    ...(index === 4 && { gridColumn: '2' }), // 5th card (Analytics) goes under 2nd card
-                  }}
                 >
                   <CardHeader className="text-center flex-shrink-0">
                     <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
