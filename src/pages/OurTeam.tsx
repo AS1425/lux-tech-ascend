@@ -275,24 +275,6 @@ return (
         </div>
       </section>
 
-      {/* Client Logo Carousel (Placeholder) */}
-      <section className="py-16 px-4 bg-background">
-        <div className="container mx-auto max-w-6xl text-center">
-          <h3 className="text-2xl font-semibold mb-8 text-foreground">
-            Trusted by Leading Companies
-          </h3>
-          <div className="flex justify-center items-center space-x-8 overflow-hidden">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div 
-                key={i}
-                className="w-32 h-16 bg-muted rounded-lg flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
-              >
-                <span className="text-muted-foreground text-sm">Logo {i}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA Section */}
       <section className="py-16 px-4 bg-muted/30">
