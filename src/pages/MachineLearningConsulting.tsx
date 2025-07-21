@@ -7,7 +7,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { ArrowRight, BarChart3, Brain, Cpu, Database, Lightbulb, Target, TrendingUp, Zap, Layers, MessageSquare, Globe, Star, Shield, Activity, RefreshCw } from 'lucide-react';
 
 const MachineLearningConsulting = () => {
-  const [activeServiceIndex, setActiveServiceIndex] = useState(0);
   const [activeValuePropIndex, setActiveValuePropIndex] = useState(0);
 
   const mlServices = [
@@ -347,52 +346,27 @@ const MachineLearningConsulting = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Left: Services Accordion */}
-            <div className="space-y-4">
-              <Accordion type="single" collapsible value={`item-${activeServiceIndex}`} onValueChange={(value) => {
-                const index = value ? parseInt(value.split('-')[1]) : 0;
-                setActiveServiceIndex(index);
-              }}>
-                {mlServices.map((service, index) => (
-                  <AccordionItem
-                    key={index}
-                    value={`item-${index}`}
-                    className="glass rounded-lg border-0"
-                  >
-                    <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                      <span className="text-lg font-semibold text-foreground">
-                        {service.title}
-                      </span>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-6 pt-0">
-                      <p className="text-muted-foreground leading-relaxed">
-                        {service.content}
-                      </p>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-
-            {/* Right: Featured Service Content */}
-            <div className="glass p-8 rounded-2xl h-fit">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Brain className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-semibold text-foreground mb-4">
-                  {mlServices[activeServiceIndex].title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {mlServices[activeServiceIndex].content}
-                </p>
-              </div>
-              <Button className="w-full group">
-                Get Started
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </div>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible defaultValue="item-0" className="space-y-4">
+              {mlServices.map((service, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="glass rounded-lg border-0"
+                >
+                  <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                    <span className="text-lg font-semibold text-foreground">
+                      {service.title}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6 pt-0">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {service.content}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
