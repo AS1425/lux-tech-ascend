@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import ParticleBackground from '@/components/ParticleBackground';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -91,7 +92,8 @@ const AIGuide = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <ParticleBackground />
       <Navigation />
       
       {/* Hero Section */}
@@ -287,9 +289,9 @@ const AIGuide = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="space-y-6">
-                <div className="bg-card rounded-lg p-6 border border-border/50">
+                <div className="bg-card rounded-lg p-6 border border-border/50 h-fit">
                   <h3 className="text-lg font-semibold text-foreground mb-3">
                     How long does it take to implement an AI Guide?
                   </h3>
@@ -298,7 +300,7 @@ const AIGuide = () => {
                   </p>
                 </div>
                 
-                <div className="bg-card rounded-lg p-6 border border-border/50">
+                <div className="bg-card rounded-lg p-6 border border-border/50 h-fit">
                   <h3 className="text-lg font-semibold text-foreground mb-3">
                     Can the AI Guide integrate with our existing systems?
                   </h3>
@@ -307,7 +309,7 @@ const AIGuide = () => {
                   </p>
                 </div>
                 
-                <div className="bg-card rounded-lg p-6 border border-border/50">
+                <div className="bg-card rounded-lg p-6 border border-border/50 h-fit">
                   <h3 className="text-lg font-semibold text-foreground mb-3">
                     What kind of training data is needed?
                   </h3>
@@ -318,7 +320,7 @@ const AIGuide = () => {
               </div>
               
               <div className="space-y-6">
-                <div className="bg-card rounded-lg p-6 border border-border/50">
+                <div className="bg-card rounded-lg p-6 border border-border/50 h-fit">
                   <h3 className="text-lg font-semibold text-foreground mb-3">
                     Is ongoing maintenance required?
                   </h3>
@@ -327,7 +329,7 @@ const AIGuide = () => {
                   </p>
                 </div>
                 
-                <div className="bg-card rounded-lg p-6 border border-border/50">
+                <div className="bg-card rounded-lg p-6 border border-border/50 h-fit">
                   <h3 className="text-lg font-semibold text-foreground mb-3">
                     What security measures are in place?
                   </h3>
@@ -336,7 +338,7 @@ const AIGuide = () => {
                   </p>
                 </div>
                 
-                <div className="bg-card rounded-lg p-6 border border-border/50">
+                <div className="bg-card rounded-lg p-6 border border-border/50 h-fit">
                   <h3 className="text-lg font-semibold text-foreground mb-3">
                     Can we customize the AI's personality and responses?
                   </h3>

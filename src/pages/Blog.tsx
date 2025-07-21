@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import ParticleBackground from '@/components/ParticleBackground';
 import { Search, Calendar, User, ArrowRight, Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -127,7 +128,8 @@ const Blog = () => {
   const popularTags = ['AI', 'Machine Learning', 'React', 'TypeScript', 'SEO', 'Automation', 'Chatbots', 'Development'];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <ParticleBackground />
       <Navigation />
       
       {/* Hero Banner Section */}

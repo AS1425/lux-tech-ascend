@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
+import ParticleBackground from '../components/ParticleBackground';
 
 import WorkflowSection from '../components/WorkflowSection';
 import BlogInsightsSection from '../components/BlogInsightsSection';
@@ -33,7 +34,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-inter">
+    <div className="min-h-screen bg-background text-foreground font-inter relative">
+      <ParticleBackground />
       <Navigation />
       <HeroSection />
       <ServicesSection />
