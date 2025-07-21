@@ -48,32 +48,32 @@ const AIVoiceBots = () => {
       id: 'handoff',
       title: 'Handoff from Chatbot to Human Agent',
       icon: Handshake,
-      description: 'Get a flawless user journey with seamless bot-to-agent handoff. When a query requires a personal touch, the AI smoothly transfers the call to a live agent – complete with contact history and insights – so no client ever has to repeat themselves.',
+      description: 'Ensure a seamless customer journey by routing complex or sensitive queries to a live agent, complete with full interaction history and context.',
       defaultOpen: true
     },
     {
       id: 'performance',
       title: 'Call Performance Evaluation',
       icon: BarChart3,
-      description: 'Automatically analyze bot calls for quality, sentiment, and resolution accuracy.'
+      description: 'Gain insights from real-time and recorded conversations to assess quality, script adherence, and agent effectiveness.'
     },
     {
       id: 'speech-recognition',
       title: 'Speech Recognition Technology',
       icon: Volume2,
-      description: 'Leverage advanced speech-to-text engines to recognize accents, tones, and variations.'
+      description: 'Accurately capture user input using advanced NLP and voice-to-text models for responsive and human-like interactions.'
     },
     {
       id: 'call-recaps',
       title: 'Intelligent Call Recaps',
       icon: FileText,
-      description: 'Summarize calls and push structured data into your CRM for next-step actions.'
+      description: 'Automatically summarize calls and sync structured summaries into your CRM for immediate follow-up and action tracking.'
     },
     {
       id: 'metrics',
       title: 'Actionable Metrics & Reporting',
       icon: TrendingUp,
-      description: 'Access dashboards to track KPIs, agent escalations, resolution rate, and more.'
+      description: 'Track KPIs like call success rate, response accuracy, and resolution time through intuitive dashboards that power data-driven decisions.'
     }
   ];
 
@@ -182,17 +182,26 @@ const AIVoiceBots = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              AI Voice Bot Solutions
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              Enhance customer interactions with intelligent AI voice bots that understand and respond in real-time.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.4s' }}>
-              <Button variant="outline" size="lg" className="px-8 py-3 text-lg hover:scale-105 transition-transform">
-                Contact Our Team
-              </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                AI Voice Bot Solutions
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+                Enhance customer interactions with intelligent AI voice bots that understand and respond in real-time.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up" style={{ animationDelay: '0.4s' }}>
+                <Button variant="outline" size="lg" className="px-8 py-3 text-lg hover:scale-105 transition-transform">
+                  Contact Our Team
+                </Button>
+              </div>
+            </div>
+            <div className="flex justify-center lg:justify-end animate-fade-up" style={{ animationDelay: '0.6s' }}>
+              <img 
+                src="/lovable-uploads/be3cabcb-666a-4794-9547-ea7f88021585.png" 
+                alt="AI Voice Bot Solutions - Voice interaction with intelligent bots"
+                className="max-w-full h-auto w-96 lg:w-full max-w-md"
+              />
             </div>
           </div>
         </div>
