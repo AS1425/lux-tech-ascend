@@ -13,6 +13,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const Portfolio = () => {
+  // Debug: Force rebuild to clear cache
+  console.log('Portfolio component loaded - bannerStudies should be available');
   const [activeTab, setActiveTab] = useState('By Services');
   const [activeFilter, setActiveFilter] = useState('All');
 
