@@ -80,25 +80,11 @@ const Navigation = () => {
     { label: 'Financial Services', href: '/industries/financial-services' },
   ];
 
-  const portfolioItems = [
-    { label: 'Case Studies', href: '/case-studies' },
-    { label: 'Client Success Stories', href: '/client-success-stories' },
-    { label: 'Industry Solutions', href: '#industry-solutions' },
-    { label: 'Product Demos', href: '#demos' },
-  ];
-
-  const resourcesItems = [
-    { label: 'Blog', href: '/blog' },
-    { label: 'Webinar', href: '/webinar' },
-    { label: 'Whitepapers', href: '/whitepapers' },
-    { label: 'AI Guides', href: '/ai-guide' },
-  ];
-
   const companyItems = [
     { label: 'About Us', href: '/about-us' },
     { label: 'Our Team', href: '/our-team' },
     { label: 'Mission & Vision', href: '/mission-vision' },
-    { label: 'Careers', href: '/careers' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Contact Us', href: '/contact-us' },
   ];
 
@@ -182,44 +168,14 @@ const Navigation = () => {
                     </NavigationMenuContent>
                   </NavigationMenuItem>
 
-                  {/* Portfolio Dropdown */}
+                  {/* Portfolio Link */}
                   <NavigationMenuItem>
-                     <NavigationMenuTrigger className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium bg-transparent">
+                    <NavigationMenuLink
+                      href="/portfolio"
+                      className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium px-4 py-2"
+                    >
                       Portfolio
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                        {portfolioItems.map((item) => (
-                          <NavigationMenuLink
-                            key={item.label}
-                            href={item.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">{item.label}</div>
-                          </NavigationMenuLink>
-                        ))}
-                      </div>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-
-                  {/* Resources Dropdown */}
-                  <NavigationMenuItem>
-                     <NavigationMenuTrigger className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium bg-transparent">
-                      Resources
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                        {resourcesItems.map((item) => (
-                          <NavigationMenuLink
-                            key={item.label}
-                            href={item.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">{item.label}</div>
-                          </NavigationMenuLink>
-                        ))}
-                      </div>
-                    </NavigationMenuContent>
+                    </NavigationMenuLink>
                   </NavigationMenuItem>
 
                   {/* Company Dropdown */}
@@ -240,6 +196,16 @@ const Navigation = () => {
                         ))}
                       </div>
                     </NavigationMenuContent>
+                  </NavigationMenuItem>
+
+                  {/* Careers Link */}
+                  <NavigationMenuItem>
+                    <NavigationMenuLink
+                      href="/careers"
+                      className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium px-4 py-2"
+                    >
+                      Careers
+                    </NavigationMenuLink>
                   </NavigationMenuItem>
 
                 </NavigationMenuList>
@@ -333,32 +299,13 @@ const Navigation = () => {
 
                 {/* Mobile Portfolio */}
                 <div className="space-y-1">
-                  <div className="px-3 py-2 text-foreground font-medium">Portfolio</div>
-                  {portfolioItems.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      className="block px-6 py-2 text-sm text-foreground/80 hover:text-primary transition-colors duration-300"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.label}
-                    </a>
-                  ))}
-                </div>
-
-                {/* Mobile Resources */}
-                <div className="space-y-1">
-                  <div className="px-3 py-2 text-foreground font-medium">Resources</div>
-                  {resourcesItems.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      className="block px-6 py-2 text-sm text-foreground/80 hover:text-primary transition-colors duration-300"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.label}
-                    </a>
-                  ))}
+                  <a
+                    href="/portfolio"
+                    className="block px-3 py-2 text-foreground font-medium hover:text-primary transition-colors duration-300"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Portfolio
+                  </a>
                 </div>
 
                 {/* Mobile Company */}
@@ -374,6 +321,17 @@ const Navigation = () => {
                       {item.label}
                     </a>
                   ))}
+                </div>
+
+                {/* Mobile Careers */}
+                <div className="space-y-1">
+                  <a
+                    href="/careers"
+                    className="block px-3 py-2 text-foreground font-medium hover:text-primary transition-colors duration-300"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Careers
+                  </a>
                 </div>
 
                 <a
