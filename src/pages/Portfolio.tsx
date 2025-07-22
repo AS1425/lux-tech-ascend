@@ -24,43 +24,72 @@ const Portfolio = () => {
     'By Use Cases': ['All', 'Customer Support', 'Sales Automation', 'Data Analytics', 'Process Optimization']
   };
 
-  // Hero Banner Case Studies
-  const heroStudies = [
+  // Scrollable Banner Case Studies
+  const bannerStudies = [
     {
       id: 1,
-      title: 'Healthcare SaaS',
-      metrics: [
-        { icon: TrendingUp, value: 'x15', label: 'revenue growth in two years' },
-        { icon: Users, value: '30+', label: 'hospitals using the solution' },
-        { icon: Database, value: '162,000+', label: 'assets in the portfolio' }
+      title: 'Dr. Oetker Chatbot',
+      client: 'Dr. Oetker',
+      bullets: [
+        'Engaging virtual assistant',
+        'Automated contact entry',
+        'AR filters on Instagram for more fun'
       ],
-      description: 'AI-powered healthcare management platform transforming patient care delivery and operational efficiency across multiple hospital networks.',
-      image: '/lovable-uploads/656039c0-0ed3-4ae0-8e29-1fdf3c2f0a62.png',
-      tag: 'LATEST CASE STUDY'
+      description: 'Giuseppe Virtual Assistant on Messenger promoting the Easy Post product and driving engagement for their content.',
+      logo: '/lovable-uploads/656039c0-0ed3-4ae0-8e29-1fdf3c2f0a62.png',
+      background: 'bg-gradient-to-br from-purple-600/20 via-red-500/20 to-pink-600/20'
     },
     {
       id: 2,
-      title: 'FinTech Revolution',
-      metrics: [
-        { icon: TrendingUp, value: '400%', label: 'increase in user adoption' },
-        { icon: Users, value: '50K+', label: 'active users monthly' },
-        { icon: Database, value: '$2M+', label: 'transactions processed' }
+      title: 'Healthcare SaaS Platform',
+      client: 'MedCore Solutions',
+      bullets: [
+        'x15 revenue growth in two years',
+        '30+ hospitals using the solution',
+        '162,000+ assets in the portfolio'
       ],
-      description: 'Revolutionary mobile banking platform with AI-driven insights and automated financial planning for modern consumers.',
-      image: '/lovable-uploads/91a208ed-fa9c-4b69-a41f-6287b353a14e.png',
-      tag: 'SUCCESS STORY'
+      description: 'AI-powered healthcare management platform transforming patient care delivery and operational efficiency.',
+      logo: '/lovable-uploads/91a208ed-fa9c-4b69-a41f-6287b353a14e.png',
+      background: 'bg-gradient-to-br from-blue-600/20 via-teal-500/20 to-green-600/20'
     },
     {
       id: 3,
-      title: 'E-commerce Intelligence',
-      metrics: [
-        { icon: TrendingUp, value: '300%', label: 'sales increase' },
-        { icon: Users, value: '100K+', label: 'customers served' },
-        { icon: Database, value: '85%', label: 'conversion rate improvement' }
+      title: 'FinTech Revolution',
+      client: 'SecureBank',
+      bullets: [
+        '400% increase in user adoption',
+        '50K+ active users monthly',
+        '$2M+ transactions processed'
       ],
-      description: 'AI-powered e-commerce platform with predictive analytics and personalized shopping experiences driving unprecedented growth.',
-      image: '/lovable-uploads/7f4f9140-16e6-4d2a-b775-4df6a962bf40.png',
-      tag: 'FEATURED PROJECT'
+      description: 'Revolutionary mobile banking platform with AI-driven insights and automated financial planning.',
+      logo: '/lovable-uploads/7f4f9140-16e6-4d2a-b775-4df6a962bf40.png',
+      background: 'bg-gradient-to-br from-indigo-600/20 via-purple-500/20 to-pink-600/20'
+    },
+    {
+      id: 4,
+      title: 'E-commerce Intelligence',
+      client: 'RetailMax',
+      bullets: [
+        '300% sales increase',
+        '100K+ customers served',
+        '85% conversion rate improvement'
+      ],
+      description: 'AI-powered e-commerce platform with predictive analytics and personalized shopping experiences.',
+      logo: '/lovable-uploads/8b71c982-5eaa-436a-9a9e-30789aa114a8.png',
+      background: 'bg-gradient-to-br from-orange-600/20 via-red-500/20 to-pink-600/20'
+    },
+    {
+      id: 5,
+      title: 'Educational Platform',
+      client: 'EduTech Pro',
+      bullets: [
+        'Personalized learning experiences',
+        '250% engagement increase',
+        'Mobile-first responsive design'
+      ],
+      description: 'Next-generation learning platform with AI-driven content recommendations and interactive features.',
+      logo: '/lovable-uploads/75ccf48e-fd5c-4d2b-9720-d64f0b797c12.png',
+      background: 'bg-gradient-to-br from-emerald-600/20 via-teal-500/20 to-blue-600/20'
     }
   ];
 
@@ -172,56 +201,61 @@ const Portfolio = () => {
               }}
               className="hero-swiper"
             >
-              {heroStudies.map((study) => (
+              {bannerStudies.map((study) => (
                 <SwiperSlide key={study.id}>
-                  <Card className="group cursor-pointer overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 bg-gradient-to-br from-card via-card to-primary/5 backdrop-blur-sm h-[400px]">
+                  <Card className={`group cursor-pointer overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 h-[420px] ${study.background} backdrop-blur-sm`}>
                     <div className="relative h-full">
-                      <div className="absolute top-4 left-4 z-10">
-                        <Badge variant="destructive" className="bg-red-500 text-white font-medium">
-                          {study.tag}
+                      <div className="absolute top-4 right-4 z-10">
+                        <Badge variant="destructive" className="bg-red-500 text-white font-medium px-3 py-1">
+                          LATEST CASE STUDIES
                         </Badge>
                       </div>
                       
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/20" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-transparent backdrop-blur-[2px]" />
                       
-                      <div className="relative z-10 p-6 h-full flex flex-col justify-between">
+                      <div className="relative z-10 p-8 h-full flex flex-col justify-between">
                         <div>
-                          <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
+                          <div className="mb-2">
+                            <span className="text-sm text-muted-foreground font-medium">{study.client}</span>
+                          </div>
+                          <h3 className="text-3xl font-bold mb-6 text-foreground group-hover:text-primary transition-colors">
                             {study.title}
                           </h3>
                           
-                          <div className="space-y-3 mb-4">
-                            {study.metrics.map((metric, index) => (
-                              <div key={index} className="flex items-center gap-3">
-                                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10">
-                                  <metric.icon className="w-4 h-4 text-primary" />
-                                </div>
-                                <div>
-                                  <span className="font-bold text-lg text-primary">{metric.value}</span>
-                                  <span className="text-sm text-muted-foreground ml-2">{metric.label}</span>
-                                </div>
+                          <div className="space-y-3 mb-6">
+                            {study.bullets.map((bullet, index) => (
+                              <div key={index} className="flex items-start gap-3">
+                                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                <span className="text-foreground font-medium">{bullet}</span>
                               </div>
                             ))}
                           </div>
                         </div>
                         
                         <div>
-                          <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
+                          <p className="text-sm text-muted-foreground mb-6 line-clamp-2">
                             {study.description}
                           </p>
                           
-                          <Button 
-                            variant="outline" 
-                            className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
-                          >
-                            Learn More
-                            <ArrowRight className="w-4 h-4 ml-2" />
-                          </Button>
+                          <div className="flex justify-between items-center">
+                            <Button 
+                              variant="default" 
+                              size="lg"
+                              className="px-6 py-3 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-all duration-300 hover:scale-105"
+                            >
+                              Learn More
+                              <ArrowRight className="w-4 h-4 ml-2" />
+                            </Button>
+                            
+                            <div className="opacity-60 group-hover:opacity-100 transition-opacity">
+                              <img 
+                                src={study.logo} 
+                                alt={`${study.client} logo`}
+                                className="w-16 h-16 object-contain rounded-lg bg-white/10 backdrop-blur-sm p-2"
+                              />
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                      
-                      <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <div className="w-16 h-16 rounded-full bg-primary/20" />
                       </div>
                     </div>
                   </Card>
