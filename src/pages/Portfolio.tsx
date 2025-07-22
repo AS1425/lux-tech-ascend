@@ -3,19 +3,65 @@ import Layout from '@/components/Layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { ArrowRight, TrendingUp, Users, Database, ChevronLeft, ChevronRight } from 'lucide-react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Portfolio = () => {
+  const [activeTab, setActiveTab] = useState('By Services');
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = [
-    'All',
-    'AI & Automation',
-    'Digital Platform',
-    'Conversational AI',
-    'Healthcare',
-    'E-commerce',
-    'FinTech',
-    'Mobile Apps'
+  const tabs = ['By Services', 'By Industries', 'By Use Cases'];
+  
+  const filtersByTab = {
+    'By Services': ['All', 'AI Agent', 'Chatbot', 'Voice AI', 'Machine Learning', 'Custom Software'],
+    'By Industries': ['All', 'Healthcare', 'E-commerce', 'FinTech', 'Education', 'Manufacturing'],
+    'By Use Cases': ['All', 'Customer Support', 'Sales Automation', 'Data Analytics', 'Process Optimization']
+  };
+
+  // Hero Banner Case Studies
+  const heroStudies = [
+    {
+      id: 1,
+      title: 'Healthcare SaaS',
+      metrics: [
+        { icon: TrendingUp, value: 'x15', label: 'revenue growth in two years' },
+        { icon: Users, value: '30+', label: 'hospitals using the solution' },
+        { icon: Database, value: '162,000+', label: 'assets in the portfolio' }
+      ],
+      description: 'AI-powered healthcare management platform transforming patient care delivery and operational efficiency across multiple hospital networks.',
+      image: '/lovable-uploads/656039c0-0ed3-4ae0-8e29-1fdf3c2f0a62.png',
+      tag: 'LATEST CASE STUDY'
+    },
+    {
+      id: 2,
+      title: 'FinTech Revolution',
+      metrics: [
+        { icon: TrendingUp, value: '400%', label: 'increase in user adoption' },
+        { icon: Users, value: '50K+', label: 'active users monthly' },
+        { icon: Database, value: '$2M+', label: 'transactions processed' }
+      ],
+      description: 'Revolutionary mobile banking platform with AI-driven insights and automated financial planning for modern consumers.',
+      image: '/lovable-uploads/91a208ed-fa9c-4b69-a41f-6287b353a14e.png',
+      tag: 'SUCCESS STORY'
+    },
+    {
+      id: 3,
+      title: 'E-commerce Intelligence',
+      metrics: [
+        { icon: TrendingUp, value: '300%', label: 'sales increase' },
+        { icon: Users, value: '100K+', label: 'customers served' },
+        { icon: Database, value: '85%', label: 'conversion rate improvement' }
+      ],
+      description: 'AI-powered e-commerce platform with predictive analytics and personalized shopping experiences driving unprecedented growth.',
+      image: '/lovable-uploads/7f4f9140-16e6-4d2a-b775-4df6a962bf40.png',
+      tag: 'FEATURED PROJECT'
+    }
   ];
 
   const projects = [
@@ -75,9 +121,15 @@ const Portfolio = () => {
     }
   ];
 
+  const currentFilters = filtersByTab[activeTab];
   const filteredProjects = activeFilter === 'All' 
     ? projects 
-    : projects.filter(project => project.tags.includes(activeFilter));
+    : projects.filter(project => {
+        if (activeTab === 'By Services') return project.tags.includes(activeFilter);
+        if (activeTab === 'By Industries') return project.tags.includes(activeFilter);
+        if (activeTab === 'By Use Cases') return project.tags.includes(activeFilter);
+        return true;
+      });
 
   const handleProjectClick = (projectId: number) => {
     // Navigate to detailed case study
@@ -88,8 +140,8 @@ const Portfolio = () => {
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/5">
         {/* Hero Section */}
-        <section className="relative py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
+        <section className="relative py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center mb-8">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               Our Work Speaks for Itself
             </h1>
@@ -99,17 +151,131 @@ const Portfolio = () => {
           </div>
         </section>
 
+        {/* Scrollable Hero Banner */}
+        <section className="py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={24}
+              slidesPerView={1}
+              navigation={{
+                prevEl: '.swiper-button-prev-custom',
+                nextEl: '.swiper-button-next-custom',
+              }}
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
+              breakpoints={{
+                640: { slidesPerView: 1.2 },
+                768: { slidesPerView: 1.5 },
+                1024: { slidesPerView: 2.2 },
+                1280: { slidesPerView: 2.5 }
+              }}
+              className="hero-swiper"
+            >
+              {heroStudies.map((study) => (
+                <SwiperSlide key={study.id}>
+                  <Card className="group cursor-pointer overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 bg-gradient-to-br from-card via-card to-primary/5 backdrop-blur-sm h-[400px]">
+                    <div className="relative h-full">
+                      <div className="absolute top-4 left-4 z-10">
+                        <Badge variant="destructive" className="bg-red-500 text-white font-medium">
+                          {study.tag}
+                        </Badge>
+                      </div>
+                      
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/20" />
+                      
+                      <div className="relative z-10 p-6 h-full flex flex-col justify-between">
+                        <div>
+                          <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
+                            {study.title}
+                          </h3>
+                          
+                          <div className="space-y-3 mb-4">
+                            {study.metrics.map((metric, index) => (
+                              <div key={index} className="flex items-center gap-3">
+                                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10">
+                                  <metric.icon className="w-4 h-4 text-primary" />
+                                </div>
+                                <div>
+                                  <span className="font-bold text-lg text-primary">{metric.value}</span>
+                                  <span className="text-sm text-muted-foreground ml-2">{metric.label}</span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
+                            {study.description}
+                          </p>
+                          
+                          <Button 
+                            variant="outline" 
+                            className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                          >
+                            Learn More
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </Button>
+                        </div>
+                      </div>
+                      
+                      <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <div className="w-16 h-16 rounded-full bg-primary/20" />
+                      </div>
+                    </div>
+                  </Card>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            
+            {/* Custom Navigation Buttons */}
+            <div className="flex justify-center gap-4 mt-6">
+              <button className="swiper-button-prev-custom flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors">
+                <ChevronLeft className="w-5 h-5 text-primary" />
+              </button>
+              <button className="swiper-button-next-custom flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors">
+                <ChevronRight className="w-5 h-5 text-primary" />
+              </button>
+            </div>
+          </div>
+        </section>
+
         {/* Portfolio Grid Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            {/* Filter Buttons */}
+            {/* Tabs */}
+            <div className="flex justify-center mb-8">
+              <div className="flex bg-muted rounded-lg p-1">
+                {tabs.map((tab) => (
+                  <Button
+                    key={tab}
+                    variant={activeTab === tab ? "default" : "ghost"}
+                    onClick={() => {
+                      setActiveTab(tab);
+                      setActiveFilter('All');
+                    }}
+                    className={`px-6 py-2 rounded-md transition-all duration-300 ${
+                      activeTab === tab 
+                        ? 'bg-background text-foreground shadow-sm' 
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    {tab}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            {/* Filter Pills */}
             <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {filters.map((filter) => (
+              {currentFilters.map((filter) => (
                 <Button
                   key={filter}
                   variant={activeFilter === filter ? "default" : "outline"}
                   onClick={() => setActiveFilter(filter)}
-                  className={`px-6 py-2 rounded-full transition-all duration-300 ${
+                  size="sm"
+                  className={`px-4 py-2 rounded-full transition-all duration-300 ${
                     activeFilter === filter 
                       ? 'bg-primary text-primary-foreground shadow-lg' 
                       : 'hover:bg-primary/10 hover:border-primary/30'
@@ -129,26 +295,28 @@ const Portfolio = () => {
                   onClick={() => handleProjectClick(project.id)}
                 >
                   <div className="relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-transparent z-10" />
                     <img 
                       src={project.image} 
                       alt={project.title}
                       className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                    <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100 z-30">
                       <Button 
                         variant="secondary" 
                         size="sm"
                         className="w-full bg-white/90 hover:bg-white text-black border-0"
                       >
-                        Read Full Story
+                        Learn More
+                        <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
                     </div>
                   </div>
                   
                   <CardContent className="p-6">
                     <div className="flex flex-wrap gap-2 mb-3">
-                      {project.tags.map((tag) => (
+                      {project.tags.slice(0, 2).map((tag) => (
                         <Badge 
                           key={tag} 
                           variant="secondary" 
@@ -172,17 +340,28 @@ const Portfolio = () => {
                     </p>
 
                     {/* Key Metrics */}
-                    <div className="flex justify-between text-xs text-primary font-medium">
+                    <div className="grid grid-cols-3 gap-2 text-xs">
                       {Object.entries(project.metrics).map(([key, value]) => (
-                        <div key={key} className="text-center">
-                          <div className="font-bold text-lg">{value}</div>
-                          <div className="capitalize text-muted-foreground">{key}</div>
+                        <div key={key} className="text-center p-2 rounded-lg bg-primary/5">
+                          <div className="font-bold text-lg text-primary">{value}</div>
+                          <div className="capitalize text-muted-foreground text-xs">{key}</div>
                         </div>
                       ))}
                     </div>
                   </CardContent>
                 </Card>
               ))}
+            </div>
+
+            {/* Show More Button */}
+            <div className="text-center mt-12">
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="px-8 py-3 text-lg rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                Show More Projects
+              </Button>
             </div>
           </div>
         </section>
