@@ -168,10 +168,10 @@ const Navigation = () => {
                       Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="grid w-[800px] gap-3 p-6 md:grid-cols-4 lg:w-[900px]">
+                      <div className="grid w-[1200px] gap-4 p-6 grid-cols-7 max-h-[70vh] overflow-y-auto">
                         {Object.entries(servicesCategories).map(([category, services]) => (
                           <div key={category} className="space-y-3">
-                            <h4 className="text-sm font-semibold text-primary border-b border-primary/20 pb-2">
+                            <h4 className="text-sm font-semibold text-primary border-b border-primary/20 pb-2 whitespace-nowrap">
                               {category}
                             </h4>
                             <div className="space-y-1">
@@ -179,7 +179,7 @@ const Navigation = () => {
                                 <NavigationMenuLink
                                   key={service.label}
                                   href={service.href}
-                                  className="block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-sm"
+                                  className="block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-xs"
                                 >
                                   {service.label}
                                 </NavigationMenuLink>
@@ -197,7 +197,7 @@ const Navigation = () => {
                       Industries We Serve
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="grid w-[600px] gap-3 p-4 md:w-[700px] md:grid-cols-2">
+                      <div className="grid w-[800px] gap-3 p-4 grid-cols-3 max-h-[70vh] overflow-y-auto">
                         {industriesWeServeItems.map((item) => (
                           <NavigationMenuLink
                             key={item.label}
