@@ -167,7 +167,7 @@ const Navigation = () => {
                      <NavigationMenuTrigger className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium bg-transparent">
                       Services
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent>
+                    <NavigationMenuContent className="left-0">
                       <div className="grid w-[1400px] gap-6 p-6 grid-cols-4 max-h-[70vh] overflow-y-auto">
                         {Object.entries(servicesCategories).map(([category, services]) => (
                           <div key={category} className="space-y-3 min-w-0">
