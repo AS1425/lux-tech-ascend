@@ -168,10 +168,10 @@ const Navigation = () => {
                       Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="grid w-[1200px] gap-4 p-6 grid-cols-7 max-h-[70vh] overflow-y-auto">
+                      <div className="grid w-[1400px] gap-6 p-6 grid-cols-4 max-h-[70vh] overflow-y-auto">
                         {Object.entries(servicesCategories).map(([category, services]) => (
-                          <div key={category} className="space-y-3">
-                            <h4 className="text-sm font-semibold text-primary border-b border-primary/20 pb-2 whitespace-nowrap">
+                          <div key={category} className="space-y-3 min-w-0">
+                            <h4 className="text-sm font-semibold text-primary border-b border-primary/20 pb-2 truncate">
                               {category}
                             </h4>
                             <div className="space-y-1">
@@ -179,7 +179,7 @@ const Navigation = () => {
                                 <NavigationMenuLink
                                   key={service.label}
                                   href={service.href}
-                                  className="block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-xs"
+                                  className="block select-none rounded-md p-2 leading-tight no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-xs break-words"
                                 >
                                   {service.label}
                                 </NavigationMenuLink>
