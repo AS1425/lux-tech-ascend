@@ -62,22 +62,30 @@ const Navigation = () => {
     ],
   };
 
-  const aiSolutionsItems = [
-    { label: 'Healthcare', href: '/industries/healthcare' },
-    { label: 'Finance & Banking', href: '/industries/finance' },
-    { label: 'E-commerce & Retail', href: '/industries/ecommerce' },
-    { label: 'Education & E-Learning', href: '/industries/education' },
-    { label: 'Legal & Compliance', href: '/industries/legal' },
-    { label: 'Aviation & Airlines', href: '/industries/aviation' },
-    { label: 'Transportation & Logistics', href: '/industries/logistics' },
-    { label: 'Telecom & IT', href: '/industries/telecom' },
-    { label: 'Automotive & Car Sales', href: '/industries/automotive' },
-    { label: 'Travel & Hospitality', href: '/industries/travel' },
-    { label: 'Media & Entertainment', href: '/industries/media' },
-    { label: 'Agriculture', href: '/industries/agriculture' },
-    { label: 'Energy & Environment', href: '/industries/energy' },
+  const industriesWeServeItems = [
+    { label: 'Healthcare & AI Consulting', href: '/healthcare-ai-consulting' },
+    { label: 'Banking & Financial Services', href: '/industries/banking' },
+    { label: 'Insurance', href: '/industries/insurance' },
+    { label: 'Ecommerce', href: '/industries/ecommerce' },
+    { label: 'Retail & AI Consulting', href: '/industries/retail' },
+    { label: 'AI Automotive', href: '/industries/automotive' },
+    { label: 'HR & Recruitment', href: '/it-recruiting-services' },
+    { label: 'Political Campaigns', href: '/industries/political' },
+    { label: 'Aviation', href: '/industries/aviation' },
     { label: 'Real Estate', href: '/industries/real-estate' },
-    { label: 'Financial Services', href: '/industries/financial-services' },
+    { label: 'Energy & Utilities', href: '/industries/energy' },
+    { label: 'Education & E-Learning', href: '/industries/education' },
+    { label: 'Non-Profit & NGOs', href: '/industries/nonprofit' },
+    { label: 'Events, Travel & Hospitality', href: '/industries/travel' },
+    { label: 'Telecom', href: '/industries/telecom' },
+    { label: 'Food & Beverage', href: '/industries/food' },
+    { label: 'Construction & Infrastructure', href: '/industries/construction' },
+    { label: 'Logistics & Supply Chain', href: '/industries/logistics' },
+    { label: 'Gaming & Entertainment', href: '/industries/gaming' },
+    { label: 'Airport & Airlines', href: '/industries/airlines' },
+    { label: 'Payments & Fintech', href: '/industries/fintech' },
+    { label: 'Legal & Compliance', href: '/industries/legal' },
+    { label: 'Transportation & Mobility', href: '/industries/transportation' },
   ];
 
   const companyItems = [
@@ -148,14 +156,14 @@ const Navigation = () => {
                     </NavigationMenuContent>
                   </NavigationMenuItem>
 
-                  {/* AI Solutions Dropdown */}
+                  {/* Industries We Serve Dropdown */}
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium bg-transparent">
-                      AI Solutions
+                      Industries We Serve
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="grid w-[500px] gap-3 p-4 md:w-[600px] md:grid-cols-3">
-                        {aiSolutionsItems.map((item) => (
+                      <div className="grid w-[600px] gap-3 p-4 md:w-[700px] md:grid-cols-2">
+                        {industriesWeServeItems.map((item) => (
                           <NavigationMenuLink
                             key={item.label}
                             href={item.href}
@@ -184,7 +192,7 @@ const Navigation = () => {
                       Company
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                      <div className="w-[300px] gap-3 p-4">
                         {companyItems.map((item) => (
                           <NavigationMenuLink
                             key={item.label}
@@ -267,23 +275,23 @@ const Navigation = () => {
                   ))}
                 </div>
 
-                {/* Mobile AI Solutions */}
+                {/* Mobile Industries We Serve */}
                 <div className="space-y-1">
                   <button
-                    onClick={() => toggleMobileCategory('AI Solutions')}
+                    onClick={() => toggleMobileCategory('Industries We Serve')}
                     className="w-full flex items-center justify-between px-3 py-2 text-foreground font-medium"
                   >
-                    AI Solutions
+                    Industries We Serve
                     <ChevronRight 
                       size={16} 
                       className={`transition-transform duration-200 ${
-                        expandedMobileCategory === 'AI Solutions' ? 'rotate-90' : ''
+                        expandedMobileCategory === 'Industries We Serve' ? 'rotate-90' : ''
                       }`}
                     />
                   </button>
-                  {expandedMobileCategory === 'AI Solutions' && (
-                    <div className="space-y-1 pl-4">
-                      {aiSolutionsItems.map((item) => (
+                  {expandedMobileCategory === 'Industries We Serve' && (
+                    <div className="space-y-1 pl-4 max-h-60 overflow-y-auto">
+                      {industriesWeServeItems.map((item) => (
                         <a
                           key={item.label}
                           href={item.href}
