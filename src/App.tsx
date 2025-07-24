@@ -46,6 +46,7 @@ import Portfolio from "./pages/Portfolio";
 import Webinar from "./pages/Webinar";
 import Whitepapers from "./pages/Whitepapers";
 import ITConsultingServices from "./pages/ITConsultingServices";
+import MVPAppDevelopment from "./pages/MVPAppDevelopment";
 
 
 const queryClient = new QueryClient();
@@ -99,6 +100,7 @@ const App = () => (
         <Route path="/webinar" element={<Webinar />} />
         <Route path="/whitepapers" element={<Whitepapers />} />
         <Route path="/it-consulting-services" element={<ITConsultingServices />} />
+        <Route path="/mvp-app-development" element={<MVPAppDevelopment />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
