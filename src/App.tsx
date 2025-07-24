@@ -55,6 +55,7 @@ import WindowsAppDevelopment from "./pages/WindowsAppDevelopment";
 import WebAppDevelopment from "./pages/WebAppDevelopment";
 import CrossPlatformDevelopment from "./pages/CrossPlatformDevelopment";
 import ProgressiveWebApps from "./pages/ProgressiveWebApps";
+import UIUXForApps from "./pages/UIUXForApps";
 
 
 const queryClient = new QueryClient();
@@ -117,6 +118,7 @@ const App = () => (
         <Route path="/web-app-development" element={<WebAppDevelopment />} />
         <Route path="/cross-platform-development" element={<CrossPlatformDevelopment />} />
         <Route path="/progressive-web-apps" element={<ProgressiveWebApps />} />
+        <Route path="/ui-ux-for-apps" element={<UIUXForApps />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
