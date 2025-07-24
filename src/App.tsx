@@ -52,6 +52,7 @@ import ProductLifecycleManagement from "./pages/ProductLifecycleManagement";
 import SoftwareDeploymentServices from "./pages/SoftwareDeploymentServices";
 import SecurityComplianceSoftwareDevelopment from "./pages/SecurityComplianceSoftwareDevelopment";
 import WindowsAppDevelopment from "./pages/WindowsAppDevelopment";
+import WebAppDevelopment from "./pages/WebAppDevelopment";
 
 
 const queryClient = new QueryClient();
@@ -111,6 +112,7 @@ const App = () => (
         <Route path="/software-deployment-services" element={<SoftwareDeploymentServices />} />
         <Route path="/security-compliance-software-development" element={<SecurityComplianceSoftwareDevelopment />} />
         <Route path="/windows-app-development" element={<WindowsAppDevelopment />} />
+        <Route path="/web-app-development" element={<WebAppDevelopment />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
