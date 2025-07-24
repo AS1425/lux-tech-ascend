@@ -56,6 +56,7 @@ import WebAppDevelopment from "./pages/WebAppDevelopment";
 import CrossPlatformDevelopment from "./pages/CrossPlatformDevelopment";
 import ProgressiveWebApps from "./pages/ProgressiveWebApps";
 import UIUXForApps from "./pages/UIUXForApps";
+import OutsourcingServices from "./pages/OutsourcingServices";
 
 
 const queryClient = new QueryClient();
@@ -119,6 +120,7 @@ const App = () => (
         <Route path="/cross-platform-development" element={<CrossPlatformDevelopment />} />
         <Route path="/progressive-web-apps" element={<ProgressiveWebApps />} />
         <Route path="/ui-ux-for-apps" element={<UIUXForApps />} />
+        <Route path="/outsourcing-services" element={<OutsourcingServices />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
