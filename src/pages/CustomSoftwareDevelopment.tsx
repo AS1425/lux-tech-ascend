@@ -1,55 +1,38 @@
-
 import React from 'react';
-import { ArrowRight, Code, Settings, Zap, Shield, Users, CheckCircle } from 'lucide-react';
+import { ArrowRight, Code, Settings, Zap, Shield, Users, CheckCircle, Cloud, Database, Smartphone, Cog, Package, Wrench } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const CustomSoftwareDevelopment = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
+      {/* Hero Banner Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
-        <div className="relative max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                  Custom Software Development Services
-                </h1>
-                <p className="text-xl text-muted-foreground max-w-2xl">
-                  Build innovative, scalable, and secure custom software solutions tailored to your business needs.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="group">
-                  Get a Free Consultation
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button variant="outline" size="lg">
-                  Talk to Our Experts
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
-                alt="Custom Software Development - Team coding"
-                className="rounded-2xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" />
-            </div>
-          </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.1),transparent_70%)]" />
+        <div className="relative max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+            Custom Software That Fits Your Business Like a Glove
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            We design, develop, and deploy scalable custom software solutions tailored to your business needs—driving productivity, efficiency, and ROI.
+          </p>
+          <Button size="lg" className="group">
+            Talk to Our Experts
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </div>
       </section>
 
-      {/* Introduction Section */}
+      {/* Introduction / Overview Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
-                alt="Java programming on monitor"
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                alt="Custom Software Development"
                 className="rounded-2xl shadow-xl"
               />
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center backdrop-blur-sm">
@@ -58,236 +41,416 @@ const CustomSoftwareDevelopment = () => {
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                What is Custom Software Development?
+                Scalable and Purpose-Built Software That Grows with You
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Custom software development involves designing, building, and maintaining software solutions that are tailored specifically to meet the unique needs of your business. Unlike off-the-shelf software, custom software is designed from the ground up, offering flexibility, scalability, and the ability to adapt as your business evolves.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Our custom software development services help businesses streamline operations, enhance customer experiences, and drive digital transformation by creating software that perfectly aligns with their objectives.
+                From MVPs to enterprise-grade platforms, our team builds powerful software tailored to your unique needs. We cover the entire lifecycle—from ideation and design to deployment and ongoing support—with agility, transparency, and innovation at the core.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Custom Software Matters */}
+      {/* Key Services (Icon Cards Section) */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Why Custom Software Matters for Your Business?
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Off-the-shelf software solutions may not provide the flexibility or features your business needs to operate efficiently. Custom software development ensures that your software perfectly aligns with your business processes, improves efficiency, and provides a competitive edge.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Whether you're looking to automate workflows, integrate with existing systems, or create innovative customer-facing applications, custom software development offers tailored solutions that drive success and help your business grow.
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Settings className="w-4 h-4 text-primary" />
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Our Custom Software Development Services Include
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: "Enterprise Software Development",
+                description: "Build robust enterprise platforms tailored to your internal workflows.",
+                icon: Settings
+              },
+              {
+                title: "MVP & Prototype Development",
+                description: "Launch faster with strategic MVPs validated for real-world use.",
+                icon: Zap
+              },
+              {
+                title: "Legacy Software Modernization",
+                description: "Upgrade outdated systems into modern, scalable technologies.",
+                icon: Package
+              },
+              {
+                title: "API Development & Integrations",
+                description: "Seamlessly connect your systems with custom APIs and integrations.",
+                icon: Database
+              },
+              {
+                title: "Cross-Platform App Development",
+                description: "Build responsive software across desktop, web, and mobile.",
+                icon: Smartphone
+              },
+              {
+                title: "Software Architecture & Design",
+                description: "Architect scalable systems from the ground up with long-term vision.",
+                icon: Cog
+              },
+              {
+                title: "Cloud-Native Development",
+                description: "Build scalable and secure applications optimized for cloud.",
+                icon: Cloud
+              },
+              {
+                title: "Maintenance & Support",
+                description: "Post-deployment support, enhancements, and performance monitoring.",
+                icon: Wrench
+              }
+            ].map((service, index) => (
+              <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/20">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <service.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <span className="text-sm font-medium">Workflow Automation</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Zap className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-sm font-medium">System Integration</span>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80"
-                alt="Colorful software code on computer monitor"
-                className="rounded-2xl shadow-xl"
-              />
-            </div>
+                  <CardTitle className="text-lg">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-center text-muted-foreground">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Development Process */}
+      {/* Accordion Section – Why Custom Software? */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Why Choose Custom Software Over Off-the-Shelf Solutions?
+            </h2>
+          </div>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left">
+                Tailored to Your Business Logic
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                No compromise—solutions built around your workflows, not the other way around.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-2" className="border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left">
+                Greater Flexibility & Control
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Add features, scale performance, or integrate anytime—on your terms.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-3" className="border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left">
+                Improved Efficiency & Productivity
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Automate repetitive tasks and eliminate bottlenecks.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-4" className="border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left">
+                Cost-Effective in the Long Run
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Avoid recurring licensing costs and third-party limitations.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-5" className="border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left">
+                Competitive Advantage
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Build proprietary tools that give your business a unique edge.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Industry Use Cases / Sectors We Serve */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Industries We Build Software For
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {[
+              {
+                title: "Healthcare",
+                description: "Custom EMR, HIPAA-compliant systems",
+                emoji: "🏥"
+              },
+              {
+                title: "E-commerce",
+                description: "Tailored order and inventory management",
+                emoji: "🛒"
+              },
+              {
+                title: "Finance & Banking",
+                description: "Secure fintech platforms with real-time insights",
+                emoji: "🏦"
+              },
+              {
+                title: "Logistics",
+                description: "Real-time tracking and delivery systems",
+                emoji: "🚚"
+              },
+              {
+                title: "Education",
+                description: "LMS platforms, student portals, and eLearning tools",
+                emoji: "🎓"
+              }
+            ].map((industry, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/20">
+                <CardHeader>
+                  <div className="text-4xl mb-2">{industry.emoji}</div>
+                  <CardTitle className="text-lg">{industry.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-muted-foreground">
+                    {industry.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Story / Process Flow Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Our Custom Software Development Process
+              How We Bring Your Software Vision to Life
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We follow a systematic and agile approach to deliver custom software solutions that meet your business goals
-            </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {[
               {
                 step: "01",
-                title: "Requirement Gathering",
-                description: "We start by understanding your business requirements, pain points, and goals.",
+                title: "Discovery & Requirement Gathering",
                 icon: Users
               },
               {
-                step: "02",
-                title: "Design & Prototyping",
-                description: "Our team creates a detailed design and prototype to ensure the software meets your needs and expectations.",
+                step: "02", 
+                title: "UI/UX Design & Wireframing",
                 icon: Code
               },
               {
                 step: "03",
-                title: "Development & Coding",
-                description: "We begin the software development process, using best practices to ensure clean, efficient, and scalable code.",
+                title: "Development & Testing",
                 icon: Settings
               },
               {
                 step: "04",
-                title: "Testing & QA",
-                description: "Our quality assurance team tests the software to identify and resolve bugs and ensure it performs to the highest standards.",
-                icon: Shield
-              },
-              {
-                step: "05",
-                title: "Deployment & Support",
-                description: "We deploy the software into your environment and provide ongoing support, updates, and maintenance.",
+                title: "Deployment & Integration",
                 icon: Zap
               },
               {
-                step: "06",
-                title: "Continuous Improvement",
-                description: "We monitor software performance and continuously optimize it to meet the evolving needs of your business.",
+                step: "05",
+                title: "Maintenance & Optimization",
                 icon: CheckCircle
               }
             ].map((process, index) => (
-              <div key={index} className="group relative">
-                <div className="bg-card p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/20">
-                  <div className="flex items-center mb-4">
-                    <span className="text-2xl font-bold text-primary/30 mr-4">{process.step}</span>
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <process.icon className="w-6 h-6 text-primary" />
-                    </div>
+              <div key={index} className="text-center group">
+                <div className="relative mb-6">
+                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                    <process.icon className="w-10 h-10 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{process.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{process.description}</p>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold">
+                    {process.step}
+                  </div>
                 </div>
+                <h3 className="text-lg font-semibold text-foreground">{process.title}</h3>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Key Benefits */}
+      {/* Why Choose Us Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Key Benefits of Our Custom Software Development
+              Why Partner with Us for Custom Software?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover how custom software solutions can transform your business operations and drive growth
-            </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                title: "Tailored to Your Needs",
-                description: "Custom software is designed specifically to address your business's unique challenges and objectives.",
-                icon: "🎯"
+                title: "Full-Cycle Development Expertise",
+                description: "End-to-end development from concept to deployment and beyond.",
+                icon: Cog
               },
               {
-                title: "Scalable & Flexible",
-                description: "As your business grows, custom software can evolve with you, scaling and adapting to new demands.",
-                icon: "📈"
+                title: "Agile & Scalable Delivery",
+                description: "Flexible methodology ensuring timely delivery and scalability.",
+                icon: Zap
               },
               {
-                title: "Improved Efficiency",
-                description: "Automate processes, streamline workflows, and reduce inefficiencies to improve overall productivity.",
-                icon: "⚡"
+                title: "Experienced Cross-Industry Developers",
+                description: "Deep expertise across multiple industries and technologies.",
+                icon: Users
               },
               {
-                title: "Better Integration",
-                description: "Custom software can integrate seamlessly with existing systems, ensuring smooth data flow and improving operations.",
-                icon: "🔗"
-              },
-              {
-                title: "Competitive Advantage",
-                description: "Custom-built solutions provide a unique advantage by offering functionality that's not available in off-the-shelf products.",
-                icon: "🏆"
-              },
-              {
-                title: "Long-term Support",
-                description: "Ongoing maintenance, updates, and support ensure your software continues to meet evolving business needs.",
-                icon: "🛠️"
+                title: "Client-First Approach & Transparent Communication",
+                description: "Clear communication and client satisfaction at every step.",
+                icon: Shield
               }
-            ].map((benefit, index) => (
-              <div key={index} className="group">
-                <div className="bg-card p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/20 h-full">
-                  <div className="text-4xl mb-4">{benefit.icon}</div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{benefit.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
-                </div>
-              </div>
+            ].map((reason, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/20">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <reason.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">{reason.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-muted-foreground">
+                    {reason.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Why Choose Us for Your Custom Software Development Needs?
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                With years of experience in custom software development, our team has a proven track record of delivering high-quality, reliable solutions that align with business goals. We combine industry expertise with the latest technologies to create scalable, secure, and innovative software solutions that meet your unique needs.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Our team is committed to providing full support throughout the software development lifecycle and beyond, ensuring your software continues to meet evolving business demands.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                <Button size="lg" className="group">
-                  Get Started with Custom Software Development
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
-                alt="People working with laptops - software development team"
-                className="rounded-2xl shadow-xl"
-              />
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-secondary/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                <Users className="w-12 h-12 text-secondary" />
-              </div>
-            </div>
-          </div>
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary/10 to-secondary/10">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            Ready to Build Software That Drives Growth?
+          </h2>
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Let's turn your vision into high-performing, scalable software. Start your journey today.
+          </p>
+          <Button size="lg" className="group">
+            Book a Free Consultation
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary/5 to-secondary/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Ready to Transform Your Business with Custom Software?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Let's discuss your requirements and create a custom software solution that drives your business forward.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="group">
-              Contact Our Experts
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="outline" size="lg">
-              Schedule a Free Consultation
-            </Button>
+      {/* FAQ Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="faq-1" className="border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left">
+                How long does it take to build custom software?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Development timelines vary based on complexity, features, and requirements. Simple applications may take 3-6 months, while complex enterprise solutions can take 12-18 months or more.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="faq-2" className="border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left">
+                Do you sign NDAs and provide IP rights?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Yes, we sign NDAs to protect your confidential information and ensure you retain full intellectual property rights to your custom software.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="faq-3" className="border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left">
+                Can I scale the software after launch?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Absolutely! We build scalable architectures that can grow with your business, and we provide ongoing support for enhancements and new features.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="faq-4" className="border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left">
+                What technologies do you work with?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                We work with modern technologies including React, Node.js, Python, .NET, cloud platforms (AWS, Azure, GCP), databases, and mobile development frameworks.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="faq-5" className="border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left">
+                Do you offer post-launch support?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Yes, we provide comprehensive post-launch support including bug fixes, updates, performance monitoring, and feature enhancements.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Related Services Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Related Services You Might Need
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "UI/UX Design",
+                description: "Create intuitive and engaging user experiences for your software.",
+                href: "/ui-ux-design"
+              },
+              {
+                title: "Mobile App Development",
+                description: "Extend your software reach with native and cross-platform mobile apps.",
+                href: "/mobile-app-development"
+              },
+              {
+                title: "DevOps Consulting",
+                description: "Streamline deployment and operations with DevOps best practices.",
+                href: "/devops-consulting"
+              }
+            ].map((service, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/20">
+                <CardHeader>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <CardDescription className="text-muted-foreground">
+                    {service.description}
+                  </CardDescription>
+                  <Button variant="outline" className="w-full group">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
