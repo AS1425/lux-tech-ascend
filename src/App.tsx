@@ -48,6 +48,7 @@ import Whitepapers from "./pages/Whitepapers";
 import ITConsultingServices from "./pages/ITConsultingServices";
 import MVPAppDevelopment from "./pages/MVPAppDevelopment";
 import CustomAPIDevelopment from "./pages/CustomAPIDevelopment";
+import ProductLifecycleManagement from "./pages/ProductLifecycleManagement";
 
 
 const queryClient = new QueryClient();
@@ -103,6 +104,7 @@ const App = () => (
         <Route path="/it-consulting-services" element={<ITConsultingServices />} />
         <Route path="/mvp-app-development" element={<MVPAppDevelopment />} />
         <Route path="/custom-api-development" element={<CustomAPIDevelopment />} />
+        <Route path="/product-lifecycle-management" element={<ProductLifecycleManagement />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
