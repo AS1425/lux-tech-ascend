@@ -54,6 +54,7 @@ import SecurityComplianceSoftwareDevelopment from "./pages/SecurityComplianceSof
 import WindowsAppDevelopment from "./pages/WindowsAppDevelopment";
 import WebAppDevelopment from "./pages/WebAppDevelopment";
 import CrossPlatformDevelopment from "./pages/CrossPlatformDevelopment";
+import ProgressiveWebApps from "./pages/ProgressiveWebApps";
 
 
 const queryClient = new QueryClient();
@@ -115,6 +116,7 @@ const App = () => (
         <Route path="/windows-app-development" element={<WindowsAppDevelopment />} />
         <Route path="/web-app-development" element={<WebAppDevelopment />} />
         <Route path="/cross-platform-development" element={<CrossPlatformDevelopment />} />
+        <Route path="/progressive-web-apps" element={<ProgressiveWebApps />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
