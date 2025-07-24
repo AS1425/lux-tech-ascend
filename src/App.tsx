@@ -53,6 +53,7 @@ import SoftwareDeploymentServices from "./pages/SoftwareDeploymentServices";
 import SecurityComplianceSoftwareDevelopment from "./pages/SecurityComplianceSoftwareDevelopment";
 import WindowsAppDevelopment from "./pages/WindowsAppDevelopment";
 import WebAppDevelopment from "./pages/WebAppDevelopment";
+import CrossPlatformDevelopment from "./pages/CrossPlatformDevelopment";
 
 
 const queryClient = new QueryClient();
@@ -113,6 +114,7 @@ const App = () => (
         <Route path="/security-compliance-software-development" element={<SecurityComplianceSoftwareDevelopment />} />
         <Route path="/windows-app-development" element={<WindowsAppDevelopment />} />
         <Route path="/web-app-development" element={<WebAppDevelopment />} />
+        <Route path="/cross-platform-development" element={<CrossPlatformDevelopment />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
