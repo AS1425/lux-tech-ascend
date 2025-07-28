@@ -345,6 +345,24 @@
   }
 }
 
+@keyframes parallaxZoom {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 /* Responsive typography */
 @media (max-width: 768px) {
   .animate-fade-up,

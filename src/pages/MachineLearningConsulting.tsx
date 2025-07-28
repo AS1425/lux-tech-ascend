@@ -75,16 +75,21 @@ const MachineLearningConsulting = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      {/* Hero Section */}
+      {/* Hero Section with Parallax Effect */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-          <div className="absolute inset-0">
-            {/* Neural Network Animation */}
+        {/* Parallax Background with Zoom Animation */}
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10 transition-transform duration-[2500ms] ease-out animate-parallax-zoom"
+        >
+          {/* Overlay Gradient for Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90" />
+          
+          {/* Neural Network Animation */}
+          <div className="absolute inset-0 opacity-30">
             {Array.from({ length: 20 }).map((_, i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-primary/30 rounded-full animate-pulse"
+                className="absolute w-2 h-2 bg-primary/60 rounded-full animate-pulse"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -97,7 +102,7 @@ const MachineLearningConsulting = () => {
             {Array.from({ length: 10 }).map((_, i) => (
               <div
                 key={`line-${i}`}
-                className="absolute h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"
+                className="absolute h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
                 style={{
                   left: `${Math.random() * 80}%`,
                   top: `${Math.random() * 80}%`,
@@ -111,14 +116,14 @@ const MachineLearningConsulting = () => {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-8 animate-fade-up">
+          <div className="space-y-8 animate-fade-up" style={{ animationDelay: '0.5s' }}>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground">
               Machine Learning 
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                 Consulting Services
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-foreground/80 max-w-4xl mx-auto leading-relaxed">
               Unlock the potential of data with our machine learning expertise to drive smarter business decisions and innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
