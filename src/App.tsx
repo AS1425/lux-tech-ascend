@@ -57,6 +57,7 @@ import CrossPlatformDevelopment from "./pages/CrossPlatformDevelopment";
 import ProgressiveWebApps from "./pages/ProgressiveWebApps";
 import UIUXForApps from "./pages/UIUXForApps";
 import OutsourcingServices from "./pages/OutsourcingServices";
+import ResourceAugmentation from "./pages/ResourceAugmentation";
 import NotFound from "./pages/NotFound";
 import BlogPost from "./pages/BlogPost";
 
@@ -123,6 +124,7 @@ const App = () => (
         <Route path="/progressive-web-apps" element={<ProgressiveWebApps />} />
         <Route path="/ui-ux-for-apps" element={<UIUXForApps />} />
         <Route path="/outsourcing-services" element={<OutsourcingServices />} />
+        <Route path="/resource-augmentation" element={<ResourceAugmentation />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="*" element={<NotFound />} />
         </Routes>
