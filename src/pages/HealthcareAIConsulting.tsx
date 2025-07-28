@@ -1,438 +1,453 @@
-
 import React from 'react';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { ArrowRight, Activity, Brain, Heart, Shield, Users, Zap, TrendingUp, Target, Database, Stethoscope, UserCheck } from 'lucide-react';
+import { 
+  Heart, 
+  Activity, 
+  Brain, 
+  Stethoscope, 
+  Shield, 
+  Clock, 
+  Users, 
+  ChartBar,
+  Phone,
+  MessageCircle,
+  Search,
+  FileText,
+  Bell,
+  Database
+} from 'lucide-react';
 
 const HealthcareAIConsulting = () => {
+  const scrollToContact = () => {
+    const element = document.getElementById('contact-section');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-      
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-          <div className="absolute inset-0">
-            {/* Healthcare AI Animation */}
-            {Array.from({ length: 15 }).map((_, i) => (
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-accent/10 py-20 lg:py-32">
+        <div className="absolute inset-0 bg-grid-white/10" />
+        <div className="absolute inset-0">
+          {/* Neural network animation */}
+          <div className="absolute inset-0 opacity-20">
+            {[...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-3 h-3 bg-primary/20 rounded-full animate-pulse"
+                className="absolute h-1 w-1 bg-primary rounded-full animate-pulse"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
                   animationDelay: `${Math.random() * 3}s`,
-                  animationDuration: `${2 + Math.random() * 2}s`
-                }}
-              />
-            ))}
-            {/* Medical Data Flow */}
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div
-                key={`flow-${i}`}
-                className="absolute h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent"
-                style={{
-                  left: `${Math.random() * 70}%`,
-                  top: `${Math.random() * 70}%`,
-                  width: `${30 + Math.random() * 50}%`,
-                  transform: `rotate(${Math.random() * 360}deg)`,
-                  animationDelay: `${Math.random() * 2}s`
+                  animationDuration: `${2 + Math.random() * 2}s`,
                 }}
               />
             ))}
           </div>
         </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-8 animate-fade-up">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground">
-              Healthcare AI 
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                Consulting Services
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Transform your healthcare organization with cutting-edge AI solutions that improve patient outcomes, optimize operations, and ensure compliance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-6 group">
-                Request a Consultation
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                Talk to Our Experts
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Introduction Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative animate-fade-right">
-              <img
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
-                alt="Healthcare AI Technology"
-                className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl"></div>
-            </div>
-            <div className="space-y-6 animate-fade-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                What is Healthcare AI Consulting?
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Healthcare AI consulting provides businesses with strategies and expertise to integrate artificial intelligence into healthcare processes to improve efficiency, patient care, and decision-making. From AI-driven diagnostics to predictive analytics, we help healthcare organizations harness the power of AI technologies to streamline operations, enhance patient experiences, and achieve better clinical outcomes.
+            <div className="space-y-6 animate-fade-up">
+              <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Revolutionizing Healthcare with AI & ML
+              </h1>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                From predictive diagnostics to intelligent patient support, our AI-powered solutions are transforming how care is delivered and managed.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Our consulting services guide healthcare providers in selecting, developing, and implementing AI tools that align with industry standards and regulations.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Healthcare AI is Essential Section */}
-      <section className="py-20 bg-accent/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-right">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Why Healthcare AI is Critical for Your Business
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                AI technologies are revolutionizing healthcare by improving patient care, streamlining workflows, and optimizing resource management. From predictive analytics that help forecast patient outcomes to AI tools that enhance imaging and diagnostics, AI is increasingly becoming a vital part of the healthcare ecosystem.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Our consulting services ensure that your healthcare business adopts the right AI strategies, enhances operational efficiency, and complies with industry regulations while improving patient experiences and outcomes.
-              </p>
-            </div>
-            <div className="relative animate-fade-left">
-              <img
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Healthcare Professional with AI Dashboard"
-                className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-primary/20 rounded-2xl"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Our Healthcare AI Consulting Process
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We follow a structured and results-driven approach to healthcare AI consulting.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Consultation & Discovery",
-                description: "We begin by understanding your specific healthcare challenges and objectives, whether improving patient care, reducing costs, or automating workflows.",
-                icon: Users
-              },
-              {
-                title: "AI Strategy Design",
-                description: "Our experts design a tailored AI strategy that fits your needs, selecting the right technologies and tools for your healthcare business.",
-                icon: Target
-              },
-              {
-                title: "Model Development & Implementation",
-                description: "We develop custom AI models or integrate existing tools into your workflows, ensuring seamless and effective AI adoption.",
-                icon: Brain
-              },
-              {
-                title: "Testing & Validation",
-                description: "We rigorously test AI models to ensure they meet healthcare standards, ensuring reliability, accuracy, and compliance.",
-                icon: Shield
-              },
-              {
-                title: "Deployment & Integration",
-                description: "We deploy AI models and integrate them with your existing healthcare systems, ensuring smooth operation and performance.",
-                icon: Database
-              },
-              {
-                title: "Continuous Monitoring & Optimization",
-                description: "We provide ongoing support, optimization, and updates to keep your AI tools relevant and effective over time.",
-                icon: TrendingUp
-              }
-            ].map((step, index) => (
-              <Card key={index} className="card-hover">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <step.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{step.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed">
-                    {step.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-accent/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Key Benefits of Healthcare AI Consulting
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Revolutionize your healthcare operations with intelligent AI solutions.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Improved Patient Care",
-                description: "AI technologies enable more accurate diagnoses, personalized treatment plans, and better patient management, leading to enhanced care.",
-                icon: Heart
-              },
-              {
-                title: "Increased Efficiency",
-                description: "Automate administrative tasks, streamline workflows, and improve operational efficiency across healthcare institutions.",
-                icon: Zap
-              },
-              {
-                title: "Predictive Analytics",
-                description: "Use AI to predict patient outcomes, disease progression, and optimize resource allocation for better healthcare delivery.",
-                icon: Activity
-              },
-              {
-                title: "Regulatory Compliance",
-                description: "Ensure that your AI systems meet healthcare industry regulations, including HIPAA and other data protection standards.",
-                icon: Shield
-              },
-              {
-                title: "Cost Reduction",
-                description: "Reduce operational costs by automating routine tasks, improving resource management, and minimizing human error.",
-                icon: TrendingUp
-              }
-            ].map((benefit, index) => (
-              <Card key={index} className="card-hover">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <benefit.icon className="h-6 w-6 text-secondary" />
-                  </div>
-                  <CardTitle className="text-xl">{benefit.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed">
-                    {benefit.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* AI Healthcare Consulting Areas Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              AI Healthcare Consulting Areas We Cover
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive AI solutions tailored for every aspect of healthcare transformation and optimization.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible defaultValue="item-0" className="space-y-4">
-              <AccordionItem
-                value="item-0"
-                className="bg-card rounded-lg border shadow-md"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <span className="text-lg font-bold text-foreground">
-                    GenAI-Powered Agents
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="text-muted-foreground leading-relaxed">
-                    Think of these as your digital assistant for desk and nursing assistants rolled into one. Our intelligent virtual helpers take the pressure off staff by handling routine questions and generating patient information through human-like conversations. They're smart enough to guide personalized guidance while staying within clinical policies – freeing up your team to focus on what matters most: face-to-face patient care.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-1"
-                className="bg-card rounded-lg border shadow-md"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <span className="text-lg font-bold text-foreground">
-                    Medical Analytics & Data Infrastructure
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="text-muted-foreground leading-relaxed">
-                    From clinical data pipelines to patient data lakes, we help hospitals and research centers set up secure, scalable, and interoperable systems. Our expertise ensures compliant, insightful use of health data to drive diagnoses, treatment planning, and operational efficiency.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-2"
-                className="bg-card rounded-lg border shadow-md"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <span className="text-lg font-bold text-foreground">
-                    Pharmaceutical Innovation Acceleration
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="text-muted-foreground leading-relaxed">
-                    We assist pharma companies in leveraging AI to shorten drug discovery cycles, model molecular interactions, and identify promising candidates faster with predictive algorithms and simulation.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-3"
-                className="bg-card rounded-lg border shadow-md"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <span className="text-lg font-bold text-foreground">
-                    Next-Gen Health Tech Platforms
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="text-muted-foreground leading-relaxed">
-                    We build and integrate next-gen platforms powered by conversational AI, virtual assistants, and LLMs to assist both patients and professionals in improving access, triage, and engagement.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-4"
-                className="bg-card rounded-lg border shadow-md"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <span className="text-lg font-bold text-foreground">
-                    Intelligent Care Coordination
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="text-muted-foreground leading-relaxed">
-                    Ensure continuity of care with AI systems that monitor, recommend, and escalate interventions across the care journey. From remote monitoring to smart alerts, care gaps are minimized.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-5"
-                className="bg-card rounded-lg border shadow-md"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <span className="text-lg font-bold text-foreground">
-                    Operational Excellence Engineering
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="text-muted-foreground leading-relaxed">
-                    We optimize resource allocation, workforce productivity, and logistics through AI-powered forecasting, workflow automation, and root cause analysis.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-6"
-                className="bg-card rounded-lg border shadow-md"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <span className="text-lg font-bold text-foreground">
-                    Public Health Intelligence Systems
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="text-muted-foreground leading-relaxed">
-                    Support large-scale public health decisions with AI dashboards, predictive outbreak modeling, and real-time reporting. Our tools empower health agencies to act proactively, not reactively.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-accent/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative animate-fade-right">
-              <img
-                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Healthcare Team Using AI Technology"
-                className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl"></div>
-            </div>
-            <div className="space-y-6 animate-fade-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Why Partner with Us for Healthcare AI Consulting?
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                With years of experience in both healthcare and AI technology, we specialize in building customized AI solutions that align with healthcare providers' goals. Our team brings deep knowledge of both industries to design AI tools that improve patient outcomes, streamline processes, and maintain regulatory compliance.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We take a hands-on approach, ensuring that every AI solution we develop is aligned with your objectives and delivers measurable results.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="group">
-                  Start Your Healthcare AI Journey
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button size="lg" onClick={scrollToContact} className="group">
+                  Let's Talk AI in Healthcare
+                  <Heart className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                 </Button>
+                <Button variant="outline" size="lg">
+                  View Case Studies
+                </Button>
+              </div>
+            </div>
+            
+            <div className="relative animate-fade-left">
+              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 p-4 bg-primary/10 rounded-xl">
+                    <Stethoscope className="h-6 w-6 text-primary" />
+                    <span className="text-sm font-medium">AI Health Assistant Active</span>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                        <Brain className="h-4 w-4 text-white" />
+                      </div>
+                      <div className="flex-1 bg-white/10 rounded-lg p-3">
+                        <p className="text-sm">How can I help you today? I can analyze symptoms, schedule appointments, or answer health questions.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 ml-11">
+                      <Button size="sm" variant="outline">Analyze Symptoms</Button>
+                      <Button size="sm" variant="outline">Book Appointment</Button>
+                      <Button size="sm" variant="outline">Health Tips</Button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-8 animate-fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Ready to Transform Healthcare with AI?
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Let our experts help you implement AI solutions that improve patient outcomes and operational efficiency.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-6 group">
-                Contact Our AI Experts
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                Schedule a Free Consultation
-              </Button>
+      {/* Challenge Section */}
+      <section className="py-20 bg-card/50">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 animate-fade-right">
+              <h2 className="text-3xl lg:text-4xl font-bold">
+                The Healthcare Sector is Struggling with Legacy Systems, Manual Overheads & Inaccessible Intelligence
+              </h2>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-destructive rounded-full mt-2" />
+                  <p className="text-muted-foreground">Delayed diagnosis & rising operational costs</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-destructive rounded-full mt-2" />
+                  <p className="text-muted-foreground">Data silos across EHR/EMR platforms</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-destructive rounded-full mt-2" />
+                  <p className="text-muted-foreground">Manual documentation draining clinical time</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-destructive rounded-full mt-2" />
+                  <p className="text-muted-foreground">Patients demanding smarter virtual care options</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative animate-fade-left">
+              <div className="bg-gradient-to-br from-destructive/10 to-destructive/5 rounded-2xl p-8 backdrop-blur-sm border border-destructive/20">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-destructive">
+                    <Clock className="h-6 w-6" />
+                    <span className="font-semibold">Current Healthcare Challenges</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center p-4 bg-background/50 rounded-lg">
+                      <p className="text-2xl font-bold text-destructive">47%</p>
+                      <p className="text-sm text-muted-foreground">Administrative Time</p>
+                    </div>
+                    <div className="text-center p-4 bg-background/50 rounded-lg">
+                      <p className="text-2xl font-bold text-destructive">$200B</p>
+                      <p className="text-sm text-muted-foreground">Annual Waste</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
+      {/* Solution Section - Use Cases */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center space-y-4 mb-16 animate-fade-up">
+            <h2 className="text-3xl lg:text-4xl font-bold">How AI is Reimagining Healthcare Operations</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Transform your healthcare operations with intelligent solutions that improve patient outcomes and reduce costs.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: ChartBar,
+                title: "Predictive Patient Analytics",
+                description: "Spot risks and readmissions early using machine learning.",
+                stat: "48%",
+                statLabel: "reduction in readmissions"
+              },
+              {
+                icon: MessageCircle,
+                title: "AI Chatbots & Virtual Nurses",
+                description: "Automate triage, FAQs, reminders, and health advice.",
+                stat: "24/7",
+                statLabel: "patient support"
+              },
+              {
+                icon: Search,
+                title: "Radiology & Image Analysis",
+                description: "Faster, accurate image interpretation through computer vision.",
+                stat: "85%",
+                statLabel: "accuracy improvement"
+              },
+              {
+                icon: FileText,
+                title: "Administrative Workflow Automation",
+                description: "Automate scheduling, claims, and documentation.",
+                stat: "60%",
+                statLabel: "time saved"
+              }
+            ].map((item, index) => (
+              <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                <CardHeader className="text-center">
+                  <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <item.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <CardDescription className="mb-4">{item.description}</CardDescription>
+                  <div className="space-y-2">
+                    <div className="text-2xl font-bold text-primary">{item.stat}</div>
+                    <div className="text-sm text-muted-foreground">{item.statLabel}</div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Spotlight Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 animate-fade-right">
+              <h2 className="text-3xl lg:text-4xl font-bold">
+                LLM-Powered Assistants for Doctors, Patients & Operations Teams
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Empower your care ecosystem with AI copilots that extract insights from EMRs, assist in diagnostics, 
+                and streamline communication across clinical teams.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="flex items-center gap-3">
+                  <Shield className="h-5 w-5 text-primary" />
+                  <span className="text-sm">HIPAA Compliant</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Database className="h-5 w-5 text-primary" />
+                  <span className="text-sm">EMR Integration</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Users className="h-5 w-5 text-primary" />
+                  <span className="text-sm">Multi-Team Access</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Bell className="h-5 w-5 text-primary" />
+                  <span className="text-sm">Real-time Alerts</span>
+                </div>
+              </div>
+              <Button size="lg" className="mt-6">
+                Learn More About Our AI Copilots
+              </Button>
+            </div>
+            
+            <div className="relative animate-fade-left">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Brain className="h-6 w-6 text-primary" />
+                    <span className="font-semibold">AI Medical Assistant Dashboard</span>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-primary/10 rounded-lg p-4 text-center">
+                      <Activity className="h-8 w-8 text-primary mx-auto mb-2" />
+                      <p className="text-sm font-medium">Patient Vitals</p>
+                      <p className="text-xs text-muted-foreground">Real-time monitoring</p>
+                    </div>
+                    <div className="bg-accent/10 rounded-lg p-4 text-center">
+                      <FileText className="h-8 w-8 text-accent mx-auto mb-2" />
+                      <p className="text-sm font-medium">Smart Notes</p>
+                      <p className="text-xs text-muted-foreground">Auto documentation</p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-background/50 rounded-lg p-4">
+                    <p className="text-sm font-medium mb-2">AI Insights:</p>
+                    <p className="text-xs text-muted-foreground">
+                      "Based on patient history and current vitals, recommend follow-up in 48 hours. 
+                      High risk indicators suggest preventive care protocol."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Results/Impact Section */}
+      <section className="py-20 bg-card/50">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative animate-fade-right">
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8">
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-bold">Real Impact: From Hours to Seconds</h3>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="text-center">
+                      <div className="text-4xl font-bold text-primary mb-2">48%</div>
+                      <div className="text-sm text-muted-foreground">Faster Patient Intake</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-4xl font-bold text-accent mb-2">30%</div>
+                      <div className="text-sm text-muted-foreground">Better Post-Op Adherence</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-4xl font-bold text-primary mb-2">65%</div>
+                      <div className="text-sm text-muted-foreground">Reduced Admin Time</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-4xl font-bold text-accent mb-2">24/7</div>
+                      <div className="text-sm text-muted-foreground">Patient Support</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-6 animate-fade-left">
+              <h2 className="text-3xl lg:text-4xl font-bold">Transforming Healthcare Delivery</h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                We helped a U.S.-based hospital reduce patient intake processing time by 48%, 
+                and improved post-op adherence by 30% using AI-driven reminders and predictive alerts.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2" />
+                  <p className="text-muted-foreground">Automated patient triage and scheduling</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2" />
+                  <p className="text-muted-foreground">Predictive analytics for readmission prevention</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2" />
+                  <p className="text-muted-foreground">Intelligent medication reminders and follow-ups</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Accordion Section - AI Use Cases */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center space-y-4 mb-12 animate-fade-up">
+              <h2 className="text-3xl lg:text-4xl font-bold">Where AI Fits into Your Ecosystem</h2>
+              <p className="text-xl text-muted-foreground">
+                Explore specific AI applications across your healthcare operations
+              </p>
+            </div>
+            
+            <Accordion type="single" collapsible className="space-y-4 animate-fade-up">
+              {[
+                {
+                  value: "virtual-assistants",
+                  title: "Virtual Assistants for Pre-Visit Questionnaires",
+                  content: "Automate patient intake with intelligent questionnaires that adapt based on responses, reducing wait times and improving data quality. Our AI assistants can handle complex medical histories and route patients to appropriate care pathways."
+                },
+                {
+                  value: "nlp-extraction",
+                  title: "NLP in Clinical Notes Extraction",
+                  content: "Transform unstructured clinical notes into actionable insights. Our natural language processing technology extracts key medical information, identifies patterns, and flags potential issues for clinical review."
+                },
+                {
+                  value: "chronic-care",
+                  title: "AI in Chronic Care Management",
+                  content: "Monitor patients with chronic conditions through intelligent tracking systems that analyze symptoms, medication adherence, and lifestyle factors to provide personalized care recommendations and early intervention alerts."
+                },
+                {
+                  value: "discharge-monitoring",
+                  title: "Post-Discharge Monitoring & Alerts",
+                  content: "Reduce readmissions with AI-powered monitoring that tracks patient recovery, medication compliance, and symptom progression. Automated alerts notify care teams of potential complications before they escalate."
+                },
+                {
+                  value: "data-intelligence",
+                  title: "HIPAA-Compliant Data Intelligence Layer",
+                  content: "Build a secure, compliant data foundation that aggregates information from multiple sources while maintaining patient privacy. Our AI platform provides insights without compromising sensitive health information."
+                }
+              ].map((item, index) => (
+                <AccordionItem 
+                  key={item.value} 
+                  value={item.value}
+                  className="border border-border/50 rounded-lg px-6 bg-card/50 backdrop-blur-sm"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <AccordionTrigger className="text-left hover:no-underline">
+                    <span className="text-lg font-semibold">{item.title}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
+                    {item.content}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section id="contact-section" className="py-20 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/5" />
+        <div className="absolute inset-0">
+          {/* Floating medical icons */}
+          <div className="absolute top-20 left-10 animate-float">
+            <Heart className="h-8 w-8 text-primary/30" />
+          </div>
+          <div className="absolute top-40 right-20 animate-float" style={{ animationDelay: '1s' }}>
+            <Stethoscope className="h-6 w-6 text-accent/30" />
+          </div>
+          <div className="absolute bottom-40 left-20 animate-float" style={{ animationDelay: '2s' }}>
+            <Brain className="h-10 w-10 text-primary/20" />
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center space-y-8 max-w-4xl mx-auto animate-fade-up">
+            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Transform Care with AI. Start Today.
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Let's partner to bring intelligent, ethical, and secure AI to your healthcare system. 
+              Schedule a free discovery call to explore how AI can revolutionize your patient care and operations.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+              <Button size="lg" className="group">
+                Schedule a Free Discovery Call
+                <Phone className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+              </Button>
+              <Button variant="outline" size="lg">
+                Download Healthcare AI Guide
+              </Button>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-border/20">
+              <div className="text-center space-y-2">
+                <Shield className="h-8 w-8 text-primary mx-auto" />
+                <h3 className="font-semibold">HIPAA Compliant</h3>
+                <p className="text-sm text-muted-foreground">Enterprise-grade security</p>
+              </div>
+              <div className="text-center space-y-2">
+                <Users className="h-8 w-8 text-primary mx-auto" />
+                <h3 className="font-semibold">Expert Team</h3>
+                <p className="text-sm text-muted-foreground">Healthcare AI specialists</p>
+              </div>
+              <div className="text-center space-y-2">
+                <Clock className="h-8 w-8 text-primary mx-auto" />
+                <h3 className="font-semibold">Fast Deployment</h3>
+                <p className="text-sm text-muted-foreground">Rapid implementation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
