@@ -219,13 +219,13 @@ const Blog = () => {
                       </div>
                     </div>
                     
-                    <Button 
-                      variant="ghost" 
-                      className="group/btn p-0 h-auto font-medium text-primary hover:text-primary/80"
+                    <a 
+                      href={`/blog/${post.title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')}`}
+                      className="group/btn p-0 h-auto font-medium text-primary hover:text-primary/80 flex items-center"
                     >
                       Read More 
                       <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                    </Button>
+                    </a>
                   </div>
                 </article>
               ))}
