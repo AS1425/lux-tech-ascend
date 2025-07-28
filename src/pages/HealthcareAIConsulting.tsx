@@ -288,25 +288,25 @@ const HealthcareAIConsulting = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative animate-fade-right">
-              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8">
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8 border border-primary/20">
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-bold">Real Impact: From Hours to Seconds</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Real Impact: From Hours to Seconds</h3>
                   <div className="grid grid-cols-2 gap-6">
-                    <div className="text-center">
+                    <div className="text-center p-4 bg-background/80 rounded-lg">
                       <div className="text-4xl font-bold text-primary mb-2">48%</div>
-                      <div className="text-sm text-muted-foreground">Faster Patient Intake</div>
+                      <div className="text-sm text-foreground/80 font-medium">Faster Patient Intake</div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-4xl font-bold text-accent mb-2">30%</div>
-                      <div className="text-sm text-muted-foreground">Better Post-Op Adherence</div>
+                    <div className="text-center p-4 bg-background/80 rounded-lg">
+                      <div className="text-4xl font-bold text-secondary mb-2">30%</div>
+                      <div className="text-sm text-foreground/80 font-medium">Better Post-Op Adherence</div>
                     </div>
-                    <div className="text-center">
+                    <div className="text-center p-4 bg-background/80 rounded-lg">
                       <div className="text-4xl font-bold text-primary mb-2">65%</div>
-                      <div className="text-sm text-muted-foreground">Reduced Admin Time</div>
+                      <div className="text-sm text-foreground/80 font-medium">Reduced Admin Time</div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-4xl font-bold text-accent mb-2">24/7</div>
-                      <div className="text-sm text-muted-foreground">Patient Support</div>
+                    <div className="text-center p-4 bg-background/80 rounded-lg">
+                      <div className="text-4xl font-bold text-secondary mb-2">24/7</div>
+                      <div className="text-sm text-foreground/80 font-medium">Patient Support</div>
                     </div>
                   </div>
                 </div>
