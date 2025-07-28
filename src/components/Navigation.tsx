@@ -63,10 +63,10 @@ const Navigation = () => {
       { label: 'Web App Development', href: '/web-app-development' },
       { label: 'Cross-Platform Development', href: '/cross-platform-development' },
       { label: 'Progressive Web Apps', href: '/progressive-web-apps' },
-      { label: 'UI/UX for Apps', href: '/ui-ux-design' },
+      { label: 'UI/UX for Apps', href: '/ui-ux-for-apps' },
     ],
     'Automation & Others': [
-      { label: 'Outsourcing', href: '/outsourcing' },
+      { label: 'Outsourcing', href: '/outsourcing-services' },
       { label: 'Business Process Automation', href: '/business-process-automation' },
       { label: 'Conversational Analytics', href: '/conversational-analytics' },
       { label: 'AI Copilot Development', href: '/ai-copilot-development' },
