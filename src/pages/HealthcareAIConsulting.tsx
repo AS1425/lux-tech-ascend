@@ -129,20 +129,20 @@ const HealthcareAIConsulting = () => {
             </div>
             
             <div className="relative animate-fade-left">
-              <div className="bg-gradient-to-br from-destructive/10 to-destructive/5 rounded-2xl p-8 backdrop-blur-sm border border-destructive/20">
+              <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20">
                 <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-destructive">
+                  <div className="flex items-center gap-3 text-primary">
                     <Clock className="h-6 w-6" />
-                    <span className="font-semibold text-lg">Current Healthcare Challenges</span>
+                    <span className="font-semibold text-lg text-foreground">Current Healthcare Challenges</span>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center p-4 bg-background/70 rounded-lg">
-                      <p className="text-2xl font-bold text-destructive">47%</p>
-                      <p className="text-sm text-foreground/70 font-medium">Administrative Time</p>
+                    <div className="text-center p-4 bg-background/80 rounded-lg border border-border/20">
+                      <p className="text-2xl font-bold text-primary">47%</p>
+                      <p className="text-sm text-foreground/80 font-medium">Administrative Time</p>
                     </div>
-                    <div className="text-center p-4 bg-background/70 rounded-lg">
-                      <p className="text-2xl font-bold text-destructive">$200B</p>
-                      <p className="text-sm text-foreground/70 font-medium">Annual Waste</p>
+                    <div className="text-center p-4 bg-background/80 rounded-lg border border-border/20">
+                      <p className="text-2xl font-bold text-primary">$200B</p>
+                      <p className="text-sm text-foreground/80 font-medium">Annual Waste</p>
                     </div>
                   </div>
                 </div>
@@ -414,38 +414,35 @@ const HealthcareAIConsulting = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center space-y-8 max-w-4xl mx-auto animate-fade-up">
-            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
               Transform Care with AI. Start Today.
             </h2>
-            <p className="text-xl text-foreground/80 leading-relaxed">
+            <p className="text-xl text-foreground/90 leading-relaxed font-medium">
               Let's partner to bring intelligent, ethical, and secure AI to your healthcare system. 
               Schedule a free discovery call to explore how AI can revolutionize your patient care and operations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-              <Button size="lg" className="group">
+              <Button size="lg" className="group text-lg px-8 py-6">
                 Schedule a Free Discovery Call
-                <Phone className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg">
-                Download Healthcare AI Guide
+                <Phone className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
               </Button>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-border/20">
               <div className="text-center space-y-2">
                 <Shield className="h-8 w-8 text-primary mx-auto" />
-                <h3 className="font-semibold">HIPAA Compliant</h3>
-                <p className="text-sm text-muted-foreground">Enterprise-grade security</p>
+                <h3 className="font-semibold text-foreground">HIPAA Compliant</h3>
+                <p className="text-sm text-foreground/70 font-medium">Enterprise-grade security</p>
               </div>
               <div className="text-center space-y-2">
                 <Users className="h-8 w-8 text-primary mx-auto" />
-                <h3 className="font-semibold">Expert Team</h3>
-                <p className="text-sm text-muted-foreground">Healthcare AI specialists</p>
+                <h3 className="font-semibold text-foreground">Expert Team</h3>
+                <p className="text-sm text-foreground/70 font-medium">Healthcare AI specialists</p>
               </div>
               <div className="text-center space-y-2">
                 <Clock className="h-8 w-8 text-primary mx-auto" />
-                <h3 className="font-semibold">Fast Deployment</h3>
-                <p className="text-sm text-muted-foreground">Rapid implementation</p>
+                <h3 className="font-semibold text-foreground">Fast Deployment</h3>
+                <p className="text-sm text-foreground/70 font-medium">Rapid implementation</p>
               </div>
             </div>
           </div>
