@@ -60,6 +60,7 @@ import OutsourcingServices from "./pages/OutsourcingServices";
 import ResourceAugmentation from "./pages/ResourceAugmentation";
 import NotFound from "./pages/NotFound";
 import BlogPost from "./pages/BlogPost";
+import ThankYou from "./pages/ThankYou";
 
 
 const queryClient = new QueryClient();
@@ -125,6 +126,7 @@ const App = () => (
         <Route path="/ui-ux-for-apps" element={<UIUXForApps />} />
         <Route path="/outsourcing-services" element={<OutsourcingServices />} />
         <Route path="/resource-augmentation" element={<ResourceAugmentation />} />
+        <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="*" element={<NotFound />} />
         </Routes>
