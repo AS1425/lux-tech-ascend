@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowRight, ShoppingCart, MessageSquare, BarChart3, Search, Eye, Mic, Target, Zap, TrendingUp, Lightbulb, Brain, Users, DollarSign, Settings, Smartphone, Globe, Star, Package, CreditCard, TrendingDown } from 'lucide-react';
 
 const EcommerceAI = () => {
@@ -319,8 +320,57 @@ const EcommerceAI = () => {
         </div>
       </section>
 
-      {/* Impact Snapshot Section */}
+      {/* FAQ Section */}
       <section className="py-20 bg-accent/50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            <AccordionItem value="item-1" className="bg-background rounded-lg border shadow-sm">
+              <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold">
+                How can AI increase my ecommerce store's revenue?
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                AI increases revenue by optimizing product recommendations, automating retargeting campaigns, offering personalized promotions, and reducing cart abandonment using predictive behavior.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="bg-background rounded-lg border shadow-sm">
+              <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold">
+                What platforms do you integrate with?
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                We support seamless integrations with Shopify, WooCommerce, Magento, BigCommerce, Wix, and headless solutions using APIs or custom middleware.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="bg-background rounded-lg border shadow-sm">
+              <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold">
+                Can AI tools be used for marketing automation?
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                Yes. AI powers marketing flows like personalized email campaigns, product re-targeting, dynamic ad creatives, and customer journey mapping.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-background rounded-lg border shadow-sm">
+              <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold">
+                Do you provide maintenance and optimization post-launch?
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                Absolutely. We offer ongoing optimization, analytics, A/B testing, performance tuning, and support services to keep your ecommerce platform evolving with market needs.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Impact Snapshot Section */}
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-up">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
