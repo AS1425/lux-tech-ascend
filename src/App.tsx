@@ -19,6 +19,7 @@ import AIConsulting from "./pages/AIConsulting";
 import ChatbotConsulting from "./pages/ChatbotConsulting";
 import GenerativeAIConsulting from "./pages/GenerativeAIConsulting";
 import MachineLearningConsulting from "./pages/MachineLearningConsulting";
+import EcommerceAI from "./pages/EcommerceAI";
 import AISecurityConsulting from "./pages/AISecurityConsulting";
 import HealthcareAIConsulting from "./pages/HealthcareAIConsulting";
 import CustomSoftwareDevelopment from "./pages/CustomSoftwareDevelopment";
@@ -87,6 +88,7 @@ const App = () => (
           <Route path="/chatbot-consulting" element={<ChatbotConsulting />} />
           <Route path="/generative-ai-consulting" element={<GenerativeAIConsulting />} />
           <Route path="/machine-learning-consulting" element={<MachineLearningConsulting />} />
+          <Route path="/ecommerce-ai" element={<EcommerceAI />} />
           <Route path="/ai-security-consulting" element={<AISecurityConsulting />} />
           <Route path="/healthcare-ai-consulting" element={<HealthcareAIConsulting />} />
           <Route path="/custom-software-development" element={<CustomSoftwareDevelopment />} />
