@@ -3,7 +3,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, ShoppingCart, MessageSquare, BarChart3, Search, Eye, Mic, Target, Zap, TrendingUp, Lightbulb, Brain, Users, DollarSign, Settings, Smartphone, Globe, Star } from 'lucide-react';
+import { ArrowRight, ShoppingCart, MessageSquare, BarChart3, Search, Eye, Mic, Target, Zap, TrendingUp, Lightbulb, Brain, Users, DollarSign, Settings, Smartphone, Globe, Star, Package, CreditCard, TrendingDown } from 'lucide-react';
 
 const EcommerceAI = () => {
   const [activeValuePropIndex, setActiveValuePropIndex] = useState(0);
@@ -83,41 +83,143 @@ const EcommerceAI = () => {
           {/* Overlay Gradient for Text Readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90" />
           
-          {/* Floating Ecommerce Icons Animation */}
+          {/* Neural Network Animation with Ecommerce Elements */}
           <div className="absolute inset-0 opacity-30">
-            {Array.from({ length: 15 }).map((_, i) => (
+            {/* Neural Network Nodes */}
+            {Array.from({ length: 25 }).map((_, i) => (
               <div
                 key={i}
-                className="absolute animate-pulse"
+                className="absolute w-3 h-3 bg-gradient-to-r from-primary/60 to-secondary/60 rounded-full animate-pulse"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
                   animationDelay: `${Math.random() * 2}s`,
                   animationDuration: `${2 + Math.random() * 2}s`
                 }}
-              >
-                {i % 4 === 0 && <ShoppingCart className="w-4 h-4 text-primary/60" />}
-                {i % 4 === 1 && <MessageSquare className="w-4 h-4 text-secondary/60" />}
-                {i % 4 === 2 && <BarChart3 className="w-4 h-4 text-primary/60" />}
-                {i % 4 === 3 && <Search className="w-4 h-4 text-secondary/60" />}
-              </div>
+              />
             ))}
-            {/* Connecting Lines */}
-            {Array.from({ length: 8 }).map((_, i) => (
+            
+            {/* Neural Mesh Connecting Lines */}
+            {Array.from({ length: 15 }).map((_, i) => (
               <div
-                key={`line-${i}`}
-                className="absolute h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
+                key={`mesh-${i}`}
+                className="absolute h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse"
                 style={{
                   left: `${Math.random() * 80}%`,
                   top: `${Math.random() * 80}%`,
-                  width: `${20 + Math.random() * 60}%`,
+                  width: `${30 + Math.random() * 40}%`,
                   transform: `rotate(${Math.random() * 360}deg)`,
-                  animationDelay: `${Math.random() * 3}s`
+                  animationDelay: `${Math.random() * 3}s`,
+                  animationDuration: `${3 + Math.random() * 2}s`
+                }}
+              />
+            ))}
+            
+            {/* Floating Ecommerce Icons - 3D Vector Style */}
+            {Array.from({ length: 20 }).map((_, i) => {
+              const icons = [ShoppingCart, Package, BarChart3, MessageSquare, CreditCard];
+              const IconComponent = icons[i % icons.length];
+              return (
+                <div
+                  key={`icon-${i}`}
+                  className="absolute animate-bounce"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                    animationDelay: `${Math.random() * 3}s`,
+                    animationDuration: `${3 + Math.random() * 2}s`
+                  }}
+                >
+                  <div className="relative">
+                    <IconComponent 
+                      className="w-6 h-6 text-primary/40 drop-shadow-lg transform rotate-12" 
+                      style={{ filter: 'drop-shadow(2px 2px 4px rgba(160, 0, 255, 0.3))' }}
+                    />
+                    <div className="absolute inset-0 w-6 h-6 bg-gradient-to-br from-primary/20 to-secondary/20 rounded blur-sm"></div>
+                  </div>
+                </div>
+              );
+            })}
+            
+            {/* Animated Particle Effect */}
+            {Array.from({ length: 40 }).map((_, i) => (
+              <div
+                key={`particle-${i}`}
+                className="absolute w-1 h-1 bg-gradient-to-r from-primary/60 to-secondary/60 rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animation: `float ${5 + Math.random() * 10}s linear infinite`,
+                  animationDelay: `${Math.random() * 5}s`
                 }}
               />
             ))}
           </div>
+          
+          {/* 3D Shopping Dashboard Visual Element */}
+          <div className="absolute right-10 top-1/4 opacity-20 hidden lg:block">
+            <div className="relative transform rotate-12 perspective-1000">
+              <div className="w-48 h-32 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-lg backdrop-blur-sm border border-primary/20 shadow-2xl">
+                <div className="p-4 space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <BarChart3 className="w-4 h-4 text-primary/60" />
+                    <div className="h-2 bg-primary/40 rounded w-20"></div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <ShoppingCart className="w-4 h-4 text-secondary/60" />
+                    <div className="h-2 bg-secondary/40 rounded w-16"></div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Package className="w-4 h-4 text-primary/60" />
+                    <div className="h-2 bg-primary/40 rounded w-12"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* AI Chatbot Assisting Customer Visual */}
+          <div className="absolute left-10 bottom-1/4 opacity-20 hidden lg:block">
+            <div className="relative transform -rotate-6">
+              <div className="w-40 h-24 bg-gradient-to-br from-secondary/30 to-primary/30 rounded-lg backdrop-blur-sm border border-secondary/20 shadow-2xl">
+                <div className="p-3 flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-secondary/40 rounded-full flex items-center justify-center">
+                    <MessageSquare className="w-4 h-4 text-secondary/80" />
+                  </div>
+                  <div className="space-y-1">
+                    <div className="h-1.5 bg-secondary/50 rounded w-16"></div>
+                    <div className="h-1.5 bg-primary/50 rounded w-12"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        
+        {/* Custom CSS for particles animation */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+          @keyframes float {
+            0% {
+              transform: translateY(100vh) scale(0);
+              opacity: 0;
+            }
+            10% {
+              opacity: 0.6;
+            }
+            90% {
+              opacity: 0.6;
+            }
+            100% {
+              transform: translateY(-100px) scale(1);
+              opacity: 0;
+            }
+          }
+          .perspective-1000 {
+            perspective: 1000px;
+          }
+          `
+        }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8 animate-fade-up" style={{ animationDelay: '0.5s' }}>
