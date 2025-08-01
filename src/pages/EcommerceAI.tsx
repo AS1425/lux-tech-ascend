@@ -78,83 +78,32 @@ const EcommerceAI = () => {
       {/* Hero Section with Parallax Effect */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Parallax Background with Zoom Animation */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10 transition-transform duration-[2500ms] ease-out animate-parallax-zoom"
-        >
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 animate-pulse">
           {/* Overlay Gradient for Text Readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90" />
           
-          {/* Neural Network Animation with Ecommerce Elements */}
-          <div className="absolute inset-0 opacity-30">
-            {/* Neural Network Nodes */}
-            {Array.from({ length: 25 }).map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-3 h-3 bg-gradient-to-r from-primary/60 to-secondary/60 rounded-full animate-pulse"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 2}s`,
-                  animationDuration: `${2 + Math.random() * 2}s`
-                }}
-              />
-            ))}
-            
-            {/* Neural Mesh Connecting Lines */}
-            {Array.from({ length: 15 }).map((_, i) => (
-              <div
-                key={`mesh-${i}`}
-                className="absolute h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse"
-                style={{
-                  left: `${Math.random() * 80}%`,
-                  top: `${Math.random() * 80}%`,
-                  width: `${30 + Math.random() * 40}%`,
-                  transform: `rotate(${Math.random() * 360}deg)`,
-                  animationDelay: `${Math.random() * 3}s`,
-                  animationDuration: `${3 + Math.random() * 2}s`
-                }}
-              />
-            ))}
-            
-            {/* Floating Ecommerce Icons - 3D Vector Style */}
-            {Array.from({ length: 20 }).map((_, i) => {
-              const icons = [ShoppingCart, Package, BarChart3, MessageSquare, CreditCard];
-              const IconComponent = icons[i % icons.length];
+          {/* Animated floating particles - Shopping Carts & Chatbots */}
+          <div className="particles-container">
+            {[...Array(15)].map((_, i) => {
+              const isShoppingCart = i % 2 === 0;
               return (
                 <div
-                  key={`icon-${i}`}
-                  className="absolute animate-bounce"
+                  key={i}
+                  className="particle-icon"
                   style={{
                     left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                    animationDelay: `${Math.random() * 3}s`,
-                    animationDuration: `${3 + Math.random() * 2}s`
+                    animationDelay: `${Math.random() * 10}s`,
+                    animationDuration: `${10 + Math.random() * 20}s`,
                   }}
                 >
-                  <div className="relative">
-                    <IconComponent 
-                      className="w-6 h-6 text-primary/40 drop-shadow-lg transform rotate-12" 
-                      style={{ filter: 'drop-shadow(2px 2px 4px rgba(160, 0, 255, 0.3))' }}
-                    />
-                    <div className="absolute inset-0 w-6 h-6 bg-gradient-to-br from-primary/20 to-secondary/20 rounded blur-sm"></div>
-                  </div>
+                  {isShoppingCart ? (
+                    <ShoppingCart className="w-4 h-4 text-primary/60" />
+                  ) : (
+                    <MessageSquare className="w-4 h-4 text-secondary/60" />
+                  )}
                 </div>
               );
             })}
-            
-            {/* Animated Particle Effect */}
-            {Array.from({ length: 40 }).map((_, i) => (
-              <div
-                key={`particle-${i}`}
-                className="absolute w-1 h-1 bg-gradient-to-r from-primary/60 to-secondary/60 rounded-full"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animation: `float ${5 + Math.random() * 10}s linear infinite`,
-                  animationDelay: `${Math.random() * 5}s`
-                }}
-              />
-            ))}
           </div>
           
           {/* 3D Shopping Dashboard Visual Element */}
@@ -200,6 +149,18 @@ const EcommerceAI = () => {
         {/* Custom CSS for particles animation */}
         <style dangerouslySetInnerHTML={{
           __html: `
+          .particles-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+          }
+          
+          .particle-icon {
+            position: absolute;
+            animation: float linear infinite;
+          }
+          
           @keyframes float {
             0% {
               transform: translateY(100vh) scale(0);
